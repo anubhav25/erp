@@ -20,8 +20,6 @@ function requireLogin (req, res, next) {
 
 app.get('/',function(req,res)
 {
-
-
     res.render('index');
 });
 
@@ -30,15 +28,8 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
-app.get('/dashboard', requireLogin, function(req, res) {
-    console.log('in dashboard');
-    res.render('admin_login');
-});
-
 
 app.post('/login',function(req,res){
-
-
   console.log(req.session_state);
     var query={
         username:req.body.username,
@@ -47,7 +38,6 @@ app.post('/login',function(req,res){
     console.log(query);
     req.db.collection('login').find(query).toArray(function (err,objs)
     {
-        //console.log(objs);
         if(err){
             console.log('Error'+err.toString);
             throw err;

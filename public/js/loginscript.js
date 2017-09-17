@@ -21,3 +21,7 @@ $("#loginbtn").click(function()
 			}
 		});
 	});
+
+$('#a').on('keydown',function (e) {
+console.log(e.keyCode);
+})
