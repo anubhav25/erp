@@ -1,0 +1,202 @@
+<head>
+<style>
+
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Notification</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sl-slide.css">
+	<link rel="stylesheet" href="css/body.css">
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="jquery-3.2.1.min.js"></script>   
+<script>
+
+$(document).ready(function($) {
+   
+$("#textbtn").click(function(event)
+          {
+                $("#file_div").hide();
+               $("#text_div").show();
+              
+          });
+$("#filebtnbtn").click(function(event)
+          {
+               $("#file_div").show();
+               $("#text_div").hide();
+          });
+$("#submit").click(function(event)
+          {
+                     
+               $("#text_div").hide();
+               $("#file_div").hide();
+               
+          });
+  
+});
+
+</script>
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+
+<body>
+    <!--Header-->
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a id="logo" class="pull-left" href="index.html"></a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                        <li ><a href="admin_login.html">Home</a></li>
+                        <li ><a href="admin_addTeacher.html">Add teacher</a></li>
+                        <li><a href="admin_editStudent.html">Edit student</a></li>
+                        <li class="active"><a href="admin_notification.html">Add notification</a></li>
+						<li><a href="index.html">Logout</a></li>
+                    </ul>        
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+	<div class="body1">
+	<div class="left1" style="width:33%;float:left">
+	<form action="http://localhost:5000/a" method="post">
+<div id="heading" style="display:block">
+<center><h3>Notification for Teacher</h3></center>
+    Notification heading :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     select Notification Option :<br><br>
+   <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
+   <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send Text Notification"></div><br><br>
+     <div id="text_div" style="display:none">Send notification as text :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="submit"  id="submit_to_teacher" value="Submit">
+     </div>
+     <div id="file_div" style="display:none">Send notification as file :<br><br>
+     <input type="file" name="pic" accept="image/*"><br><br>
+     <input type="submit"  id="submit_to_teacher" value="Submit">
+     </div><br><br>
+ </form>
+
+
+	</div>
+	<div class="middle1" style="width:33%;float:left">
+	<form action="http://localhost:5000/a" method="post">
+<div id="heading" style="display:block">
+<center><h3>Notification for all</h3></center>
+    Notification heading :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     select Notification Option :<br><br>
+   <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
+   <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send Text Notification"></div><br><br>
+     <div id="text_div" style="display:none">Send notification as text :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="submit"  id="submit_to_all" value="Submit">
+     </div>
+     <div id="file_div" style="display:none">Send notification as file :<br><br>
+     <input type="file" name="pic" accept="image/*"><br><br>
+     <input type="submit"  id="submit_to_all" value="Submit">
+     </div><br><br>
+ </form>
+
+	
+	</div>
+	<div class="right1" style="width:33%;float:left">
+	<form action="http://localhost:5000/a" method="post">
+<div id="heading" style="display:block">
+<center><h3>Notification for Student</h3></center>
+    Notification heading :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     select Notification Option :<br><br>
+   <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
+   <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send Text Notification"></div><br><br>
+     <div id="text_div" style="display:none">Send notification as text :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="submit"  id="submit_to_student" value="Submit">
+     </div>
+     <div id="file_div" style="display:none">Send notification as file :<br><br>
+     <input type="file" name="pic" accept="image/*"><br><br>
+     <input type="submit"  id="submit_to_student" value="Submit">
+     </div><br><br>
+ </form>
+
+	
+	</div>
+	
+	</div>
+
+
+
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span5 cp">
+                    &copy; 2017 <a target="_blank" href="http://www.domain.com/">Your Company</a>. All Rights Reserved.
+                </div>
+                <div class="span6">
+                    <ul class="social pull-right">
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
+                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram"></i></a></li>                   
+                    </ul>
+                </div>
+                <div class="span1">
+                    <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/Footer-->
+
+    <script src="js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.ba-cond.min.js"></script>
+    <script src="js/jquery.slitslider.js"></script>
+    <!-- Slider -->
+    <script type="text/javascript"> 
+    $(function() {
+        var Page = (function() {
+            var $navArrows = $( '#nav-arrows' ),
+            slitslider = $( '#slider' ).slitslider( {
+                autoplay : true
+            } ),
+            init = function() {
+                initEvents();
+            },
+            initEvents = function() {
+                $navArrows.children( ':last' ).on( 'click', function() {
+                    slitslider.next();
+                    return false;
+                });
+                $navArrows.children( ':first' ).on( 'click', function() {
+                    slitslider.previous();
+                    return false;
+                });
+            };
+            return { init : init };
+        })();
+        Page.init();
+    });
+    $(".text-right").html("Created by Anubhav and Sunil");
+    </script>
+    <!-- /Slider -->
+</body>
+</html>

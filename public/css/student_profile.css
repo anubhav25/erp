@@ -1,0 +1,33 @@
+#academic_details{
+padding:10px;
+float:left;
+background-color:silver;
+width:27%;
+height:491px;
+line-height:30px;
+}
+#personal_details{
+	padding:10px;
+float:left;
+background-color:green;
+width:27%;
+height:491px;
+line-height:30px;
+}
+
+#guardian_details{
+	padding:10px;
+float:left;
+background-color:silver;
+width:27%;
+height:491px;
+line-height:30px;
+}
+#upload_image{
+	padding:10px;
+float:left;
+background-color:green;
+width:13%;
+height:491px;
+line-height:30px;	
+}

@@ -1,0 +1,190 @@
+<head>
+<style>
+
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Add Teacher</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sl-slide.css">
+	<link rel="stylesheet" href="css/body.css">
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+
+<body>
+    <!--Header-->
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a id="logo" class="pull-left" href="index.html"></a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                        <li ><a href="admin_login.html">Home</a></li>
+                        <li class="active"><a href="admin_addTeacher.html">Add teacher</a></li>
+                        <li><a href="admin_editStudent.html">Edit student</a></li>
+                        <li><a href="admin_notification.html">Add notification</a></li>
+						<li><a href="index.html">Logout</a></li>
+                    </ul>        
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+	<div class="body1" style="height:auto">
+	<div class="left1" style="height:auto">
+<form action="http://localhost:5000/t" method="post">
+<h3>1. General Information<h3>
+<table id="fill_details">
+<tr>
+     <td>Name :</td>
+     <td><input type="text" name="name" id="name"></td>
+     <td>Mobile No. :</td>
+     <td><input type="number" name="mob_no" id="mob_no"></td>
+</tr>
+
+<tr>
+     <td>DOB :</td>
+     <td><input type="text" name="dob" id="dob"></td>
+     <td>Religion</td>
+     <td><input type="text" name="religion" id="religion"></td>
+</tr>
+<tr>
+     <td>Blood Group :</td>
+     <td><input type="text" name="bg" id="bg"></td>
+     <td>Gender :</td>
+     <td><input type="text" name="gender" id="gender"></td>
+</tr>
+<tr>
+     <td>Nationality :</td>
+     <td><input type="text" name="Nationality" id="Nationality"></td>
+     <td>Email_ID :</td>
+     <td><input type="number" name="email" id="email"></td>
+</tr>
+
+<tr>
+     <td>Voter Card No :</td>
+     <td><input type="text" name="voter_card_no" id="voter_card_no"></td>
+     <td>Aadhar Card No</td>
+     <td><input type="number" name="aadhar_card_no" id="aadhar_card_no"></td>
+</tr>
+
+</table>
+<h3>2. Permanent Address</h3>
+<table id="address_detail">
+
+<tr>
+     <td>Address :</td>
+     <td colspan="3"><input type="text" name="address" id="address"></td>
+     
+</tr>
+
+<tr>
+     <td>City :</td>
+     <td><input type="text" name="city" id="city"></td>
+     <td>Distt.</td>
+     <td><input type="text" name="distt" id="distt"></td>
+</tr>
+<tr>
+     <td>State :</td>
+     <td><input type="text" name="state" id="state"></td>
+     <td>Pin No.</td>
+     <td><input type="number" name="pin" id="pin"></td>
+</tr>
+<tr>
+     <td>Land Line No :</td>
+     <td><input type="number" name="landline" id="landline"></td>
+     <td>Country.</td>
+     <td><input type="text" name="country" id="country"></td>
+</tr>
+
+
+
+</table>
+<input type="submit"  id="submit" value="Submit">
+
+
+ </form>
+
+	</div>
+	<div class="right1" style="height:714px">
+	notification
+	</div>
+	
+	</div>
+
+
+
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span5 cp">
+                    &copy; 2017 <a target="_blank" href="http://www.domain.com/">Your Company</a>. All Rights Reserved.
+                </div>
+                <div class="span6">
+                    <ul class="social pull-right">
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
+                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                        <li><a href="#"><i class="icon-instagram"></i></a></li>                   
+                    </ul>
+                </div>
+                <div class="span1">
+                    <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/Footer-->
+
+    <script src="js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.ba-cond.min.js"></script>
+    <script src="js/jquery.slitslider.js"></script>
+    <!-- Slider -->
+    <script type="text/javascript"> 
+    $(function() {
+        var Page = (function() {
+            var $navArrows = $( '#nav-arrows' ),
+            slitslider = $( '#slider' ).slitslider( {
+                autoplay : true
+            } ),
+            init = function() {
+                initEvents();
+            },
+            initEvents = function() {
+                $navArrows.children( ':last' ).on( 'click', function() {
+                    slitslider.next();
+                    return false;
+                });
+                $navArrows.children( ':first' ).on( 'click', function() {
+                    slitslider.previous();
+                    return false;
+                });
+            };
+            return { init : init };
+        })();
+        Page.init();
+    });
+    $(".text-right").html("Created by Anubhav and Sunil");
+    </script>
+    <!-- /Slider -->
+</body>
+</html>
