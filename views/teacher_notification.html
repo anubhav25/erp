@@ -17,6 +17,32 @@
 	<link rel="stylesheet" href="css/body.css">
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
+	<script src="jquery-3.2.1.min.js"></script>   
+<script>
+
+$(document).ready(function($) {
+   
+$("#textbtn").click(function(event)
+          {
+                $("#file_div").hide();
+               $("#text_div").show();
+              
+          });
+$("#filebtnbtn").click(function(event)
+          {
+               $("#file_div").show();
+               $("#text_div").hide();
+          });
+$("#submit").click(function(event)
+          {
+                     
+               $("#text_div").hide();
+               $("#file_div").hide();
+               
+          });
+  
+});
+</script>
 </head>
 
 <body>
@@ -44,14 +70,30 @@
         </div>
     </header>
     <!-- /header -->
-	<div class="body1">
-	<div class="left1">
-	<h1>Notification</h1>
-	</div>
-	<div class="right1">
-	notification
+	<div class="body1"><center>
+	<div class="left1" style="width:100%;float:left">
+	<form action="http://localhost:5000/a" method="post">
+<div id="heading" style="display:block">
+<center><h3>Notification for Teacher</h3></center>
+    Notification heading :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     select Notification Option :<br><br>
+   <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
+   <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send Text Notification"></div><br><br>
+     <div id="text_div" style="display:none">Send notification as text :<br><br>
+     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="submit"  id="submit_to_teacher" value="Submit">
+     </div>
+     <div id="file_div" style="display:none">Send notification as file :<br><br>
+     <input type="file" name="pic" accept="image/*"><br><br>
+     <input type="submit"  id="submit_to_teacher" value="Submit">
+     </div><br><br>
+ </form>
+
+
 	</div>
 	
+</center>	
 	</div>
 
 
