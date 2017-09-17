@@ -215,11 +215,6 @@ app.get('/:a',requireLogin,function (req,res) {
 
 });
 
-app.get('/:b',requireLogin,function (req,res) {
-    console.log("hi25");
-    res.render(req.params.a);
-
-});
 
 
 /**
