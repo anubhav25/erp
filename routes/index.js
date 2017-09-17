@@ -38,33 +38,16 @@ app.get('/dashboard', requireLogin, function(req, res) {
 
 app.post('/login',function(req,res){
 
-  /*  MongoClient.connect(url,function (err,db) {
-        var query={
-            username:req.body.username,
-            password:req.body.password
-        }
-        console.log(query);
-        db.collection('adminDetails').find(query).toArray(function (err,objs)
-        {
-            if(err){
-                console.log('Error'+err.toString);
-                throw err;
-            }
-            if(objs.length===1)
-                res.json({msg:"ok",data:objs[0]});
-            else
-                res.json({msg:'WRONG USERNAME OR PASSWORD'});
-        });
-    });*/
+
   console.log(req.session_state);
     var query={
         username:req.body.username,
         password:req.body.password
     }
-    console.log(req.body);
+    console.log(query);
     req.db.collection('login').find(query).toArray(function (err,objs)
     {
-
+        //console.log(objs);
         if(err){
             console.log('Error'+err.toString);
             throw err;
@@ -73,8 +56,23 @@ app.post('/login',function(req,res){
             // res.json({msg:"ok",data:objs[0]});
 
             req.session_state.user = objs[0];
-            //res.redirect('/dashboard');}
-            res.json({msg: 'ok'});
+
+            switch (objs[0].type)
+            {
+                case "teacher" :
+                    res.json({msg: 'ok', addr : "/teacher_login"});
+                    break;
+
+                case "admin" :
+                    res.json({msg: 'ok', addr : "/admin_login"});
+                    break;
+                case "student" :
+                    res.json({msg: 'ok', addr : "/student_login"});
+                    break;
+                default :
+                    res.json({msg:'Some Error Occurred'});
+            }
+
         }
         else
             res.json({msg:'WRONG USERNAME OR PASSWORD'});

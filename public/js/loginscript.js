@@ -8,11 +8,12 @@ $("#loginbtn").click(function()
 
 		$.post('/login',a,function (data) {
 			console.log(data)
-			if(data.msg=='ok')
+			if(data.msg==='ok')
 			{
 				//console.log(data);
 				//document.write(data);
-				window.location.href="/dashboard";
+				//alert(data.addr);
+				window.location.href=data.addr;
 			}
 			else
 			{
