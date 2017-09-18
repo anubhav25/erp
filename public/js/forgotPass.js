@@ -6,7 +6,7 @@ $("#loginbtn").click(function()
 		a.email=$('#email').val();
 
 
-		$.post('/login',a,function (data) {
+		$.post('/forgotPass',a,function (data) {
 			console.log(data)
 			if(data.msg=='ok')
 			{
