@@ -85,7 +85,7 @@ function sendMail(sub,data,to)
             pass: mypass
         }
     });
-//console.log(transporter);
+
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
@@ -105,40 +105,42 @@ app.get('/send',function(req,res){
 app.post("/forgotPass",function(req,res){
 
     var data = req.body;
-
-//var pass = gernatepass();
-
-
-
-    MongoClient.connect(url,function (err,db) {
-        if(err)throw err;
-
+    
         var query={
             rollno:data.rollno,
             email:data.email
         }
 
-        db.collection('studentDetails').find(query).toArray(function (err,objs) {
+        req.db.collection('studentDetails').find(query).toArray(function (err,objs) {
 
-            if(err) {console.log(err);
-                res.josn({msg:"SERVER ERROR"});
-                throw er;}
-            //console.log(objs);
-            if(objs.length==1){
-                data=objs[0];
-                sendMail("your erp password","Username: "+data.rollno+" ,Password: "+data.pass,data.email);
-                res.json({msg:"ok"});
-                res.end();
+            data=objs[0];
+            if(objs.length===1){
+                var query2 = {
+                    username : data.rollno
+                }
+                req.db.collection("login").find(query2).toArray(function (err2, obj2) {
+
+                    if(err2) {console.log(err2);
+                        res.josn({msg:"SERVER ERROR"});
+                        throw er;
+                    }
+                    if(objs.length===1) {
+                        var data2 = obj2[0];
+                        sendMail("your erp password", "Username: " + data2.username + " ,Password: " + data2.password, data.email);
+                        res.json({msg: "ok"});
+                        req.db.close();
+                    }
+                })
             }
             else
             {
                 res.json({msg:"enter valid details"});
             }
 
-            db.close();
+
         });
-    });
-});
+    })
+
 
 
 
@@ -154,50 +156,58 @@ function gernatePass()
     return randomstring;
 }
 
-app.post("/registerStudent",function(req,res)
-{
+app.post("/registerStudent",function(req,res) {
     var data = req.body;
 
     var pass = gernatepass();
 
+    var query = {
+        rollno: data.rollno,
+        email: data.email
+    }
 
+    req.db.collection('studentDetails').find({$or : [{ rollno : data.rollno } , { email : data.email } ] }).toArray(function (err, objs) {
 
-    MongoClient.connect(url,function (err,db) {
-        if(err)throw err;
-
-        var query={
-            rollno:data.rollno
+        if (err) {
+            console.log(err);
+            res.josn({msg: "SERVER ERROR"});
+            throw er;
         }
 
-        db.collection('studentDetails').find(query).toArray(function (err,objs) {
-
-            if(err) {console.log(err);
-                throw er;}
-            //console.log(objs);
-            if(objs.length==0){
-                data.pass=pass;
-                sendMail("your erp password","Username: "+data.rollno+" ,Password: "+data.pass,data.email);
-                db.collection('studentDetails').insertOne(data,function(err,user) {
-
-                    if(err) {console.log(err);
-                        res.josn({msg:"SERVER ERROR"});
-                        res.end();
-                        throw er;}
-                    res.json({msg:"ok"});
-                    res.end();
-                });
+        data = objs[0];
+        if (objs.length === 0) {
+            var query2 = {
+                username: data.rollno,
+                type: "student"
             }
-            else
-            {
-                res.json({msg:"user already exists"});
-            }
+            req.db.collection("login").find(query2).toArray(function (err2, obj2) {
+                if (err2) {
+                    console.log(err2);
+                    res.josn({msg: "SERVER ERROR"});
+                    throw er;
+                }
+                if (obj2.length === 0) {
+                    query2.password = pass;
+                    req.db.collection("login").insertOne(query, function (err, data2) {
+                        sendMail("your erp password", "Username: " + data2.username + " ,Password: " + data2.password, data.email);
+                        res.json({msg: "ok"});
+                        req.db.close();
 
-            db.close();
-        });
+                    })
+
+                }
+            })
+        }
+        else {
+            res.json({msg: "user already exists"});
+        }
+
+
     });
 });
 
-app.get('/:a',requireLogin,function (req,res) {
+
+app.get('/:a',function (req,res) {
     console.log("hi25");
     res.render(req.params.a);
 
