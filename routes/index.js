@@ -1,15 +1,11 @@
 var express = require('express');
 var app = express.Router();
-var nodemailer=require('nodemailer');
-
-var mymail='uietkuk.erp@gmail.com';
-var mypass='anubhavsunil';
+var mail = require("./email");
 
 
-var MongoClient = require('mongodb').MongoClient;
 
-function requireLogin (req, res, next) {
-    if (!req.user) {
+function requireLoginStudent (req, res, next) {
+    if (!req.user && req.user.type !== "student") {
         console.log("not found");
         res.redirect('/');
     } else {
@@ -17,6 +13,30 @@ function requireLogin (req, res, next) {
         next();
     }
 }
+
+
+function requireLoginTeacher (req, res, next) {
+    if (!req.user && req.user.type !== "teacher") {
+        console.log("not found");
+        res.redirect('/');
+    } else {
+        console.log("found");
+        next();
+    }
+}
+
+
+
+function requireLoginAdmin (req, res, next) {
+    if (!req.user && req.user.type !== "admin") {
+        console.log("not found");
+        res.redirect('/');
+    } else {
+        console.log("found");
+        next();
+    }
+}
+
 
 app.get('/',function(req,res)
 {
@@ -34,7 +54,7 @@ app.post('/login',function(req,res){
     var query={
         username:req.body.username,
         password:req.body.password
-    }
+    };
     console.log(query);
     req.db.collection('login').find(query).toArray(function (err,objs)
     {
@@ -68,90 +88,54 @@ app.post('/login',function(req,res){
             res.json({msg:'WRONG USERNAME OR PASSWORD'});
     });
     });
-function sendMail(sub,data,to)
-{
-
-    console.log("sending mail");
-    var mailOptions = {
-        from: mymail,
-        to: to,
-        subject: sub,
-        text: data
-    };
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: mymail,
-            pass: mypass
-        }
-    });
 
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.send("done");
-        }
-    });
-
-
-}
 app.get('/send',function(req,res){
-    sendMail("hi","test","suniljakhal.skj@gmail.com");
+    mail.sendMail("hi","test","gupta.anubhav25@gmail.com");
 });
 
 app.post("/forgotPass",function(req,res){
 
     var data = req.body;
-    
+
         var query={
-            rollno:data.rollno,
+            username:data.rollno,
             email:data.email
-        }
+        };
+    //console.log(query);
+        req.db.collection("login").find(query).toArray(function (err, objs) {
 
-        req.db.collection('studentDetails').find(query).toArray(function (err,objs) {
-
-            data=objs[0];
-            if(objs.length===1){
-                var query2 = {
-                    username : data.rollno
-                }
-                req.db.collection("login").find(query2).toArray(function (err2, obj2) {
-
-                    if(err2) {console.log(err2);
-                        res.josn({msg:"SERVER ERROR"});
-                        throw er;
+                    if(err) {console.log(err);
+                        res.json({msg:"SERVER ERROR"});
+                        throw err;
                     }
+
                     if(objs.length===1) {
-                        var data2 = obj2[0];
-                        sendMail("your erp password", "Username: " + data2.username + " ,Password: " + data2.password, data.email);
+                        var data2 = objs[0];
+                        mail.sendMail("your erp password", "Username: " + data2.username + " ,Password: " + data2.password, data2.email);
                         res.json({msg: "ok"});
-                        req.db.close();
+
                     }
-                })
-            }
-            else
-            {
-                res.json({msg:"enter valid details"});
-            }
+                    else
+                    {
+                        res.json({msg:"enter valid details"});
+                    }
 
-
+            req.db.close();
         });
-    })
+    });
 
 
 
 
 function gernatePass()
 {
-    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZ!@#&*/+-abcdefghiklmnopqrstuvwxyz";
+    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
     var string_length = 8;
     var randomstring = '';
     for (var i=0; i<string_length; i++) {
         var rnum = Math.floor(Math.random() * chars.length);
-        randomstring += chars.substring(rnum,rnum+1);
+        randomstring += chars.charAt(rnum);
     }
     return randomstring;
 }
@@ -159,56 +143,44 @@ function gernatePass()
 app.post("/registerStudent",function(req,res) {
     var data = req.body;
 
-    var pass = gernatepass();
+    var pass = gernatePass();
 
-    var query = {
-        rollno: data.rollno,
-        email: data.email
-    }
-
-    req.db.collection('studentDetails').find({$or : [{ rollno : data.rollno } , { email : data.email } ] }).toArray(function (err, objs) {
-
-        if (err) {
-            console.log(err);
-            res.josn({msg: "SERVER ERROR"});
-            throw er;
-        }
-
-        data = objs[0];
-        if (objs.length === 0) {
             var query2 = {
                 username: data.rollno,
+                email : data.email,
                 type: "student"
             }
-            req.db.collection("login").find(query2).toArray(function (err2, obj2) {
+            req.db.collection("login").find(    {   $or : [query2, { username : data.rollno ,  type: "student"} ,
+                                                        { email : data.email , type: "student"}, query2 ]
+                                                }).toArray(function (err2, obj2) {
                 if (err2) {
                     console.log(err2);
-                    res.josn({msg: "SERVER ERROR"});
-                    throw er;
+                    res.json({msg: "SERVER ERROR"});
+                    throw err2;
                 }
                 if (obj2.length === 0) {
                     query2.password = pass;
-                    req.db.collection("login").insertOne(query, function (err, data2) {
-                        sendMail("your erp password", "Username: " + data2.username + " ,Password: " + data2.password, data.email);
+                    req.db.collection("login").insertOne(query2, function (err, data2) {
+
+                        mail.sendMail("your erp password", "Username: " + query2.username + " ,Password: " + query2.password, query2.email);
                         res.json({msg: "ok"});
-                        req.db.close();
+
 
                     })
 
+
                 }
+                else {
+                    res.json({msg: "user already exists"});
+                }
+                req.db.close();
             })
-        }
-        else {
-            res.json({msg: "user already exists"});
-        }
 
-
-    });
 });
 
 
 app.get('/:a',function (req,res) {
-    console.log("hi25");
+   // console.log("hi25");
     res.render(req.params.a);
 
 });

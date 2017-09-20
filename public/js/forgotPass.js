@@ -10,7 +10,7 @@ $("#loginbtn").click(function()
 			console.log(data)
 			if(data.msg=='ok')
 			{
-
+                $('#wrongdetails').hide('fast');
 			}
 			else
 			{

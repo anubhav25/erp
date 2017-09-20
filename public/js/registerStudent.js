@@ -6,11 +6,11 @@ $("#loginbtn").click(function()
     a.email=$('#email').val();
 
 
-    $.post('/registerPass',a,function (data) {
+    $.post('/registerStudent',a,function (data) {
         console.log(data)
         if(data.msg=='ok')
         {
-
+            $('#wrongdetails').hide('fast');
         }
         else
         {
