@@ -86,7 +86,10 @@ app.post('/login',function(req,res){
         }
         else
             res.json({msg:'WRONG USERNAME OR PASSWORD'});
+
+        req.db.close();
     });
+
     });
 
 
@@ -126,6 +129,36 @@ app.post("/forgotPass",function(req,res){
     });
 
 
+app.post("/changePass",function(req,res) {
+
+    var data = req.body;
+
+    var query = {
+        username: data.username,
+        email : data.email,
+        password :  data.oldpassword
+    };
+    
+    var query2 = {
+        password :  data.newpassword
+    };
+    req.db.collection("login").updateOne( query, query2 ,function (err2, obj2) {
+        if (err2) {
+            console.log(err2);
+            res.json({msg: "SERVER ERROR"});
+            throw err2;
+        }
+
+            req.db.collection("login").insertOne(query2, function (err, data2) {
+
+                mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + query2.password, query.email);
+                res.json({msg: "ok"});
+                req.db.close();
+
+            })
+        })
+});
+
 
 
 function gernatePass()
@@ -139,6 +172,8 @@ function gernatePass()
     }
     return randomstring;
 }
+
+
 
 app.post("/registerStudent",function(req,res) {
     var data = req.body;

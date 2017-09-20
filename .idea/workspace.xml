@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07ab46d6-069d-4c6b-8f16-d98e8b271407" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/email.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/express-mongo-db/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/express-mongo-db/license" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/express-mongo-db/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/express-mongo-db/readme.md" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/forgotPass.js" afterPath="$PROJECT_DIR$/public/js/forgotPass.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/loginscript.js" afterPath="$PROJECT_DIR$/public/js/loginscript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/registerStudent.js" afterPath="$PROJECT_DIR$/public/js/registerStudent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/register_now.html" afterPath="$PROJECT_DIR$/views/register_now.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +22,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="30" column="2" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+            <state relative-caret-position="251">
+              <caret line="124" column="2" lean-forward="false" selection-start-line="124" selection-start-column="2" selection-end-line="124" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -41,10 +32,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
               <folding>
-                <element signature="e#4797#4840#0" expanded="false" />
+                <element signature="e#5618#5661#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -271,7 +262,7 @@
       <workItem from="1505667959144" duration="2114000" />
       <workItem from="1505670440576" duration="761000" />
       <workItem from="1505708235975" duration="4342000" />
-      <workItem from="1505907920777" duration="11757000" />
+      <workItem from="1505907920777" duration="13228000" />
     </task>
     <task id="LOCAL-00001" summary="index.js corrected">
       <created>1505668061357</created>
@@ -308,11 +299,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505712557926</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="forgot password and registration complete">
+      <created>1505927380537</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1505927380537</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54329000" />
+    <option name="totallyTimeSpent" value="55800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -347,7 +345,8 @@
     <MESSAGE value="index.js corrected" />
     <MESSAGE value="login modified" />
     <MESSAGE value="updated many things" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated many things" />
+    <MESSAGE value="forgot password and registration complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot password and registration complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,7 +368,7 @@
         <state relative-caret-position="3689">
           <caret line="217" column="12" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="12" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -403,7 +402,7 @@
         <state relative-caret-position="3689">
           <caret line="217" column="12" lean-forward="false" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="12" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -421,7 +420,7 @@
         <state relative-caret-position="3587">
           <caret line="211" column="27" lean-forward="false" selection-start-line="211" selection-start-column="27" selection-end-line="211" selection-end-column="27" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -455,7 +454,7 @@
         <state relative-caret-position="1275">
           <caret line="75" column="9" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -511,7 +510,7 @@
         <state relative-caret-position="833">
           <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -544,7 +543,7 @@
         <state relative-caret-position="833">
           <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -577,7 +576,7 @@
         <state relative-caret-position="527">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -683,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="30" column="2" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/forgotPass.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -751,12 +742,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="124" column="2" lean-forward="false" selection-start-line="124" selection-start-column="2" selection-end-line="124" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
           <folding>
-            <element signature="e#4797#4840#0" expanded="false" />
+            <element signature="e#5618#5661#0" expanded="false" />
           </folding>
         </state>
       </provider>
