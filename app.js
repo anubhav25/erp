@@ -31,8 +31,25 @@ app.use(clientSessions({
 */
 
 var url = "mongodb://localhost:27017/erp";
+url= "mongodb://erp:qwerty@ds141434.mlab.com:41434/erp" ;
+/*
 var expressMongoDb = require('express-mongo-db');
-app.use(expressMongoDb(url));
+app.use(expressMongoDb(url));*/
+
+var MongoClient = require('mongodb').MongoClient;
+app.use(function expressMongoDb(req, res, next) {
+    var connection = MongoClient.connect(url);
+
+    connection
+        .then(function (db) {
+            req['db'] = db;
+            next();
+        })
+        .catch(function (err) {
+            connection = undefined;
+            next(err);
+        });
+});
 
 
 
@@ -64,11 +81,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
     console.log("hi");
     if (req.session_state && req.session_state.user) {
-        console.log("here");
         req.db.collection('login').findOne({ username: req.session_state.user.username }, function(err, user) {
          if (user) {
          req.user = user;
-         console.log(req.user+"hi");
          console.log(req.user);
          delete req.user.password; // delete the password from the session
          req.session_state.user = user;  //refresh the session value
@@ -90,7 +105,7 @@ app.use(function(req, res, next) {
 app.use('/', index);
 
 
-
+/*
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -108,5 +123,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+*/
 module.exports = app;

@@ -14,6 +14,7 @@ $("#loginbtn").click(function()
 				//document.write(data);
 				//alert(data.addr);
 				window.location.href=data.addr;
+                $('#wrongdetails').hide('fast');
 			}
 			else
 			{
