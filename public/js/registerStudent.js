@@ -11,6 +11,7 @@ $("#loginbtn").click(function()
         if(data.msg=='ok')
         {
             $('#wrongdetails').hide('fast');
+            window.location.href ="/";
         }
         else
         {
