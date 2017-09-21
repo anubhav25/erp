@@ -31,6 +31,7 @@ app.get('/logout', function(req, res) {
 
 app.post('/login',function(req,res){
   console.log(req.session_state);
+  console.log(req.body);
     var query={
         username:req.body.username,
         password:req.body.password
