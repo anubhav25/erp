@@ -5,7 +5,9 @@
 
 $("#submit").click(function (){
     var sem=window.btoa($("#sem").val());
-    var rno= window.btoa("2514221").val();
-    console.log(sem+rno);
-window.location.href = "http://49.50.77.75/Forms/Student/PrintReportCard.aspx?rollno="+rno+"&sem="+sem;
+    var rno= window.btoa("2514221");
+    var url = "http://49.50.77.75/Forms/Student/PrintReportCard.aspx?rollno="+rno+"&sem="+sem;
+    console.log(url);
+
+//window.location.href =
 });
