@@ -214,6 +214,75 @@ app.post("/registerStudent",function(req,res) {
 
 });
 
+var fs = require('fs');
+var teacher_notifications = [] ;
+var student_notifications = [] ;
+fs.readFile('./teacher_notifications',function(err,data){
+try {
+    teacher_notifications = JSON.parse(data);
+}
+catch (e){}
+});
+
+fs.readFile('./student_notifications','UTF-8',function(err,data){
+    try{
+student_notifications = JSON.parse(data);
+    }
+    catch (e){}
+});
+
+app.post('/add_notification',function (req,res) {
+    var data = req.body;
+    if(data.target === 'all')
+    {
+        if(teacher_notifications.length === 20)
+        {
+            teacher_notifications.shift();
+        }
+        teacher_notifications.push(data);
+        fs.writeFile('./teacher_notifications',JSON.stringify(teacher_notifications));
+        if(student_notifications.length === 20)
+        {
+            student_notifications.shift();
+        }
+        student_notifications.push(data);
+    }
+    if(data.target === 'teacher')
+    {
+        if(teacher_notifications.length === 20)
+        {
+            teacher_notifications.shift();
+        }
+        teacher_notifications.push(data);
+    }
+    if(data.target === 'student')
+    {
+        if(student_notifications.length === 20)
+        {
+            student_notifications.shift();
+        }
+        student_notifications.push(data);
+    }
+    fs.writeFile('./teacher_notifications',JSON.stringify(teacher_notifications),function () {
+        
+    });
+    fs.writeFile('./student_notifications',JSON.stringify(student_notifications),function () {
+        
+    });
+    res.end();
+
+});
+
+
+
+app.get('/get_student_notification',function (req,res) {
+    res.json(student_notifications);
+});
+
+app.get('/get_teacher_notification',function (req,res) {
+    res.json(teacher_notifications);
+});
+
 
 app.post('/result',function (req,res) {
 

@@ -72,16 +72,21 @@ $("#submit").click(function(event)
     <!-- /header -->
 	<div class="body1"><center>
 	<div class="left1" style="width:100%;float:left">
-	<form action="http://localhost:5000/a" method="post">
+	<form action="/add_notification" method="POST">
 <div id="heading" style="display:block">
-<center><h3>Notification for Teacher</h3></center>
+<center><h3>Notification</h3></center>
     Notification heading :<br><br>
      <input type="text" name="notification_heading" id="notification_heading"><br><br>
+    <select name="target" id="target">
+        <option value="all">all</option>
+        <option value="teachers">teachers</option>
+        <option value="students">students</option>
+    </select>
      select Notification Option :<br><br>
    <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
    <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send Text Notification"></div><br><br>
      <div id="text_div" style="display:none">Send notification as text :<br><br>
-     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="text" name="notification_content" id="notification_content"><br><br>
      <input type="submit"  id="submit_to_teacher" value="Submit">
      </div>
      <div id="file_div" style="display:none">Send notification as file :<br><br>
