@@ -214,6 +214,26 @@ app.post("/registerStudent",function(req,res) {
 
 });
 
+
+app.post('/result',function (req,res) {
+
+    var sem = req.body.sem;
+    var rno = req.user.username;
+
+    var buff = new Buffer(sem);
+   sem = buff.toString('base64');
+
+    buff = new Buffer(rno);
+    rno = buff.toString('base64')
+var a={};
+    a.msg = 'ok';
+    a.url = "http://49.50.77.75/Forms/Student/PrintReportCard.aspx?rollno="+rno+"&sem="+sem;
+
+    res.json(a);
+
+});
+
+
 app.get("/favicon.ico", function (req,res) {
     res.end();
 })
