@@ -138,7 +138,7 @@ app.post("/changePass",function(req,res) {
         email : data.email,
         password :  data.oldpassword
     };
-    
+
     var query2 = {
         password :  data.newpassword
     };
