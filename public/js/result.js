@@ -9,5 +9,5 @@ $("#submit").click(function (){
     var url = "http://49.50.77.75/Forms/Student/PrintReportCard.aspx?rollno="+rno+"&sem="+sem;
     console.log(url);
 
-//window.location.href =
+window.location.href = url;
 });
