@@ -5,7 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var clientSessions = require("client-sessions");
 var app = express();
-
+var index = require('./routes/index');
 
 
 
@@ -102,7 +102,7 @@ app.use(function(req, res, next) {
 
 
 
-var index = require('./routes/index');
+
 
 app.use('/', index);
 

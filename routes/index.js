@@ -308,7 +308,7 @@ app.get('/myusername',function(req,res){
 
 app.get("/favicon.ico", function (req,res) {
     res.end();
-})
+});
 app.get('/:a',function (req,res) {
    // console.log("hi25");
     res.render(req.params.a);
