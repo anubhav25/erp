@@ -301,7 +301,9 @@ var a={};
     res.json(a);
 
 });
-
+app.get('/myusername',function(req,res){
+    res.send(req.user.username);
+});
 
 
 app.get("/favicon.ico", function (req,res) {

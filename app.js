@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var clientSessions = require("client-sessions");
-var index = require('./routes/index');
 var app = express();
+
+
 
 
 
@@ -101,8 +102,11 @@ app.use(function(req, res, next) {
 
 
 
+var index = require('./routes/index');
 
 app.use('/', index);
+
+
 
 
 /*
