@@ -165,7 +165,7 @@
                  if(res.sender===data)
                      res.sender='ME';
 
-                 var msg = "<b>"+res.sender+"</b> :  "+res.fileName+"<br><a href="+res.link+">click here to download</a>";
+                 var msg = "<b>"+res.sender+"</b> :  "+res.fileName+"<br><a href="+res.link+"/"+res.fileName+">click here to download</a>";
                  $('#messages').prepend($('<li>').html(msg));
                  window.scrollTo(100, document.body.scrollHeight);
              });

@@ -114,8 +114,8 @@ app.post('/login',function(req,res){
     });
 
 
-app.get('/files/:a',function (req,res) {
-    res.download("./UserFiles/chatFiles/"+req.params.a);
+app.get('/files/:a/:b',function (req,res) {
+    res.download("./UserFiles/chatFiles/"+req.params.a,req.params.b);
 });
 
 
