@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var clientSessions = require("client-sessions");
-var index = require('./routes/index');
 var app = express();
+var index = require('./routes/index');
+
 
 
 
@@ -30,29 +31,12 @@ app.use(clientSessions({
 }));
 */
 
-var url = "mongodb://localhost:27017/erp";
-url= "mongodb://erp:qwerty@ds141434.mlab.com:41434/erp" ;
-/*
-var expressMongoDb = require('express-mongo-db');
-app.use(expressMongoDb(url));*/
 
-var MongoClient = require('mongodb').MongoClient;
-app.use(function expressMongoDb(req, res, next) {
-    var connection = MongoClient.connect(url);
+app.use(function (req, res, next) {
 
-    connection
-        .then(function (db) {
-            req['db'] = db;
-            next();
-        })
-        .catch(function (err) {
-            connection = undefined;
-            next(err);
-        });
+require('./routes/db')(req,next);
+
 });
-
-
-
 // view engine setup
 /*app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -102,7 +86,10 @@ app.use(function(req, res, next) {
 
 
 
+
 app.use('/', index);
+
+
 
 
 /*
