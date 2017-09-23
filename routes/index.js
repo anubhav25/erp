@@ -40,6 +40,24 @@ function requireLoginAdmin (req, res, next) {
 
 app.get('/',function(req,res)
 {
+    var myuser =   req.session_state.user ;
+    if(myuser && myuser.type) {
+        switch (myuser.type) {
+            case "teacher" :
+                res.renser("teacher_login");
+                break;
+
+            case "admin" :
+                res.render("admin_login");
+                break;
+            case "student" :
+                res.render("student_login");
+                break;
+            default :
+                res.render('index');
+        }
+    }
+    else
     res.render('index');
 });
 
@@ -50,7 +68,7 @@ app.get('/logout', function(req, res) {
 
 
 app.post('/login',function(req,res){
-  console.log(req.session_state);
+ // console.log(req.session_state);
   console.log(req.body);
     var query={
         username:req.body.username,
@@ -59,10 +77,12 @@ app.post('/login',function(req,res){
     console.log(query);
     req.db.collection('login').find(query).toArray(function (err,objs)
     {
+
         if(err){
             console.log('Error'+err.toString);
             throw err;
         }
+        console.log(objs);
         if(objs.length===1) {
             // res.json({msg:"ok",data:objs[0]});
 
@@ -92,6 +112,11 @@ app.post('/login',function(req,res){
     });
 
     });
+
+
+app.get('/files/:a/:b',function (req,res) {
+    res.download("./UserFiles/chatFiles/"+req.params.a,req.params.b);
+});
 
 
 app.get('/send',function(req,res){

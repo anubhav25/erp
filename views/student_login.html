@@ -73,7 +73,11 @@
 hgf
         <ul id="messages"></ul>
         <form action="">
+<<<<<<< HEAD
             <input id="m"  autofocus /><button>Send</button>
+=======
+            <input id="m" autocomplete="off" autofocus /><input type="file" id="file"/><button>Send</button>
+>>>>>>> 1acf18d1c08c9b8847d311b2a98e87f473daf58b
         </form>
 
 	</div>
@@ -86,7 +90,7 @@ hgf
 
 
 
-    <!--Footer-->
+    <!--Footer--
     <footer id="footer">
         <div class="container">
             <div class="row-fluid">
@@ -109,7 +113,7 @@ hgf
             </div>
         </div>
     </footer>
-    <!--/Footer-->
+    !--/Footer-->
 
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
@@ -121,31 +125,67 @@ hgf
     <script>
          $(function () {
 
+            // var socket = io();
              var socket = io('http://erp.openode.io/');
 
              $.get('/myusername',function(data)
              {
 
+        $('#file').change(function(e){
 
+            var file = e.target.files[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function (e) {
+                var binary = e.target.result;
+                var base64 = window.btoa(binary);
+                var msg = {};
+                msg.file=base64;
+                msg.fileName=file.name;
+                msg.sender=data;
+                socket.emit('chat_file', msg );
+                $('#file').val('');
+            };
+
+            fileReader.readAsBinaryString(file);
+        });
 
         $('form').submit(function(){
 
 
               var msg = {};
+
               msg.msg=$('#m').val();
               msg.sender=data;
-              socket.emit('chat message', msg );
+              socket.emit('chat_message', msg );
               $('#m').val('');
+
+
+
             return false;
         });
-        socket.on('chat message', function(res){
-            if(res.sender===data)
-                res.sender='ME';
-            var msg = "<b> "+res.sender+"</b> :  "+res.msg;
-            $('#messages').prepend($('<li>').html(msg));
-            window.scrollTo(100, document.body.scrollHeight);
-        });
-        });
+
+
+             socket.on('chat_message', function(res){
+                 console.log('message recieved');
+                 console.log(res);
+                 if(res.sender===data)
+                     res.sender='ME';
+                 var msg = "<b> "+res.sender+"</b> :  "+res.msg;
+                 $('#messages').prepend($('<li>').html(msg));
+                 window.scrollTo(100, document.body.scrollHeight);
+             });
+             socket.on('chat_file', function(res){
+                 console.log('file recieved');
+                 console.log(res);
+                 if(res.sender===data)
+                     res.sender='ME';
+
+                 var msg = "<b>"+res.sender+"</b> :  "+res.fileName+"<br><a href="+res.link+"/"+res.fileName+">click here to download</a>";
+                 $('#messages').prepend($('<li>').html(msg));
+                 window.scrollTo(100, document.body.scrollHeight);
+             });
+
+             });
          $("body").on('keydown', function (event) {
              if( event.keyCode==13 ) {
                  event.preventDefault();
