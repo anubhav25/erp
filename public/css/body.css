@@ -7,7 +7,8 @@ width:70%;
 background-color:teal;
 float:left; 
 height:491px;
-borer-right: 1px solid black;
+
+overflow-y:scroll;
 
 }
 .right1{

@@ -1,4 +1,4 @@
-body {
+/*body {
   font: 1em sans-serif;
   padding: 0;
   margin : 0;
@@ -27,7 +27,7 @@ input[type=email]{
 }
 
 /* This is our style for the invalid fields */
-input:invalid{
+/*input:invalid{
   border-color: #900;
   background-color: #FDD;
 }
@@ -37,7 +37,7 @@ input:focus:invalid {
 }
 
 /* This is the style of our error messages */
-.error {
+/*.error {
   width  : 100%;
   padding: 0;
  
@@ -52,4 +52,22 @@ input:focus:invalid {
 
 .error.active {
   padding: 0.3em;
+}*/
+table{
+width:90%;
+margin: 10px;
+}
+input{
+  width: 80%
+
+}
+.body1{
+height:491px;
+
+}
+.left1{
+width:100%;
+background-color:teal;
+ height:491px;
+overflow-y:scroll;
 }
