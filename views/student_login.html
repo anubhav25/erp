@@ -109,25 +109,28 @@
     <!--<script src="https://code.jquery.com/jquery-1.11.1.js"></script>-->
     <script>
          $(function () {
-        var socket = io('http://erp.openode.io/');
+
+             var socket = io('http://erp.openode.io/');
+
+             $.get('/myusername',function(data)
+             {
+
+
 
         $('form').submit(function(){
 
-         $.get('/myusername',function(data)
-          {
 
               var msg = {};
               msg.msg=$('#m').val();
               msg.sender=data;
               socket.emit('chat message', msg );
               $('#m').val('');
-          });
-
-
             return false;
         });
-        socket.on('chat message', function(data){
-            var msg = "<b> "+data.sender+"</b> :  "+data.msg;
+        socket.on('chat message', function(res){
+            if(res.sender===data)
+                res.sender='ME';
+            var msg = "<b> "+res.sender+"</b> :  "+res.msg;
             $('#messages').prepend($('<li>').html(msg));
             window.scrollTo(100, document.body.scrollHeight);
         });
@@ -141,6 +144,7 @@
 
              }
          })
+         });
     </script>
     <!-- Slider -->
     <script type="text/javascript"> 
