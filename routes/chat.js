@@ -10,7 +10,7 @@ module.exports = function(server) {
 
         io.on('connection', function (socket) {
             // console.log("user connected");
-            mongo.db.collection('chats').find({}).limit(20).toArray(function (err, objs) {
+            mongo.db.collection('chats').find({},{ _id: 0 }).limit(20).toArray(function (err, objs) {
                 objs.forEach(function (a) {
                     if (a.link) {
                         console.log('file sent');

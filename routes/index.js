@@ -75,7 +75,7 @@ app.post('/login',function(req,res){
         password:req.body.password
     };
     console.log(query);
-    req.db.collection('login').find(query).toArray(function (err,objs)
+    req.db.collection('login').find(query, { _id: 0 }).toArray(function (err,objs)
     {
 
         if(err){
@@ -132,7 +132,7 @@ app.post("/forgotPass",function(req,res){
             email:data.email
         };
     //console.log(query);
-        req.db.collection("login").find(query).toArray(function (err, objs) {
+        req.db.collection("login").find(query, { _id: 0 }).toArray(function (err, objs) {
 
                     if(err) {console.log(err);
                         res.json({msg:"SERVER ERROR"});
@@ -213,7 +213,7 @@ app.post("/registerStudent",function(req,res) {
             }
             req.db.collection("login").find(    {   $or : [query2, { username : data.rollno ,  type: "student"} ,
                                                         { email : data.email , type: "student"}, query2 ]
-                                                }).toArray(function (err2, obj2) {
+                                                }, { _id: 0 }).toArray(function (err2, obj2) {
                 if (err2) {
                     console.log(err2);
                     res.json({msg: "SERVER ERROR"});
@@ -326,6 +326,42 @@ var a={};
     res.json(a);
 
 });
+
+/*app('/updateStudentDetails',function(req,res){
+
+
+
+});
+
+app('/getStudentDetais',function(req,res){
+
+
+});*/
+
+app.get('/getTeachers/:a?',function (req,res) {
+    var sk=parseInt(req.params.a);
+    req.db.collection('Teachers').find({},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+     if(err)
+     {
+         throw err;
+     }
+     res.send(objs);
+    })
+});
+
+app.get('/getStudents/:a?',function (req,res) {
+    var sk=parseInt(req.params.a);
+    req.db.collection('Students').find({},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+     if(err)
+     {
+         throw err;
+     }
+     res.send(objs);
+    })
+});
+
+
+
 app.get('/myusername',function(req,res){
     res.send(req.user.username);
 });
