@@ -162,7 +162,7 @@
                  if(res.sender===data)
                      res.sender='ME';
                  else
-                     snd.play();
+                     beep();
                  var msg = "<b> "+res.sender+"</b> :  "+res.msg;
                  $('#messages').prepend($('<li>').html(msg));
                  window.scrollTo(100, document.body.scrollHeight);
@@ -173,7 +173,7 @@
                  if(res.sender===data)
                      res.sender='ME';
                     else
-                     snd.play();
+                    beep();
                  var msg = "<b>"+res.sender+"</b> :  "+res.fileName+"<br><a href="+res.link+"/"+res.fileName+">click here to download</a>";
                  $('#messages').prepend($('<li>').html(msg));
                  window.scrollTo(100, document.body.scrollHeight);
