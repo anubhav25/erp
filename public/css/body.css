@@ -1,12 +1,12 @@
 .body1{
-height:491px;
+height:496px;
 
 }
 .left1{
 width:70%;
 background-color:teal;
 float:left; 
-height:491px;
+height:496px;
 
 overflow-y:scroll;
 
@@ -15,6 +15,6 @@ overflow-y:scroll;
 width:30%; 
 background-color:silver;
 float:left; 
-height:491px;
+height:496px;
 
 }

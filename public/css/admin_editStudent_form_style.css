@@ -62,12 +62,12 @@ input{
 
 }
 .body1{
-height:491px;
+
 
 }
 .left1{
 width:100%;
 background-color:teal;
- height:491px;
+min-height:496px;
 overflow-y:scroll;
 }
