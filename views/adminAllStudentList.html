@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Student</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sl-slide.css">
+	<link rel="stylesheet" href="css/body.css">
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+    <!--Header-->
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a id="logo" class="pull-left" href="index.html"></a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                       <li ><a href="admin_login.html">Home</a></li>
+                        <li ><a href="adminAllTeacherList.html">Teacher</a></li>
+                        <li class="active"><a href="adminAllStudentList.html">Student</a></li>
+                        <li><a href="admin_notification.html">Add notification</a></li>
+						<li><a href="index.html">Logout</a></li>
+                    </ul>        
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+	<div id="student_edit_delete_div">
+	<input type="button" value="Add Student" id="addStudent" class="addStudent">
+	<table id="student_edit_delete_table">
+		<tr>
+			<th>Name</th>
+			<th>id</th>
+			<th>Phone No.</th>
+			<th>Email Id</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			
+		</tr>
+	</table></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/adminAllStudentList.js"></script>	
+</body>
+</html>
