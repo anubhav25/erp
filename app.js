@@ -11,7 +11,6 @@ var index = require('./routes/index');
 
 
 
-
 app.use(clientSessions({
     // cookie name dictates the key name added to the request object
     secret: 'infinixnote4miredmi3s', // should be a large unguessable string
@@ -75,7 +74,6 @@ app.use(function(req, res, next) {
         next();
     }
 });
-
 
 
 
