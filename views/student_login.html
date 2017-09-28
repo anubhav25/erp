@@ -152,8 +152,6 @@
 
 
              socket.on('chat_message', function(res){
-                 console.log('message recieved');
-                 console.log(res);
                  if(res.sender===data)
                      res.sender='ME';
                  var msg = "<b> "+res.sender+"</b> :  "+res.msg;
@@ -161,8 +159,6 @@
                  window.scrollTo(100, document.body.scrollHeight);
              });
              socket.on('chat_file', function(res){
-                 console.log('file recieved');
-                 console.log(res);
                  if(res.sender===data)
                      res.sender='ME';
 
@@ -210,6 +206,10 @@
     });
     $(".text-right").html("Created by Anubhav and Sunil");
     </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src ="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src ="js/recieve_notification_student.js"></script>
     <!-- /Slider -->
 </body>
 </html>
