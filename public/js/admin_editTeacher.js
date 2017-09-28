@@ -30,7 +30,7 @@ function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,vot
 
 
 
-/*
+
 
 
 $('#submit').click(function (argument) {
@@ -55,7 +55,7 @@ var country=$('#country').val();
 var tcDetails=new teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,voter_card_no,aadhar_card_no,address,city,distt,state,pin,landline,country);
 
 console.log(tcDetails);
-*/		/*$.post('/addTeacher',tcDetails,function (data) {
+$.post('/addTeacher',tcDetails,function (data) {
 			console.log(data)
 			if(data.msg=="ok")
 			{
@@ -65,11 +65,11 @@ console.log(tcDetails);
 			{
 				alert(data.msg);
 			}
-		})*/;
+		});
 
 
 
-//});
+});
 
 var email=sessoinStorage.email;
 $.get('/getTeacherDetails/'+email,function(data)
@@ -103,12 +103,12 @@ $('#email').disable();
 
 
 
-
+/*
 
 $('form').submit(function(){
 
 
-	/*var name=$('#name').val();
+	var name=$('#name').val();
 var mob_no=$('#mob_no').val();
 var dob=$('#dob').val();
 var religion=$('#religion').val();
@@ -127,10 +127,10 @@ var landline=$('#landline').val();
 var country=$('#country').val();
 
 var tcDetails=new teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,voter_card_no,aadhar_card_no,address,city,distt,state,pin,landline,country);
-console.log(tcDetails);*/
+console.log(tcDetails);
 
 
-	return false;});
+	return false;});*/
 
 
 

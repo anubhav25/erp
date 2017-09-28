@@ -66,6 +66,13 @@ $("#addTeacher").click(function(){
 											value : 'Class Assign',
 											id : 'class_assign',
 											class : 'class_assign'});
+							input.click(function(event)
+		                                    {
+                                                 alert();
+		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(3).text() 	;
+			                    				window.location.href="admin_addTeacherSubject.html";
+
+		                           });
 
 							tr.append($('<td>').append(input));
 

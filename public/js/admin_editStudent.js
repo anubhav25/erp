@@ -23,7 +23,7 @@ form.addEventListener("submit", function (event) {
 }, false);*/
 $(document).ready(function($) {
 
-/*
+
 
 function studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,mail,address,city,distt,state,pin,landline,country)
 {
@@ -112,7 +112,7 @@ var stDetails=new studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname
 	}
 
 
-*/
+
 var email=sessoinStorage.email;
 $.get('/getStudentDetails/'+email,function(data)
 {
@@ -160,10 +160,10 @@ $('#mail').disable();
 
 
 
-$('form').submit(function(){
+/*$('form').submit(function(){
 
 
-	return false;});
+	return false;});*/
 
 });
 
