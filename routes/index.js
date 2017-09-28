@@ -38,13 +38,14 @@ function requireLoginAdmin (req, res, next) {
 }
 
 
+
 app.get('/',function(req,res)
 {
-    var myuser =   req.session_state.user ;
-    if(myuser && myuser.type) {
-        switch (myuser.type) {
+    var myUser =   req.user ;
+    if(myUser && myUser.type) {
+        switch (myUser.type) {
             case "teacher" :
-                res.renser("teacher_login");
+                res.render("teacher_login");
                 break;
 
             case "admin" :
@@ -68,13 +69,10 @@ app.get('/logout', function(req, res) {
 
 
 app.post('/login',function(req,res){
- // console.log(req.session_state);
-  console.log(req.body);
     var query={
         username:req.body.username,
         password:req.body.password
     };
-    console.log(query);
     req.db.collection('login').find(query, { _id: 0 }).toArray(function (err,objs)
     {
 
@@ -318,8 +316,9 @@ app.post('/result',function (req,res) {
    sem = buff.toString('base64');
 
     buff = new Buffer(rno);
-    rno = buff.toString('base64')
-var a={};
+    rno = buff.toString('base64');
+
+    var a={};
     a.msg = 'ok';
     a.url = "http://49.50.77.75/Forms/Student/PrintReportCard.aspx?rollno="+rno+"&sem="+sem;
 
@@ -327,43 +326,294 @@ var a={};
 
 });
 
-/*app('/updateStudentDetails',function(req,res){
+
+
+app.post('/updateStudentDetails',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Students').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===1)
+        {
+            req.db.collection('Students').deleteOne(objs[0],function(err)
+            {
+                if(err)
+                {
+                    throw err;
+                }
+                req.db.collection('Students').insertOne(req.body,function(err,data)
+                {
+                    if(err)
+                    {
+                        res.json({msg:"ERROR OCCURRED"});
+                        throw err;
+                    }
+                    res.json({msg:"ok"});
+                });
+            })
+
+        }
+        else
+            res.json({msg:"USER DOES NOT EXISTS."});
+    });
+
+
+});
+
+
+app.post('/updateTeacherDetails',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Teachers').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===1)
+        {
+            req.db.collection('Teachers').deleteOne(objs[0],function (err) {
+                if(err)
+                {
+                    throw err;
+                }
+
+
+                req.db.collection('Teachers').insertOne(req.body,function(err,data)
+                {
+                    if(err)
+                    {
+                        res.json({msg:"ERROR OCCURRED"});
+                        throw err;
+                    }
+                    res.json({msg:"ok"});
+                });
+
+            });
+        }
+        else
+            res.json({msg:"USER DOES NOT EXISTS."});
+    });
+
+
+});
+
+
+
+app.post('/setStudentDetails',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Students').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===0)
+        {
+            req.db.collection('Students').insertOne(req.body,function(err,data)
+            {
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+        }
+        else
+            res.json({msg:"USER ALREADY EXISTS."});
+    });
+
+
+});
+app.post('/setTeacherDetails',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Teachers').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===0)
+        {
+            req.db.collection('Teachers').insertOne(req.body,function(err,data)
+            {
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+        }
+        else
+            res.json({msg:"USER ALREADY EXISTS."});
+    });
+
+
+});
+
+
+
+
+app.post('/assignLecture',function(req,res)
+{
+
+    req.db.collection('Lectures').insertOne(req.body,function(err)
+    {
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json({msg:"ok"});
+    })
 
 
 
 });
 
-app('/getStudentDetais',function(req,res){
+app.post('/removeLecture',function(req,res)
+{
+
+    req.db.collection('Lectures').deleteOne(req.body,function(err)
+    {
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json({msg:"ok"});
+    })
 
 
-});*/
 
-app.get('/getTeachers/:a?',function (req,res) {
+});
+app.get('/getLecture/:username',function(req,res)
+{
+    var query ={
+        username : req.params.username
+    }
+    req.db.collection('Lectures').find(query,{_id:0}).toArray(function(err,data){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(data);
+    });
+});
+
+
+
+
+
+
+
+app.post('/deleteStudent',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Students').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===1)
+        {
+            req.db.collection('Students').deleteOne(query,function(err,data)
+            {
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+        }
+        else
+            res.json({msg:"USER DOES NOT EXISTS."});
+    });
+
+
+});
+app.post('/deleteTeacher',function(req,res){
+
+    var query = {
+        email : req.body.email
+    };
+    req.db.collection('Teachers').find(query,{_id : 0}).toArray(function(err,objs){
+
+        if(objs.length===1)
+        {
+            req.db.collection('Teachers').deleteOne(query,function(err,data)
+            {
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+        }
+        else
+            res.json({msg:"USER DOES NOT EXISTS."});
+    });
+
+
+});
+
+
+app.get('/getTeacher/:a?',function (req,res) {
     var sk=parseInt(req.params.a);
     req.db.collection('Teachers').find({},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
      if(err)
      {
+         res.json({msg:"ERROR OCCURRED"});
          throw err;
      }
-     res.send(objs);
+     res.json(objs);
+    })
+});
+
+app.get('/getStudentDetails/:a',function (req,res) {
+    var emailId=parseInt(req.params.a);
+    req.db.collection('Students').find({email:emailId},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+     if(err)
+     {
+         res.json({msg:"ERROR OCCURRED"});
+         throw err;
+     }
+     res.json(objs[0]);
+    })
+});
+
+
+
+app.get('/getTeacherDetails/:a',function (req,res) {
+    var emailId=parseInt(req.params.a);
+    req.db.collection('Teachers').find({email:emailId},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
     })
 });
 
 app.get('/getStudents/:a?',function (req,res) {
     var sk=parseInt(req.params.a);
     req.db.collection('Students').find({},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
-     if(err)
-     {
-         throw err;
-     }
-     res.send(objs);
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
     })
 });
 
 
 
 app.get('/myusername',function(req,res){
-    res.send(req.user.username);
+    res.json(req.user.username);
 });
 
 
