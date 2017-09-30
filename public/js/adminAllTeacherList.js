@@ -1,34 +1,18 @@
 $(document).ready(function($) {
-var StudentList=[];
-var products=[];
+
 var teacher_edit_delete_table = $("#teacher_edit_delete_table");
 var addTeacher = $("#addTeacher");
-function getStoredProducts()
-{
-if (!localStorage.products)
-{
-localStorage.products = JSON.stringify([]);
-}
-console.log(localStorage.products);
-return JSON.parse(localStorage.products);
-}
 
-function storeProducts(products)
-{
-localStorage.products = JSON.stringify(products);
-}
-
-var products=getStoredProducts();
 $("#addTeacher").click(function(){
 	window.location.href="admin_addTeacher.html";
 });
 
 
-	//$.get('/options/', function(data)
-	//{
-		//var StudentCount=data.length;
-		var TeacherCount=products.length;
-//		alert(StudentCount);
+	$.get('/getTeacher/0', function(data)
+	{
+		var TeacherCount=data.length;
+		console.log(data);
+
 
 		var i;
 		for(i=0;i<TeacherCount;i++){
@@ -37,11 +21,11 @@ $("#addTeacher").click(function(){
 			
 
 			var tr =$('<tr>');
-							//tr.append($('<td>').text(data.studentRollNo));
-							tr.append($('<td>').text(products[i].name));
-							tr.append($('<td>').text(products[i].id));
-							tr.append($('<td>').text(products[i].name));
-							tr.append($('<td>').text(products[i].id));
+							
+							tr.append($('<td>').text(data[i].name));
+							tr.append($('<td>').text(data[i].email));
+							tr.append($('<td>').text(data[i].gender));
+							tr.append($('<td>').text(data[i].mob_no));
 
 							//tr.append($('<td>').text(data.studentName));
 
@@ -55,7 +39,7 @@ $("#addTeacher").click(function(){
 							input.click(function(event)
 		                                    {
 
-		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(3).text() 	;
+		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(1).text() 	;
 			                    				window.location.href="admin_editTeacher.html";
 
 		                           });
@@ -69,7 +53,7 @@ $("#addTeacher").click(function(){
 							input.click(function(event)
 		                                    {
                                                  alert();
-		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(3).text() 	;
+		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(1).text() 	;
 			                    				window.location.href="admin_addTeacherSubject.html";
 
 		                           });
@@ -84,12 +68,15 @@ $("#addTeacher").click(function(){
 										input.click(function(event)
 		                                    {
                                                 var a={};
-		                                    	 a.email = $(event.target).parent().siblings().eq(3).text() 	;
+		                                    	 a.email = $(event.target).parent().siblings().eq(1).text() 	;
                                                
 		                                    	$.post("/deleteTeacher",a,function(data){
 		                                    		if(data.msg=="ok"){
 		                                    			alert("delete succesfull");
-		                                    			$(event.target).parent().parent().parent().remove($(event.target).parent().parent());
+		                                    			var parent =event.target.parentNode.parentNode.parentNode;
+		                                    			var child =event.target.parentNode.parentNode;
+
+		                                    			parent.removeChild(child);
 		                                    		}
 		                                    		else{
 		                                    			alert("error");
@@ -104,5 +91,5 @@ $("#addTeacher").click(function(){
 }
 		
 
-//}
+});
 });

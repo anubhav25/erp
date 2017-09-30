@@ -25,12 +25,12 @@ $(document).ready(function($) {
 
 
 
-function studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,mail,address,city,distt,state,pin,landline,country)
+function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,address,city,distt,state,pin,landline,country)
 {
 	
 	this.name=name;
 	this.mob_no=mob_no;
-	this.roll_no=roll_no;
+	this.rollno=rollno;
 	this.batch_name=batch_name;
 	this.classs=classs;
 	this.sem=sem;
@@ -49,7 +49,7 @@ function studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname,fmob_no,
 	this.voter_card_no=voter_card_no;
 	this.aadhar_card_no=aadhar_card_no;
 	this.residancy=residancy;
-	this.mail=mail;
+	this.email=email;
 	this.address=address;
 	this.city=city;
 	this.distt=distt;
@@ -67,7 +67,7 @@ function studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname,fmob_no,
 $('#submit').click(function (argument) {
 var name=$('#name').val();
 var mob_no=$('#mob_no').val();
-var roll_no=$('#roll_no').val();
+var rollno=$('#rollno').val();
 var batch_name=$('#batch_name').val();
 var classs=$('#classs').val();
 var sem=$('#sem').val();
@@ -86,7 +86,7 @@ var family_income=$('#family_income').val();
 var voter_card_no=$('#voter_card_no').val();
 var aadhar_card_no=$('#aadhar_card_no').val();
 var residancy=$('#residancy').val();
-var mail=$('#mail').val();
+var email=$('#email').val();
 var address=$('#address').val();
 var city=$('#city').val();
 var distt=$('#distt').val();
@@ -95,13 +95,13 @@ var pin=$('#pin').val();
 var landline=$('#landline').val();
 var country=$('#country').val();
 
-var stDetails=new studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,mail,address,city,distt,state,pin,landline,country);
+var stDetails=new studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,address,city,distt,state,pin,landline,country);
 
-		$.post('/resistor',stDetails,function (data) {
+		$.post('/updateStudentDetails',stDetails,function (data) {
 			console.log(data)
 			if(data.msg=="ok")
 			{
-				
+				alert("updated");
 			}
 			else
 			{
@@ -109,18 +109,18 @@ var stDetails=new studentDetails(name,mob_no,roll_no,batch_name,classs,sem,fname
 			}
 		});
 		return false;
-	}
+	});
 
 
 
-var email=sessoinStorage.email;
+var email=sessionStorage.email;
 $.get('/getStudentDetails/'+email,function(data)
 {
-	
+	console.log(data);
 
 	$('#name').val(data.name);
 $('#mob_no').val(data.mob_no);
-$('#roll_no').val(data.roll_no);
+$('#rollno').val(data.rollno);
 $('#batch_name').val(data.batch_name);
 $('#classs').val(data.classs);
 $('#sem').val(data.sem);
@@ -139,7 +139,7 @@ $('#family_income').val(data.family_income);
 $('#voter_card_no').val(data.voter_card_no);
 $('#aadhar_card_no').val(data.aadhar_card_no);
 $('#residancy').val(data.residancy);
-$('#mail').val(data.mail);
+$('#email').val(data.email);
 $('#address').val(data.address);
 $('#city').val(data.city);
 $('#distt').val(data.distt);
@@ -150,7 +150,7 @@ $('#country').val(data.country);
 
 
 
-$('#mail').disable();
+$('#email').attr('disabled',true);
 
 
 

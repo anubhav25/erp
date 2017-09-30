@@ -508,8 +508,8 @@ app.get('/getTeacher/:a?',function (req,res) {
 });
 
 app.get('/getStudentDetails/:a',function (req,res) {
-    var emailId=parseInt(req.params.a);
-    req.db.collection('Students').find({email:emailId},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+    var emailId=(req.params.a);
+    req.db.collection('Students').find({email:emailId},{_id : 0}).toArray(function ( err,objs){
      if(err)
      {
          res.json({msg:"ERROR OCCURRED"});
@@ -522,14 +522,14 @@ app.get('/getStudentDetails/:a',function (req,res) {
 
 
 app.get('/getTeacherDetails/:a',function (req,res) {
-    var emailId=parseInt(req.params.a);
-    req.db.collection('Teachers').find({email:emailId},{_id : 0}).skip(20*sk).limit(20).toArray(function ( err,objs){
+    var emailId=(req.params.a);
+    req.db.collection('Teachers').find({email:emailId},{_id : 0}).toArray(function ( err,objs){
         if(err)
         {
             res.json({msg:"ERROR OCCURRED"});
             throw err;
         }
-        res.json(objs);
+        res.json(objs[0]);
     })
 });
 

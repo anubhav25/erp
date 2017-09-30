@@ -1,33 +1,16 @@
 $(document).ready(function($) {
-var products=[];
+
 var student_edit_delete_table = $("#student_edit_delete_table");
 var addStudent = $("#addStudent");
-function getStoredProducts()
-{
-if (!localStorage.products)
-{
-localStorage.products = JSON.stringify([]);
-}
-console.log(localStorage.products);
-return JSON.parse(localStorage.products);
-}
-
-function storeProducts(products)
-{
-localStorage.products = JSON.stringify(products);
-}
-
-var products=getStoredProducts();
 
 $("#addStudent").click(function(){
 	window.location.href="admin_addStudent.html";
 });
 
-	//$.get('/options/', function(data)
-	//{
-		//var StudentCount=data.length;
-		var StudentCount=products.length;
-//		alert(StudentCount);
+	$.get('/getStudents/0', function(data)
+	{
+		var StudentCount=data.length;
+    console.log(data[0]);
 
 		var i;
 		for(i=0;i<StudentCount;i++){
@@ -36,13 +19,16 @@ $("#addStudent").click(function(){
 			
 
 			var tr =$('<tr>');
-							//tr.append($('<td>').text(data.studentRollNo));
-							tr.append($('<td>').text(products[i].name));
-							tr.append($('<td>').text(products[i].id));
-							tr.append($('<td>').text(products[i].name));
-							tr.append($('<td>').text(products[i].id));
+							
+							
+							tr.append($('<td>').text(data[i].rollno));
+							
+							tr.append($('<td>').text(data[i].email));
+							tr.append($('<td>').text(data[i].name));
+							tr.append($('<td>').text(data[i].classs));
+							tr.append($('<td>').text(data[i].mob_no));
 
-							//tr.append($('<td>').text(data.studentName));
+						
 
 							var input=$('<input>')
 										.attr({type : 'button',
@@ -54,7 +40,7 @@ $("#addStudent").click(function(){
 							input.click(function(event)
 		                                    {
 
-		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(3).text() 	;
+		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(1).text() 	;
 			                    				window.location.href="admin_editStudent.html";
 
 		                           });
@@ -70,12 +56,17 @@ $("#addStudent").click(function(){
 										input.click(function(event)
 		                                    {
                                                 var a={};
-		                                    	 a.email = $(event.target).parent().siblings().eq(3).text() 	;
+		                                    	 a.email = $(event.target).parent().siblings().eq(1).text() 	;
                                                 
 		                                    	$.post("/deleteStudent",a,function(data){
 		                                    		if(data.msg=="ok"){
+		                                    			
 		                                    			alert("delete succesfull");
-		                                    			$(event.target).parent().parent().parent().remove($(event.target).parent().parent());
+		                                    			var parent =event.target.parentNode.parentNode.parentNode;
+		                                    			var child =event.target.parentNode.parentNode;
+
+		                                    			parent.removeChild(child);
+		                                    		
 		                                    		}
 		                                    		else{
 		                                    			alert("error");
@@ -90,5 +81,5 @@ $("#addStudent").click(function(){
 
 		}
 
-//}
+});
 });
