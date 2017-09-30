@@ -25,7 +25,7 @@ $(document).ready(function($) {
     //   var socket = io('http://erp.openode.io/');
     var socket = io('http://localhost:3000');
 
-    socket.emit('student',{});
+    socket.emit('students',{});
 
     socket.on('new_notification_text', function(res){
 

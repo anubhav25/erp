@@ -38,9 +38,17 @@ $(document).ready(function($) {
             var base64 = window.btoa(binary);
             var msg = {};
             msg.notification_heading=$('#notification_heading').val();
-            msg.target=$('#target').val();
-            msg.file=base64;
+             msg.file=base64;
             msg.fileName=file.name;
+            var test =$('#target').val();
+            if(test=='all')
+            {
+                test='teachers';
+                  msg.target=test;
+            socket.emit('new_notification_file', msg );
+            test='students';
+            }
+            msg.target=test;
             socket.emit('new_notification_file', msg );
             $('#file').val('');
             $('#notification_heading').val('');
@@ -57,11 +65,19 @@ $(document).ready(function($) {
 
             var data={};
             data.notification_heading=$('#notification_heading').val();
-            data.target=$('#target').val();
+            
             data.notification_content=$('#notification_content').val();
-
-            console.log(data);
+           var test =$('#target').val();
+            if(test=='all')
+            {
+                test='teachers';
+                  data.target=test;
             socket.emit('new_notification_text', data );
+            test='students';
+            }
+            data.target=test;
+            socket.emit('new_notification_text', data );
+
             $('#notification_content').val('');
             $('#notification_heading').val('');
 

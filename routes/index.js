@@ -376,8 +376,33 @@ app.post('/setTeacherDetails',function(req,res){
                     res.json({msg:"ERROR OCCURRED"});
                     throw err;
                 }
-                res.json({msg:"ok"});
-            });
+              //  res.json({msg:"ok"});
+
+
+
+ var data = req.body;
+
+    var pass = gernatePass();
+
+            var query2 = {
+                username: data.email.substr(0,data.email.indexOf('@')-1),
+                email : data.email,
+                type: "teacher",
+                password:pass
+            }
+                    req.db.collection("login").insertOne(query2, function (err, data2) {
+
+                        mail.sendMail("your erp password", "Username: " + query2.username + " ,Password: " + query2.password, query2.email);
+                        res.json({msg: "ok"});
+
+                    req.db.close();
+                    })
+
+
+            })
+
+
+
         }
         else
             res.json({msg:"USER ALREADY EXISTS."});

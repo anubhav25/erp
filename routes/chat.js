@@ -25,6 +25,7 @@ module.exports = function(server) {
             {
                 student_notifications.shift();
             }
+            console.log(data);
             student_notifications.push(data);
             fs.writeFile('./student_notifications',JSON.stringify(student_notifications),function () {
 
@@ -77,6 +78,7 @@ module.exports = function(server) {
 
             socket.on('students',function(msg){
                 socket.join('students');
+                console.log(student_notifications);
                 student_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -87,6 +89,7 @@ module.exports = function(server) {
             });
             socket.on('teachers',function(msg){
                 socket.join('teachers');
+                console.log(teacher_notifications);
                 teacher_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -112,7 +115,7 @@ module.exports = function(server) {
                         delete data.file;
                         data.link = '/notifications/' + fileName;
 
-                        
+
                         if(data.target==='teachers'){
                             io.to('teachers').emit('new_notification_file',data);
 
@@ -145,7 +148,13 @@ module.exports = function(server) {
             });
             socket.on('new_notification_text', function (data) {
 console.log(data);
-                
+                if(data.target=='all')
+                {
+                    data.target='students';
+                    io.to('students').emit('new_notification_text',data);
+                    save_notification(data);
+                    data.target='teachers';
+                }
                 if(data.target==='teachers'){
                     io.to('teachers').emit('new_notification_text',data);
                     save_notification(data);
@@ -154,15 +163,7 @@ console.log(data);
                     io.to('students').emit('new_notification_text',data);
                     save_notification(data);
                 }
-                else{
-                    data.target='students'
-                    io.to('students').emit('new_notification_text',data);
-                    save_notification(data);
-                    data.target='teachers'
-                    io.to('teachers').emit('new_notification_text',data);
-                    save_notification(data);
 
-                }
 
 
             });
