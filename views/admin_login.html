@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-	<link rel="stylesheet" href="css/admin_login.css">
+	
     <link rel="stylesheet" href="css/body.css">
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="css/admin_login.css">
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
@@ -46,10 +47,12 @@
     <!-- /header -->
 	<div class="body1">
 	<div class="left1">
-	<h1> home</h1>
+	<h1> Teacher</h1>
+    <ul id="teacherNotificationList">
 	</div>
 	<div class="right1">
-	notification
+	<h1> Student</h1>
+    <ul id="StudentNotificationList">
 	</div>
 	
 	</div>
@@ -91,6 +94,12 @@
     });
     $(".text-right").html("Created by Anubhav and Sunil");
     </script>
+     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src ="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src='js/admin_login.js'></script>
+
+
     <!-- /Slider -->
 </body>
 </html>

@@ -7,42 +7,30 @@ module.exports = function(server) {
     var student_notifications = [] ;
     function save_notification(data)
     {
-        if(data.target === 'all')
+
+        if(data.target === 'teachers')
         {
             if(teacher_notifications.length === 20)
             {
                 teacher_notifications.shift();
             }
             teacher_notifications.push(data);
-            fs.writeFile('./teacher_notifications',JSON.stringify(teacher_notifications));
-            if(student_notifications.length === 20)
-            {
-                student_notifications.shift();
-            }
-            student_notifications.push(data);
+             fs.writeFile('./teacher_notifications',JSON.stringify(teacher_notifications),function () {
+
+        });
         }
-        if(data.target === 'teacher')
-        {
-            if(teacher_notifications.length === 20)
-            {
-                teacher_notifications.shift();
-            }
-            teacher_notifications.push(data);
-        }
-        if(data.target === 'student')
+        if(data.target === 'students')
         {
             if(student_notifications.length === 20)
             {
                 student_notifications.shift();
             }
             student_notifications.push(data);
+            fs.writeFile('./student_notifications',JSON.stringify(student_notifications),function () {
+
+        });
         }
-        fs.writeFile('./teacher_notifications',JSON.stringify(teacher_notifications),function () {
 
-        });
-        fs.writeFile('./student_notifications',JSON.stringify(student_notifications),function () {
-
-        });
     }
 
 
@@ -72,7 +60,7 @@ module.exports = function(server) {
 
 
 
-            // console.log("user connected");
+           
             mongo.db.collection('chats').find({},{ _id: 0 }).limit(20).toArray(function (err, objs) {
                 objs.forEach(function (a) {
                     if (a.link) {
@@ -87,8 +75,8 @@ module.exports = function(server) {
                 })
             });
 
-            socket.on('student',function(msg){
-                socket.join('student');
+            socket.on('students',function(msg){
+                socket.join('students');
                 student_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -97,8 +85,8 @@ module.exports = function(server) {
                         socket.emit('new_notification_text',obj);
                 })
             });
-            socket.on('teacher',function(msg){
-                socket.join('teacher');
+            socket.on('teachers',function(msg){
+                socket.join('teachers');
                 teacher_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -124,14 +112,24 @@ module.exports = function(server) {
                         delete data.file;
                         data.link = '/notifications/' + fileName;
 
-                        save_notification(data);
-                        if(data.target==='teacher')
-                            io.to('teacher').emit('new_notification_file',data);
-                        else if(data.target==='student')
-                            io.to('student').emit('new_notification_file',data);
+                        
+                        if(data.target==='teachers'){
+                            io.to('teachers').emit('new_notification_file',data);
+
+                            save_notification(data);
+                        }
+                        else if(data.target==='students'){
+                            io.to('students').emit('new_notification_file',data);
+                            save_notification(data);
+                        }
                         else{
-                            io.to('student').emit('new_notification_file',data);
-                            io.to('teacher').emit('new_notification_file',data);
+                            data.target='students'
+                            io.to('students').emit('new_notification_file',data);
+                            save_notification(data);
+
+                            data.target='teachers'
+                            io.to('teachers').emit('new_notification_file',data);
+                            save_notification(data);
 
                         }
 
@@ -147,14 +145,22 @@ module.exports = function(server) {
             });
             socket.on('new_notification_text', function (data) {
 console.log(data);
-                save_notification(data);
-                if(data.target==='teacher')
-                    io.to('teacher').emit('new_notification_text',data);
-                else if(data.target==='student')
-                    io.to('student').emit('new_notification_text',data);
+                
+                if(data.target==='teachers'){
+                    io.to('teachers').emit('new_notification_text',data);
+                    save_notification(data);
+                }
+                else if(data.target==='students'){
+                    io.to('students').emit('new_notification_text',data);
+                    save_notification(data);
+                }
                 else{
-                    io.to('student').emit('new_notification_text',data);
-                    io.to('teacher').emit('new_notification_text',data);
+                    data.target='students'
+                    io.to('students').emit('new_notification_text',data);
+                    save_notification(data);
+                    data.target='teachers'
+                    io.to('teachers').emit('new_notification_text',data);
+                    save_notification(data);
 
                 }
 
@@ -164,7 +170,7 @@ console.log(data);
 
             socket.on('chat_message', function (msg) {
 
-                console.log('msg recieved');
+               // console.log('msg recieved');
                 mongo.db.collection('chats').insertOne(msg, function () {
                     io.emit('chat_message', msg);
                 });

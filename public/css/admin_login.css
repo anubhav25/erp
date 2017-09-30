@@ -1,0 +1,22 @@
+.body1{
+height:562px;
+
+}
+.left1{
+width:50%;
+background: linear-gradient(#00c6ff,#0072ff);
+
+float:left; 
+height:562px;
+
+overflow-y:scroll;
+
+}
+.right1{
+width:50%; 
+background: linear-gradient(#00c6ff,#0072ff);
+
+float:left; 
+height:562px;
+overflow-y:scroll;
+}

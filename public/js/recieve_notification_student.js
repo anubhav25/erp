@@ -25,11 +25,11 @@ $(document).ready(function($) {
     //   var socket = io('http://erp.openode.io/');
     var socket = io('http://localhost:3000');
 
-    socket.emit('teacher',{});
+    socket.emit('student',{});
 
     socket.on('new_notification_text', function(res){
 
-        console.log(res);
+        //console.log(res);
 
 
         var msg=$('<a>').text(res.notification_heading);
