@@ -392,6 +392,8 @@ app.post('/setTeacherDetails',function(req,res){
 app.post('/assignLecture',function(req,res)
 {
 
+
+
     req.db.collection('Lectures').insertOne(req.body,function(err)
     {
         if(err)
@@ -425,7 +427,7 @@ app.post('/removeLecture',function(req,res)
 app.get('/getLecture/:username',function(req,res)
 {
     var query ={
-        username : req.params.username
+        email : req.params.username
     }
     req.db.collection('Lectures').find(query,{_id:0}).toArray(function(err,data){
         if(err)
