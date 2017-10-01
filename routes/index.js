@@ -405,10 +405,11 @@ app.get('/myLectures',requireLoginTeacher,function(req,res){
 
 });
 
-app.get('/getStudentList/:class',requireLoginTeacher,function(req,res){
+app.get('/getStudentList/:sem/:class',requireLoginTeacher,function(req,res){
 
     var query ={
-        classs : req.params.class
+        classs : req.params.class,
+        sem :  req.params.sem
     }
     req.db.collection('Students').find(query,{_id:0}).toArray(function(err,objs){
         if(err)
@@ -421,11 +422,12 @@ app.get('/getStudentList/:class',requireLoginTeacher,function(req,res){
 
 
 });
-app.get('/getStudentList/:class/:group',requireLoginTeacher,function(req,res){
+app.get('/getStudentList/:class/:sem/:group',requireLoginTeacher,function(req,res){
 
     var query ={
         classs : req.params.class,
-        class_group : req.params.group
+        sem :  req.params.sem,
+        classs_group : req.params.group
 }
     req.db.collection('Students').find(query,{_id:0}).toArray(function(err,objs){
         if(err)
@@ -475,6 +477,12 @@ app.post('/removeLecture',function(req,res)
 
 
 });
+app.post('/',requireLoginTeacher,function(req,res){
+
+})
+
+
+
 app.get('/getLecture/:username',function(req,res)
 {
     var query ={
