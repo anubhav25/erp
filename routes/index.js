@@ -512,7 +512,10 @@ app.post('/deleteStudent',function(req,res){
                     res.json({msg:"ERROR OCCURRED"});
                     throw err;
                 }
-                res.json({msg:"ok"});
+                req.db.collection('login').deleteOne(query,function () {
+                    res.json({msg:"ok"});
+                });
+
             });
         }
         else
@@ -537,7 +540,10 @@ app.post('/deleteTeacher',function(req,res){
                     res.json({msg:"ERROR OCCURRED"});
                     throw err;
                 }
-                res.json({msg:"ok"});
+                req.db.collection('login').deleteOne(query,function () {
+                    res.json({msg:"ok"});
+                });
+
             });
         }
         else
