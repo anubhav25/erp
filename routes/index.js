@@ -394,7 +394,7 @@ app.post('/setTeacherDetails',function(req,res){
 
 app.get('/myLectures',requireLoginTeacher,function(req,res){
 
-    req.db.collection('Lectures').find({email:req.body.email},{_id:0}).toArray(function(err,objs){
+    req.db.collection('Lectures').find({email:req.user.email},{_id:0}).toArray(function(err,objs){
         if(err)
         {
             res.json({msg:"ERROR OCCURRED"});
@@ -402,6 +402,40 @@ app.get('/myLectures',requireLoginTeacher,function(req,res){
         }
         res.json(objs);
     })
+
+});
+
+app.get('/getStudentList/:class',requireLoginTeacher,function(req,res){
+
+    var query ={
+        classs : req.params.class
+    }
+    req.db.collection('Students').find(query,{_id:0}).toArray(function(err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
+    })
+
+
+});
+app.get('/getStudentList/:class/:group',requireLoginTeacher,function(req,res){
+
+    var query ={
+        classs : req.params.class,
+        class_group : req.params.group
+}
+    req.db.collection('Students').find(query,{_id:0}).toArray(function(err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
+    })
+
 
 });
 
