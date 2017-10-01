@@ -405,7 +405,7 @@ app.get('/myLectures',requireLoginTeacher,function(req,res){
 
 });
 
-app.get('/getStudentList/:sem/:class',requireLoginTeacher,function(req,res){
+app.get('/getStudentList/:class/:sem',requireLoginTeacher,function(req,res){
 
     var query ={
         classs : req.params.class,
