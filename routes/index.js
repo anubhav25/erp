@@ -202,43 +202,7 @@ function gernatePass()
 
 
 
-app.post("/registerStudent",function(req,res) {
-    var data = req.body;
 
-    var pass = gernatePass();
-
-            var query2 = {
-                username: data.rollno,
-                email : data.email,
-                type: "student"
-            }
-            req.db.collection("login").find(    {   $or : [query2, { username : data.rollno ,  type: "student"} ,
-                                                        { email : data.email , type: "student"}, query2 ]
-                                                }, { _id: 0 }).toArray(function (err2, obj2) {
-                if (err2) {
-                    console.log(err2);
-                    res.json({msg: "SERVER ERROR"});
-                    throw err2;
-                }
-                if (obj2.length === 0) {
-                    query2.password = pass;
-                    req.db.collection("login").insertOne(query2, function (err, data2) {
-
-                        mail.sendMail("your erp password", "Username: " + query2.username + " ,Password: " + query2.password, query2.email);
-                        res.json({msg: "ok"});
-
-
-                    })
-
-
-                }
-                else {
-                    res.json({msg: "user already exists"});
-                }
-                req.db.close();
-            })
-
-});
 
 
 
@@ -344,14 +308,30 @@ app.post('/setStudentDetails',function(req,res){
 
         if(objs.length===0)
         {
-            req.db.collection('Students').insertOne(req.body,function(err,data)
-            {
-                if(err)
-                {
-                    res.json({msg:"ERROR OCCURRED"});
+            req.db.collection('Students').insertOne(req.body,function(err,data) {
+                if (err) {
+                    res.json({msg: "ERROR OCCURRED"});
                     throw err;
                 }
-                res.json({msg:"ok"});
+                var data = req.body;
+
+                var pass = gernatePass();
+
+                var query2 = {
+                    username: data.rollno,
+                    email: data.email,
+                    type: "student",
+                    password: pass
+                };
+
+                req.db.collection("login").insertOne(query2, function (err, data2) {
+
+                    mail.sendMail("your erp password", "Username: " + query2.username + " ,Password: " + query2.password, query2.email);
+                    res.json({msg: "ok"});
+
+
+                })
+
             });
         }
         else
@@ -385,7 +365,7 @@ app.post('/setTeacherDetails',function(req,res){
     var pass = gernatePass();
 
             var query2 = {
-                username: data.email.substr(0,data.email.indexOf('@')-1),
+                username: data.email.substr(0,data.email.indexOf('@')),
                 email : data.email,
                 type: "teacher",
                 password:pass
@@ -412,6 +392,18 @@ app.post('/setTeacherDetails',function(req,res){
 });
 
 
+app.get('/myLectures',requireLoginTeacher,function(req,res){
+
+    req.db.collection('Lectures').find({email:req.body.email},{_id:0}).toArray(function(err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
+    })
+
+});
 
 
 app.post('/assignLecture',function(req,res)
