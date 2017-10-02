@@ -49,7 +49,7 @@
     <!-- /header -->
 	<div class="body1" >
 	<div class="left1" >
-	<form action="http://localhost:5000/a" method="post" id="abc">
+	<form >
 <h3>1. General Information</h3>
 <table id="fill_details">
 <tr>
@@ -92,7 +92,7 @@
 </tr>
 <tr>
      <td>DOB :</td>
-     <td><input type="text" name="dob" id="dob"></td>
+     <td><input type="date" name="dob" id="dob"></td>
      <td>Religion</td>
      <td><input type="text" name="religion" id="religion"></td>
 </tr>
@@ -127,6 +127,17 @@
      <td>Email_ID :</td>
      <td><input type="email" name="email" id="email">
 	 <span class="error" aria-live="polite"></span></td>
+</tr>
+<tr>
+     <td>Class Group :</td>
+     <td><select id="classs_group">
+     <option value="">Class Group</option>
+     <option value="1" name="1">1</option>
+     <option value="2" name="2">2</option>
+     <option value="3" name="3">3</option>
+     
+     </select></td>
+     
 </tr>
 </div>
 </table>

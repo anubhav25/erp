@@ -1,0 +1,15 @@
+.body1{
+height:635px;
+
+}
+.left1{
+width:100%;
+background: linear-gradient(#00c6ff,#0072ff);
+background-coor:teal;
+float:left; 
+height:635px;
+
+overflow-y:scroll;
+
+}
+

@@ -25,7 +25,7 @@ $(document).ready(function($) {
 
 
 
-function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,address,city,distt,state,pin,landline,country)
+function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,classs_group,address,city,distt,state,pin,landline,country)
 {
 	
 	this.name=name;
@@ -50,6 +50,7 @@ function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,f
 	this.aadhar_card_no=aadhar_card_no;
 	this.residancy=residancy;
 	this.email=email;
+	this.classs_group=classs_group;
 	this.address=address;
 	this.city=city;
 	this.distt=distt;
@@ -87,6 +88,7 @@ var voter_card_no=$('#voter_card_no').val();
 var aadhar_card_no=$('#aadhar_card_no').val();
 var residancy=$('#residancy').val();
 var email=$('#email').val();
+var classs_group=$('#classs_group').val();
 var address=$('#address').val();
 var city=$('#city').val();
 var distt=$('#distt').val();
@@ -95,7 +97,7 @@ var pin=$('#pin').val();
 var landline=$('#landline').val();
 var country=$('#country').val();
 
-var stDetails=new studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,address,city,distt,state,pin,landline,country);
+var stDetails=new studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,classs_group,address,city,distt,state,pin,landline,country);
 
 		$.post('/updateStudentDetails',stDetails,function (data) {
 			console.log(data)
@@ -140,6 +142,8 @@ $('#voter_card_no').val(data.voter_card_no);
 $('#aadhar_card_no').val(data.aadhar_card_no);
 $('#residancy').val(data.residancy);
 $('#email').val(data.email);
+$('#classs_group').val(data.classs_group);
+
 $('#address').val(data.address);
 $('#city').val(data.city);
 $('#distt').val(data.distt);

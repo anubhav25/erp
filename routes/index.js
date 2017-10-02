@@ -476,6 +476,7 @@ app.post('/removeLecture',function(req,res)
 
 
 });
+
 app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLoginTeacher,function(req,res){
 
     var batch=req.params.Batch;
@@ -491,7 +492,8 @@ app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLo
             sem: sem,
             sub:sub
         };
-    req.db.collection(batch).find(query1).toArray(function(err,obj){
+
+    req.db.collection('Attendance'+batch).find(query1).toArray(function(err,obj){
         if(err)
         {
             res.json({msg:"ERROR OCCURRED"});
@@ -502,44 +504,54 @@ app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLo
             date:date,
             present:req.body[stu]
         };
+        
         if(obj.length===1)
         {
+            var at=[];
             query = obj[0];
-            query.attendace.push(a);
-            req.db.collection(batch).updateOne(obj[0],query,function(err){
+            at=obj[0].attendance;
+            at.push(a);
+            query.attendance =  at;
+            req.db.collection('Attendance'+batch).updateOne(obj[0],query,function(err){
                 if(err)
                 {
                     res.json({msg:"ERROR OCCURRED"});
                     throw err;
+                     
                 }
-                res.json({msg:"ok"});
+                
+              
+             
             });
+
         }
         else {
+            var at=[]
             query = {
                 rollno :  stu,
                 classs : classs,
                 sem: sem,
                 sub:sub,
-                attendance : []
+                attendance : at
             }
-            query.attendace.push(a);
-            req.db.collection(batch).insertOne(query,function(err){
+            at.push(a);
+            query.attendance = at;
+            req.db.collection('Attendance'+batch).insertOne(query,function(err){
                 if(err)
                 {
                     res.json({msg:"ERROR OCCURRED"});
                     throw err;
+                     
                 }
-                res.json({msg:"ok"});
+
             });
 
-
         }
-
-
     });
 }
+res.json({msg:"ok"});
 });
+
 
 
 
