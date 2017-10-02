@@ -422,6 +422,9 @@ app.get('/getStudentList/:class/:sem',requireLoginTeacher,function(req,res){
 
 
 });
+
+
+
 app.get('/getStudentList/:class/:sem/:group',requireLoginTeacher,function(req,res){
 
     var query ={
@@ -466,20 +469,77 @@ app.post('/removeLecture',function(req,res)
 
     req.db.collection('Lectures').deleteOne(req.body,function(err)
     {
-        if(err)
-        {
-            res.json({msg:"ERROR OCCURRED"});
-            throw err;
-        }
+
         res.json({msg:"ok"});
     })
 
 
 
 });
-app.post('/',requireLoginTeacher,function(req,res){
+app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLoginTeacher,function(req,res){
 
-})
+    var batch=req.params.Batch;
+    var classs=req.params.class;
+    var sem=req.params.semester;
+    var sub=req.params.subject;
+    var date = req.params.date;
+
+    for(var stu in req.body) {
+        var query1 = {
+            rollno :  stu,
+            classs : classs,
+            sem: sem,
+            sub:sub
+        };
+    req.db.collection(batch).find(query1).toArray(function(err,obj){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        var query;
+        var a={
+            date:date,
+            present:req.body[stu]
+        };
+        if(obj.length===1)
+        {
+            query = obj[0];
+            query.attendace.push(a);
+            req.db.collection(batch).updateOne(obj[0],query,function(err){
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+        }
+        else {
+            query = {
+                rollno :  stu,
+                classs : classs,
+                sem: sem,
+                sub:sub,
+                attendance : []
+            }
+            query.attendace.push(a);
+            req.db.collection(batch).insertOne(query,function(err){
+                if(err)
+                {
+                    res.json({msg:"ERROR OCCURRED"});
+                    throw err;
+                }
+                res.json({msg:"ok"});
+            });
+
+
+        }
+
+
+    });
+}
+});
 
 
 
