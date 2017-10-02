@@ -5,10 +5,10 @@
 $(document).ready(function($) {
 
 
+var alertBox = $("<div>").attr('id',"dialog");
+    $('body').append(alertBox);
 
-
-    var alertBox = $("<div>").attr('id',"dialog");
-    alertBox.dialog({
+ alertBox.dialog({
         autoOpen: false,
         show: {
             effect: "blind",
@@ -19,7 +19,6 @@ $(document).ready(function($) {
             duration: 1000
         }
     });
-
 
 
     //   var socket = io('http://erp.openode.io/');
@@ -35,7 +34,7 @@ $(document).ready(function($) {
         var msg=$('<a>').text(res.notification_heading);
         msg.click(function()
         {
-            alertBoxt.html('<p>'+res.notification_content+'</p>');
+            alertBox.html('<p>'+res.notification_content+'</p>');
             alertBox.dialog("open");
         });
 

@@ -6,7 +6,7 @@ module.exports = function(obj,next) {
 
     var url = "mongodb://localhost:27017/erp";
    // console.log(url);
-//   url = "mongodb://erp:qwerty@ds141434.mlab.com:41434/erp";
+  // url = "mongodb://erp:qwerty@ds141434.mlab.com:41434/erp";
   url="mongodb://192.168.43.154:27017/erp";
     /*
      var expressMongoDb = require('express-mongo-db');

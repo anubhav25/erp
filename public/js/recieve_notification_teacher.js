@@ -29,7 +29,7 @@ $(document).ready(function($) {
 
             socket.on('new_notification_text', function(res){
 
-                console.log(res);
+             //   console.log(res);
 
 
                 var msg=$('<a>').text(res.notification_heading);
@@ -42,7 +42,7 @@ $(document).ready(function($) {
             $('#notifications').prepend($('<li>').append(msg));
         });
         socket.on('new_notification_file', function(res){
-            console.log(res);
+            //console.log(res);
 
             var msg=$('<a>').attr('href',res.link+"/"+res.fileName).text(res.notification_heading);
             $('#notifications').prepend($('<li>').append(msg));

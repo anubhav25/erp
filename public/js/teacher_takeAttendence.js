@@ -8,6 +8,19 @@ var classs;
 var sem;
 var sub;
 
+
+    var date1 = new Date();
+
+    var day = date1.getDate();
+    var month = date1.getMonth() + 1;
+    var year = date1.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;       
+    $("date").attr("value", today);
+
 var student_list = $("#student_list");
 var left1=$('#left1');
 var list;

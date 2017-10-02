@@ -13,6 +13,7 @@ var teacherNotificationList=$('#teacherNotificationList');
 var StudentNotificationList=$('#StudentNotificationList');
 
 
+
     
     alertBox.dialog({
         autoOpen: false,

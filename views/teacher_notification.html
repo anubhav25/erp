@@ -19,31 +19,7 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 	<script src="jquery-3.2.1.min.js"></script>   
-<script>
 
-$(document).ready(function($) {
-   
-$("#textbtn").click(function(event)
-          {
-                $("#file_div").hide();
-               $("#text_div").show();
-              
-          });
-$("#filebtnbtn").click(function(event)
-          {
-               $("#file_div").show();
-               $("#text_div").hide();
-          });
-$("#submit").click(function(event)
-          {
-                     
-               $("#text_div").hide();
-               $("#file_div").hide();
-               
-          });
-  
-});
-</script>
 </head>
 
 <body>
@@ -79,6 +55,9 @@ $("#submit").click(function(event)
     Notification heading :<br><br>
      <input type="text" name="notification_heading" id="notification_heading"><br><br>
      select Notification Option :<br><br>
+      <div id="slelectBox">
+        
+    </div>
    <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
    <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send File Notification"></div><br><br>
      <div id="text_div" style="display:none">Send notification as text :<br><br>
@@ -105,6 +84,8 @@ $("#submit").click(function(event)
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+       <script src="/socket.io/socket.io.js"></script>
+    <script src="js/teacher_notification.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
     <!-- Slider -->

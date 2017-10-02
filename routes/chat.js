@@ -170,17 +170,14 @@ module.exports = function(server) {
 
 
 
-
-    require('./db')({}, function (err) {
+var mongo={};
+    require('./db')(mongo, function (err) {
 
         if (err)
             throw err;
 
         io.on('connection', function (socket) {
 
-
-
-           
             mongo.db.collection('chats').find({},{ _id: 0 }).limit(20).toArray(function (err, objs) {
                 objs.forEach(function (a) {
                     if (a.link) {
@@ -195,9 +192,13 @@ module.exports = function(server) {
                 })
             });
 
+
+
+
+
             socket.on('students',function(msg){
                 socket.join('students');
-                console.log(student_notifications);
+               // console.log(student_notifications);
                 student_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -208,7 +209,7 @@ module.exports = function(server) {
             });
             socket.on('teachers',function(msg){
                 socket.join('teachers');
-                console.log(teacher_notifications);
+                //console.log(teacher_notifications);
                 teacher_notifications.forEach(function (obj) {
 
                     if(obj.fileName)
@@ -221,8 +222,10 @@ module.exports = function(server) {
 
             socket.on('csea',function(msg){
                 socket.join('csea');
-                csea_notifications.forEach(function (obj) {
 
+                csea_notifications.forEach(function (obj) {
+                    console.log('hi');
+                         console.log(obj);
                     if(obj.fileName)
                         socket.emit('new_file_from_teacher',obj);
                     else
@@ -287,7 +290,7 @@ module.exports = function(server) {
 
 
 
-            socket.on('new_notification_file', function (data) {
+            socket.on('new_file_from_teacher', function (data) {
 
 
                 var fileName = Date.now() + '' + data.fileName;
@@ -313,7 +316,8 @@ module.exports = function(server) {
                 });
             });
 
-            socket.on('new_notification_text', function (data) {
+            socket.on('new_text_from_teacher', function (data) {
+                console.log(data);
                 io.to(data.target).emit('new_text_from_teacher',data);
                 save_notification(data);
             });
@@ -367,6 +371,7 @@ module.exports = function(server) {
 
             });
             socket.on('new_notification_text', function (data) {
+
 console.log(data);
                 if(data.target=='all')
                 {
