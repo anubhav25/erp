@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07ab46d6-069d-4c6b-8f16-d98e8b271407" name="Default" comment="added change password function">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher_notification.js" afterPath="$PROJECT_DIR$/public/js/teacher_notification.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +17,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="620" column="17" lean-forward="true" selection-start-line="620" selection-start-column="17" selection-end-line="620" selection-end-column="17" />
+            <state relative-caret-position="95">
+              <caret line="751" column="20" lean-forward="false" selection-start-line="751" selection-start-column="10" selection-end-line="751" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -30,11 +30,21 @@
       <file leaf-file-name="chat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1631">
+            <state relative-caret-position="-1835">
               <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
               <folding>
                 <marker date="1507098240778" expanded="true" signature="10811:11500" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teacher_notification.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/teacher_notification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="124" column="31" lean-forward="false" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,6 +180,7 @@
         <option value="$PROJECT_DIR$/views/change_Password.html" />
         <option value="$PROJECT_DIR$/public/js/changePassword.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/js/teacher_notification.js" />
       </list>
     </option>
   </component>
@@ -441,7 +452,7 @@
       <workItem from="1507058251573" duration="618000" />
       <workItem from="1507059031303" duration="316000" />
       <workItem from="1507083724389" duration="10540000" />
-      <workItem from="1507143601655" duration="10995000" />
+      <workItem from="1507143601655" duration="11395000" />
     </task>
     <task id="LOCAL-00001" summary="index.js corrected">
       <created>1505668061357</created>
@@ -496,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212094000" />
+    <option name="totallyTimeSpent" value="212494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -568,13 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mail module.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/express-mongo-db/license" />
     <entry file="file://$PROJECT_DIR$/node_modules/express-mongo-db/index.js" />
@@ -911,16 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1631">
-          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding>
-            <marker date="1507098240778" expanded="true" signature="10811:11500" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -929,10 +923,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1835">
+          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+          <folding>
+            <marker date="1507098240778" expanded="true" signature="10811:11500" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="620" column="17" lean-forward="true" selection-start-line="620" selection-start-column="17" selection-end-line="620" selection-end-column="17" />
+        <state relative-caret-position="95">
+          <caret line="751" column="20" lean-forward="false" selection-start-line="751" selection-start-column="10" selection-end-line="751" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/teacher_notification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="124" column="31" lean-forward="false" selection-start-line="124" selection-start-column="31" selection-end-line="124" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -25,6 +25,11 @@ $("#submit").click(function(event)
 
     
 var list;
+var username='';
+    $.get('/myusername',function(res)
+    {
+        username=res;
+    });
 $.get('/myLectures',function (data){
   list=data.filter((e)=>
    { return !e.group;}
@@ -46,7 +51,7 @@ $.get('/myLectures',function (data){
                 }
           })
       }
-    
+
 //console.log(list);
     for( var id=0;id<lectureCount;id++){
    
@@ -88,6 +93,7 @@ $.get('/myLectures',function (data){
             var msg = {};
             msg.notification_heading=$('#notification_heading').val();
              msg.file=base64;
+             msg.from=username;
             msg.fileName=file.name;
 
             
@@ -116,6 +122,7 @@ $.get('/myLectures',function (data){
             var data={};
             data.notification_heading=$('#notification_heading').val();
             data.notification_content=$('#notification_content').val();
+            data.from=username;
             
             for (var i=0;i<list.length;i++)
                 {
