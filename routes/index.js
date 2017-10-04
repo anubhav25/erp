@@ -156,18 +156,18 @@ app.post("/forgotPass",function(req,res){
     });
 
 
-app.post("/changePass",function(req,res) {
+app.post("/changePass",requireLoginStudent,function(req,res) {
 
-    var data = req.body;
+
 
     var query = {
-        username: data.username,
-        email : data.email,
-        password :  data.oldpassword
+        username: req.user.username,
+        email : req.user.email,
+        password :  req.body.oldpassword
     };
 
     var query2 = {
-        password :  data.newpassword
+        password :  req.body.newpassword
     };
     req.db.collection("login").updateOne( query, query2 ,function (err2, obj2) {
         if (err2) {
