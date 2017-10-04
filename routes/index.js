@@ -63,7 +63,7 @@ app.get('/',function(req,res)
 });
 
 app.get('/logout', function(req, res) {
-    req.session.reset();
+    req.session_state.reset();
     res.redirect('/');
 });
 
