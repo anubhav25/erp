@@ -163,7 +163,8 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
     var query = {
         username: req.user.username,
         email : req.user.email,
-        password :  req.body.oldpassword
+        password :  req.body.oldpassword,
+        type: req.user.type
     };
 
     req.db.collection("login").deleteOne( query ,function (err2, obj2) {
@@ -172,12 +173,12 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
             res.json({msg: "SERVER ERROR"});
             throw err2;
         }
-        obj2=obj2[0];
-            delete obj2._id;
-            obj2.password=req.body.newpassword;
-            req.db.collection("login").insertOne(obj2, function (err, data2) {
+        
 
-                mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + query2.password, query.email);
+            query.password=req.body.newpassword;
+            req.db.collection("login").insertOne(query, function (err, data2) {
+
+                mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + obj2.password, query.email);
                 res.json({msg: "ok"});
                 req.db.close();
 
