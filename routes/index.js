@@ -166,17 +166,16 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
         password :  req.body.oldpassword
     };
 
-    var query2 = {
-        password :  req.body.newpassword
-    };
     req.db.collection("login").deleteOne( query ,function (err2, obj2) {
         if (err2) {
             console.log(err2);
             res.json({msg: "SERVER ERROR"});
             throw err2;
         }
-
-            req.db.collection("login").insertOne(query2, function (err, data2) {
+        obj2=obj2[0];
+            delete obj2._id;
+            obj2.password=req.body.newpassword;
+            req.db.collection("login").insertOne(obj2, function (err, data2) {
 
                 mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + query2.password, query.email);
                 res.json({msg: "ok"});
