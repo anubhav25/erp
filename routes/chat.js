@@ -2,7 +2,6 @@
 module.exports = function(server) {
     var io = require('socket.io').listen(server);
     var fs = require('fs');
-    var fs = require('fs');
     var teacher_notifications = [] ;
     var student_notifications = [] ;
     var csea_notifications = [];
@@ -178,21 +177,27 @@ var mongo={};
 
         io.on('connection', function (socket) {
 
-            mongo.db.collection('chats').find({},{ _id: 0 }).limit(20).toArray(function (err, objs) {
-                objs.forEach(function (a) {
-                    if (a.link) {
-                        console.log('file sent');
-                        socket.emit('chat_file', a)
-                    }
-                    else {
-                        console.log('message sent');
-                        socket.emit('chat_message', a)
-                    }
 
-                })
+            socket.on('chat',function(msg){
+
+                mongo.db.collection('chats').find({},{ _id: 0 }).limit(20).toArray(function (err, objs) {
+                    objs.forEach(function (a) {
+                        if (a.link) {
+                            console.log('file sent');
+                            socket.emit('chat_file', a)
+                        }
+                        else {
+                            console.log('message sent');
+                            socket.emit('chat_message', a)
+                        }
+
+                    })
+                });
+
+
+
+
             });
-
-
 
 
 

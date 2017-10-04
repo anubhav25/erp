@@ -119,6 +119,7 @@
 
             // var socket = io();
              var socket = io('http://erp.openode.io/');
+             socket.emit('chat',{});
 
              $.get('/myusername',function(data)
              {

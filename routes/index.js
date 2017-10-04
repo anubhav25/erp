@@ -477,80 +477,98 @@ app.post('/removeLecture',function(req,res)
 
 });
 
-app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLoginTeacher,function(req,res){
+    app.post('/takeAttendanceClass/:Batch/:class/:semester/:subject/:date',requireLoginTeacher,function(req,res) {
 
-    var batch=req.params.Batch;
-    var classs=req.params.class;
-    var sem=req.params.semester;
-    var sub=req.params.subject;
-    var date = req.params.date;
+        var batch = req.params.Batch;
+        var classs = req.params.class;
+        var sem = req.params.semester;
+        var sub = req.params.subject;
+        var date = req.params.date;
 
-    for(var stu in req.body) {
-        var query1 = {
-            rollno :  stu,
-            classs : classs,
-            sem: sem,
-            sub:sub
-        };
 
-    req.db.collection('Attendance'+batch).find(query1).toArray(function(err,obj){
-        if(err)
-        {
-            res.json({msg:"ERROR OCCURRED"});
-            throw err;
-        }
-        var query;
-        var a={
-            date:date,
-            present:req.body[stu]
-        };
-        
-        if(obj.length===1)
-        {
-            var at=[];
-            query = obj[0];
-            at=obj[0].attendance;
-            at.push(a);
-            query.attendance =  at;
-            req.db.collection('Attendance'+batch).updateOne(obj[0],query,function(err){
-                if(err)
-                {
-                    res.json({msg:"ERROR OCCURRED"});
-                    throw err;
-                     
-                }
-                
-              
-             
-            });
+        // console.log(req.body);
+        for (var stu in req.body) {
 
-        }
-        else {
-            var at=[]
-            query = {
-                rollno :  stu,
-                classs : classs,
+            function doit(stu)
+            {
+            console.log(stu);
+            var query1 = {
+                rollno: stu,
+                classs: classs,
                 sem: sem,
-                sub:sub,
-                attendance : at
-            }
-            at.push(a);
-            query.attendance = at;
-            req.db.collection('Attendance'+batch).insertOne(query,function(err){
-                if(err)
-                {
-                    res.json({msg:"ERROR OCCURRED"});
+                sub: sub
+            };
+
+            req.db.collection('Attendance' + batch).find(query1).toArray(function (err, obj) {
+                if (err) {
+                    res.json({msg: "ERROR OCCURRED"});
                     throw err;
-                     
                 }
+                var query;
+                var a = {
+                    date: date,
+                    present: req.body[stu]
+                };
 
+                if (obj.length === 1) {
+                    var at = [];
+                    delete  obj[0]._id;
+                    query = obj[0];
+
+                    at = obj[0].attendance;
+                    at.push(a);
+                    query.attendance = at;
+                    console.log('hi');
+                    console.log(query);
+                    req.db.collection('Attendance' + batch).deleteOne(query1, function (err) {
+                        if (err) {
+                            res.json({msg: "ERROR OCCURRED"});
+                            throw err;
+
+                        }
+                        else
+                        req.db.collection('Attendance' + batch).insertOne(query, function (err) {
+                            if (err) {
+                                res.json({msg: "ERROR OCCURRED"});
+                                throw err;
+
+                            }
+
+                        });
+
+
+
+                    });
+
+                }
+                else {
+                    var at = []
+                    query = {
+                        rollno: stu,
+                        classs: classs,
+                        sem: sem,
+                        sub: sub,
+                        attendance: at
+                    }
+                    at.push(a);
+                    query.attendance = at;
+                    console.log(query);
+                    req.db.collection('Attendance' + batch).insertOne(query, function (err) {
+                        if (err) {
+                            res.json({msg: "ERROR OCCURRED"});
+                            throw err;
+
+                        }
+
+                    });
+
+                }
             });
-
         }
+        doit(stu);
+    }
+        res.json({msg:"ok"});
     });
-}
-res.json({msg:"ok"});
-});
 
 
 
@@ -572,6 +590,13 @@ app.get('/getLecture/:username',function(req,res)
 
 
 
+app.get('/myClass',requireLoginAdmin,function(req,res){
+
+   req.db.collection('Students').findOne({rollno:req.user.username,email:req.user.email},function(data){
+       res.send(data.class_name);
+   })
+
+});
 
 
 
@@ -682,6 +707,28 @@ app.get('/getStudents/:a?',function (req,res) {
         }
         res.json(objs);
     })
+});
+
+
+
+app.get('/getMyAttendance',requireLoginStudent,function(req,res){
+    req.db.collection('Students').findOne({rollno:req.user.username},{_id:0},function(err,obj){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        console.log(obj);
+        req.db.collection('Attendance'+obj.batch_name).find({rollno:req.user.username},{_id:0}).toArray(function(err,objs){
+            if(err)
+            {
+                res.json({msg:"ERROR OCCURRED"});
+                throw err;
+            }
+            res.json(objs);
+        })
+    });
+
 });
 
 
