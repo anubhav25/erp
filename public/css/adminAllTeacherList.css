@@ -1,0 +1,19 @@
+
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
+#teacher_edit_delete_div{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
+overflow-y:scroll;
+}
+}
+@media  only screen and (min-width: 768px)
+{
+#teacher_edit_delete_div{
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+overflow-y :scroll;
+}	
+}

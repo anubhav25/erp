@@ -53,21 +53,45 @@ input:focus:invalid {
 .error.active {
   padding: 0.3em;
 }*/
+
+.left1{
+width:100%;
+background: linear-gradient(#00c6ff,#0072ff);
+height:100%;
+overflow-y:scroll;
+}
+
+
+
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
+.left1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
+overflow-y:scroll;
+}
 table{
 width:90%;
 margin: 10px;
 }
 input{
-  width: 80%
-
+  width: 90%
 }
-.body1{
-
-
 }
+@media  only screen and (min-width: 768px)
+{
 .left1{
-width:100%;
-background-color:teal;
-min-height:496px;
-overflow-y:scroll;
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+overflow-y :scroll;
+}
+table{
+width:90%;
+margin: 10px;
+}
+input{
+  width: 90%
+} 
 }

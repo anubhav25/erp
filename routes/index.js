@@ -590,10 +590,15 @@ app.get('/getLecture/:username',function(req,res)
 
 
 
-app.get('/myClass',requireLoginAdmin,function(req,res){
+app.get('/myClass',function(req,res){
 
-   req.db.collection('Students').findOne({rollno:req.user.username,email:req.user.email},function(data){
-       res.send(data.class_name);
+   req.db.collection('Students').findOne({rollno:req.user.username,email:req.user.email},function(err,data){
+       if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+       res.send(data.classs);
    })
 
 });

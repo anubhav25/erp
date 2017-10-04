@@ -8,15 +8,20 @@ $(document).ready(function($) {
 var alertBox = $("<div>").attr('id',"dialog");
     $('body').append(alertBox);
 
- alertBox.dialog({
+
+
+
+
+    
+    alertBox.dialog({
         autoOpen: false,
         show: {
             effect: "blind",
-            duration: 1000
+            duration: 400
         },
         hide: {
-            effect: "explode",
-            duration: 1000
+            effect: "fadeOut",
+            duration: 400
         }
     });
 
@@ -49,4 +54,46 @@ var alertBox = $("<div>").attr('id',"dialog");
 
 
 
+
+
+
+
+var teacherList=$('#teacherList');
+
+
+
+
+    $.get('/myClass',function(data){
+        console.log(data);
+          socket.emit(data,{});
+    })
+ 
+  
+     
+  
+  
+    
+
+    socket.on('new_text_from_teacher', function(res){
+
+      console.log(res);
+      var msg=$('<a>').html('<b>'+res.target+' : </b>'+res.notification_heading);
+        msg.click(function()
+        {
+            alertBox.html('<p>'+res.notification_content+'</p>');
+            alertBox.dialog("open");
+        });
+        teacherList.prepend($('<li>').append(msg));
+    });
+
+    socket.on('new_file_from_teacher', function(res){
+      console.log(res);
+
+      var msg=$('<a>').attr('href',res.link+"/"+res.fileName).html('<b>'+res.target+' : </b>'+res.notification_heading);
+      teacherList.prepend($('<li>').append(msg));
+        
+    });
+
+
 });
+
