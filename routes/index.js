@@ -173,7 +173,7 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
             res.json({msg: "SERVER ERROR"});
             throw err2;
         }
-        
+
 
             query.password=req.body.newpassword;
             req.db.collection("login").insertOne(query, function (err, data2) {
@@ -615,7 +615,7 @@ app.post('/deleteStudent',function(req,res){
 
         if(objs.length===1)
         {
-            req.db.collection('Students').deleteOne(query,function(err,data)
+            req.db.collection('login').deleteOne(query,function(err,data)
             {
                 if(err)
                 {
