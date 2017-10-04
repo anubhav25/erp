@@ -169,7 +169,7 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
     var query2 = {
         password :  req.body.newpassword
     };
-    req.db.collection("login").updateOne( query, query2 ,function (err2, obj2) {
+    req.db.collection("login").deleteOne( query ,function (err2, obj2) {
         if (err2) {
             console.log(err2);
             res.json({msg: "SERVER ERROR"});
