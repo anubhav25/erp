@@ -688,6 +688,17 @@ app.get('/getStudentDetails/:a',function (req,res) {
     })
 });
 
+app.get('/getMyDetails',function (req,res) {
+    var emailId=(req.user.email);
+    req.db.collection('Students').find({email:emailId},{_id : 0}).toArray(function ( err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs[0]);
+    })
+});
 
 
 app.get('/getTeacherDetails/:a',function (req,res) {
