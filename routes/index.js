@@ -5,6 +5,7 @@ var mail = require("./email");
 
 
 function requireLoginStudent (req, res, next) {
+    console.log(req.user);
     if (!req.user && req.user.type !== "student") {
         console.log("not found");
         res.redirect('/');
@@ -598,6 +599,7 @@ app.get('/myClass',function(req,res){
             res.json({msg:"ERROR OCCURRED"});
             throw err;
         }
+        console.log(data);
        res.send(data.classs);
    })
 

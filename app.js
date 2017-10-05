@@ -55,23 +55,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(function(req, res, next) {
-    console.log("hi");
+    
     if (req.session_state && req.session_state.user) {
+   
         req.db.collection('login').findOne({ username: req.session_state.user.username }, function(err, user) {
          if (user) {
          req.user = user;
-         console.log(req.user);
+         console.log(user);
          delete req.user.password; // delete the password from the session
          req.session_state.user = user;  //refresh the session value
          res.locals.user = user;
          }
+            console.log(req.user);
          next();
          });
 
     }
    else
     {
-        next();
+      next();
+     
     }
 });
 

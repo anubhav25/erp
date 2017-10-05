@@ -8,6 +8,15 @@ background : linear-gradient(#00c6ff,#0072ff);
 height:480px;
 overflow-y:scroll;
 }
+table{
+	width:60%;
+	text-align:center;
+	margin:5% 20% 5% 20% ;
+}
+#addTeacher{
+	margin :2%;
+	text-align: center;
+}
 }
 @media  only screen and (min-width: 768px)
 {
@@ -15,5 +24,15 @@ overflow-y:scroll;
 background : linear-gradient(#00c6ff,#0072ff);
 height:635px;
 overflow-y :scroll;
+}
+table{
+	width:60%;
+	text-align:center;
+	margin:5% 20% 5% 20% ;
 }	
+#addTeacher{
+	margin :2%;
+	text-align: center;
+}
+
 }

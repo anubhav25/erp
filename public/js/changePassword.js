@@ -4,6 +4,7 @@
 
 $(document).ready(function($) {
 
+
     $('#submit').click(function(){
         var np=$('#newPassword').val();
         var cp = $('#confirmPassword').val();

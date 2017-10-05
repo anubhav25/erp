@@ -89,7 +89,7 @@ var teacherList=$('#teacherList');
     socket.on('new_file_from_teacher', function(res){
       console.log(res);
 
-      var msg=$('<a>').attr('href',res.link+"/"+res.fileName).html('<b>'+res.target+' : </b>'+res.notification_heading);
+      var msg=$('<a>').attr('href',res.link+"/"+res.fileName).html('<b>'+res.from+' : </b>'+res.notification_heading);
       teacherList.prepend($('<li>').append(msg));
         
     });

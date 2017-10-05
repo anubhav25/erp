@@ -7,7 +7,7 @@
 background : linear-gradient(#00c6ff,#0072ff);
 height:480px;
 width:50%;
-overflow-y:scroll;
+
 }
 .right1{
 
@@ -30,6 +30,15 @@ height:240px;
 width:100%;
 overflow-y:scroll;
 }
+#send_div{
+	width:100%;
+	height:40px;
+
+}
+#msgdiv{
+width:100%;
+	height:440px;
+}
 }
 @media  only screen and (min-width: 768px)
 {
@@ -38,7 +47,7 @@ overflow-y:scroll;
 background : linear-gradient(#00c6ff,#0072ff);
 height:635px;
 width:50%;
-overflow-y:scroll;
+
 }
 .right1{
 
@@ -60,4 +69,16 @@ background : linear-gradient(#00c6ff,#0072ff);
 height:318px;
 width:100%;
 overflow-y:scroll;
-}}
+}
+#send_div{
+	width:100%;
+	height:40px;
+
+}
+#msgdiv{
+width:100%;
+	height:595px;
+	overflow-y: scroll;
+}
+
+}
