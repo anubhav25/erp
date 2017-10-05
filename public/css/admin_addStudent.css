@@ -1,10 +1,4 @@
 
-.left1{
-width:100%;
-background: linear-gradient(#00c6ff,#0072ff);
-height:100%;
-overflow-y:scroll;
-}
 
 
 
@@ -24,6 +18,12 @@ margin: 10px;
 input{
   width: 90%
 }
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
+}
 }
 @media  only screen and (min-width: 768px)
 {
@@ -38,5 +38,15 @@ margin: 10px;
 }
 input{
   width: 90%
+}
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
 }	
+}
+
+#dob{
+	width: 90%;
 }

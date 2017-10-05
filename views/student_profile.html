@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
+
 	<link rel="stylesheet" href="css/student_profile.css">
-	<link rel="stylesheet" href="css/student_profile.css">
-    <link rel="stylesheet" href="css/body.css">
+    
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
@@ -47,45 +47,141 @@
         </div>
     </header>
     <!-- /header -->
-	<div class="body1">
-	<div class="left">
-	<div id="main_div">
-<div id="upload_image">
-<inpit type="file">
-hi
-</div>
+<div class="body1" >
+    <div class="left1" >
+    <form action="http://localhost:5000/a" method="post" id="abc">
+<h3>1. General Information</h3>
+<table id="fill_details">
+<tr>
+     <td>Name :</td>
+     <td><input type="text" name="name" id="name"></td>
+     <td>Mobile No. :</td>
+     <td><input type="number" name="mob_no" id="mob_no"></td>
+</tr>
+<tr>
+     <td>Roll No :</td>
+     <td><input type="text" name="rollno" id="rollno"></td>
+     <td>Batch Name :</td>
+     <td><input type="number" name="batch_name" id="batch_name"></td>
+</tr>
+<tr>
+     <td>Class :</td>
+     <td><select id="classs">
+     <option value="">class</option>
+     <option value="csea" name="csea">CSE A</option>
+     <option value="cseb" name="cseb">CSE B</option>
+     <option value="ecea" name="ecea">ECE A</option>
+     <option value="eceb" name="eceb">ECE B</option>
+     <option value="mech" name="mech">MECH</option>
+     <option value="bt" name="bt">BT</option>
+     </select></td>
+     <td>Semester :</td>
+     <td><input type="number" name="sem" id="sem"></td>
+</tr>
+<tr>
+     <td>Father's Name :</td>
+     <td><input type="text" name="fname" id="fname"></td>
+     <td>Father's Mobile No. :</td>
+     <td><input type="number" name="fmob_no" id="fmob_no"></td>
+</tr>
+<tr>
+     <td>Father's Occupation :</td>
+     <td><input type="text" name="foccupation" id="foccupation"></td>
+     <td>Mother's Name :</td>
+     <td><input type="text" name="mname" id="mname"></td>
+</tr>
+<tr>
+     <td>DOB :</td>
+     <td><input type="date" name="dob" id="dob"></td>
+     <td>Religion</td>
+     <td><input type="text" name="religion" id="religion"></td>
+</tr>
+<tr>
+     <td>Blood Group :</td>
+     <td><input type="text" name="bg" id="bg"></td>
+     <td>Gender :</td>
+     <td><input type="text" name="gender" id="gender"></td>
+</tr>
+<tr>
+     <td>Nationality :</td>
+     <td><input type="text" name="Nationality" id="Nationality"></td>
+     <td>Caste :</td>
+     <td><input type="text" name="caste" id="caste"></td>
+</tr>
+<tr>
+     <td>Category :</td>
+     <td><input type="text" name="Category" id="Category"></td>
+     <td>Family Income :</td>
+     <td><input type="number" name="family_income" id="family_income"></td>
+</tr>
+<tr>
+     <td>Voter Card No :</td>
+     <td><input type="text" name="voter_card_no" id="voter_card_no"></td>
+     <td>Aadhar Card No</td>
+     <td><input type="number" name="aadhar_card_no" id="aadhar_card_no"></td>
+</tr>
 
-<div id="academic_details">
-Academic Details : <br><br>
-Student Roll No. : <label id="student_rollno"></label><br>
-Batch Name : <label id="student_name"></label><br>
-Academic Session : <label id="academic_session"></label><br>
-Class : <label id="student_class"></label><br>
-Date of Admission : <label id="student_dateOfAdmission"></label>
-</div>
-<div id="personal_details">
-Personal Details : <br><br>
-Date of Birth : <label id="student_dob"></label><br>
-Gender : <label id="student_gender"></label><br>
-Email Id : <label id="student_emailid"></label><br>
-Mobile No. : <label id="student_mobileNo"></label><br>
-Blood Group : <label id="student_bloodGroup"></label>
-</div>
-<div id="guardian_details">
-Emergency Guardian : <br><br>
-Guardian Type: <label id="guardian_type"></label><br>
-Guardian Name : <label id="guardian_name"></label><br>
-Email Id : <label id="guardian_emailid"></label><br>
-Mobile No. : <label id="guardian_mobileNo"></label><br>
-Address : <label id="guardian_address"></label>
-</div>
-</div>
+<tr>
+     <td>Rural/Urban  :</td>
+     <td><input type="text" name="residancy" id="residancy"></td>
+     <td>Email_ID :</td>
+     <td><input type="email" name="email" id="email">
+     <span class="error" aria-live="polite"></span></td>
+</tr>
+<tr>
+     <td>Class Group :</td>
+     <td><select id="classs_group">
+     <option value="">Class Group</option>
+     <option value="1" name="1">1</option>
+     <option value="2" name="2">2</option>
+     <option value="3" name="3">3</option>
+     
+     </select></td>
+     
+</tr>
+
+<tr>
+     <td>Address :</td>
+     <td colspan="3"><input type="text" name="address" id="address" width="500px" height="10px"></td>
+     
+</tr>
+
+<tr>
+     <td>City :</td>
+     <td><input type="text" name="city" id="city"></td>
+     <td>Distt.</td>
+     <td><input type="text" name="distt" id="distt"></td>
+</tr>
+<tr>
+     <td>State :</td>
+     <td><input type="text" name="state" id="state"></td>
+     <td>Pin No.</td>
+     <td><input type="number" name="pin" id="pin"></td>
+</tr>
+<tr>
+     <td>Land Line No :</td>
+     <td><input type="number" name="landline" id="landline"></td>
+     <td>Country.</td>
+     <td><input type="text" name="country" id="country"></td>
+</tr>
 
 
-	</div>
-	
-	
-	</div>
+
+</table>
+
+
+
+ </form>
+
+    </div>
+    
+    
+    </div>
+
+
+
+
+
 
 
 
@@ -93,6 +189,7 @@ Address : <label id="guardian_address"></label>
 
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/student_profile.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>

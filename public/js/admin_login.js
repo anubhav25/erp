@@ -14,6 +14,7 @@ var StudentNotificationList=$('#StudentNotificationList');
 
 
 
+
     
     alertBox.dialog({
         autoOpen: false,

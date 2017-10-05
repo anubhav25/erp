@@ -54,12 +54,6 @@ input:focus:invalid {
   padding: 0.3em;
 }*/
 
-.left1{
-width:100%;
-background: linear-gradient(#00c6ff,#0072ff);
-height:100%;
-overflow-y:scroll;
-}
 
 
 
@@ -79,6 +73,12 @@ margin: 10px;
 input{
   width: 90%
 }
+select{
+    width: 90%;
+}
+#address{
+   width:96.2%;
+}
 }
 @media  only screen and (min-width: 768px)
 {
@@ -92,6 +92,12 @@ width:90%;
 margin: 10px;
 }
 input{
-  width: 90%
+  width: 90%;
 } 
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
+}
 }

@@ -24,6 +24,12 @@ margin: 10px;
 input{
   width: 90%
 }
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
+}
 }
 @media  only screen and (min-width: 768px)
 {
@@ -38,5 +44,11 @@ margin: 10px;
 }
 input{
   width: 90%
+}
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
 }	
 }

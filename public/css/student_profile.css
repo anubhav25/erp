@@ -1,33 +1,46 @@
-#academic_details{
-padding:10px;
-float:left;
-background-color:silver;
-width:27%;
-height:491px;
-line-height:30px;
-}
-#personal_details{
-	padding:10px;
-float:left;
-background-color:green;
-width:27%;
-height:491px;
-line-height:30px;
-}
 
-#guardian_details{
-	padding:10px;
-float:left;
-background-color:silver;
-width:27%;
-height:491px;
-line-height:30px;
+
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
+.left1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
+overflow-y:scroll;
 }
-#upload_image{
-	padding:10px;
-float:left;
-background-color:green;
-width:13%;
-height:491px;
-line-height:30px;	
+table{
+width:90%;
+margin: 10px;
+}
+input{
+  width: 90%
+}
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
+}
+}
+@media  only screen and (min-width: 768px)
+{
+.left1{
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+overflow-y :scroll;
+}
+table{
+width:90%;
+margin: 10px;
+}
+input{
+  width: 90%
+} 
+select{
+    width: 90%;
+}
+#address{
+  width:96.2%;
+}
 }
