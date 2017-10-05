@@ -65,6 +65,7 @@ function drawChart(obj) {
     var options = {
         width: 600,
         height: 400,
+        backgroundColor:{fill : 'transparent'},
         legend: { position: 'top', maxLines: 10 },
         bar: { groupWidth: '75%' },
         isStacked: true

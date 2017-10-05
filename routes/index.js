@@ -591,8 +591,8 @@ app.get('/getLecture/:username',function(req,res)
 
 
 
-app.get('/myClass',function(req,res){
-
+app.get('/myClass',requireLoginStudent,function(req,res){
+console.log(req.user);
    req.db.collection('Students').findOne({rollno:req.user.username,email:req.user.email},function(err,data){
        if(err)
         {

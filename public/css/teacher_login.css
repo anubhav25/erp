@@ -1,7 +1,38 @@
 
-.left{
-width:100%;
-background: linear-gradient(#00c6ff,#0072ff);
-height:100%;
-overflow-y:scroll;
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
+.left1{
+overflow-y: scroll;
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
+width:50%;
+
+}
+.right1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
+width:50%;
+overflow-y: scroll;
+}
+
+}
+@media  only screen and (min-width: 768px)
+{
+.left1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+width:50%;
+overflow-y: scroll;
+}
+.right1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+width:50%;
+overflow-y: scroll;
+}
+
 }

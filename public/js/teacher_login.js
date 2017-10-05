@@ -32,6 +32,7 @@ var selfList=$('#selfList');
     var socket = io('http://localhost:3000');
 
 $.get('/myLectures',function (data){
+  console.log(data);
   data=data.filter((a)=>{
     return !a.group;
   });

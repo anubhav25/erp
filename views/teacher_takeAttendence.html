@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
-    <link rel="stylesheet" href="css/body.css">
+    
 	<link rel="stylesheet" href="css/teacher_takeAttendence.css">
     
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -38,7 +38,7 @@
                     <ul class="nav">
                          <li ><a href="teacher_login.html">Home</a></li>
                         <li class="active"><a href="teacher_takeAttendence.html">Take Attendence</a></li>
-                        <li><a href="teacher_sessional.html">Sessional</a></li>
+                        <li><a href="change_Password.html">Change Password</a></li>
                         <li><a href="teacher_notification.html">Add Notification</a></li>
                         <li><a href="teacher_contactUs.html">Contact Us</a></li>
 						<li><a href="index.html">Logout</a></li>
@@ -50,25 +50,26 @@
     <!-- /header -->
 	<div class="body1">
 	<div class="left1" id="left1">
-	<h1>Attendence</h1>
+	<center>
     <div id="btn">
         
-    </div>
+    </div><br>
+     <label id="label">Date  :</label>
+    <input type="date"  required    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="date" id="date"><br><br>
      
     <div id="student_list">
-           <table id="studentAttendenceList">
+           <table id="studentAttendenceList" style="display:none">
+            <thead>
         <tr>
             <th>Name</th>
-            <th>Roll No</th>
+            <th>Roll_No</th>
             <th>Present</th>
             
             
-        </tr>
+        </tr></thead>
     </table><br>
-     Date  :
-    <input type="date"  required    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" value="date" id="date"><br><br>
-    
-    </div>
+   
+    </div></center>
 	</div>
 	
 	

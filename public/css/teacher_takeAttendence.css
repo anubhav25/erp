@@ -1,15 +1,113 @@
-.body1{
-height:100%;
 
-}
+
+
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
 .left1{
+overflow-y: scroll;
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
 width:100%;
-background: linear-gradient(#00c6ff,#0072ff);
-background-coor:teal;
-float:left; 
-height:100%;
 
-overflow-y:scroll;
+}
+#btn{
+	padding-top:15px;
+}
+table{
+	width:40%;
+	text-align: center;
+}
+#btn{
+	padding-top:15px;
+}
+table{
+	width:40%;
+	text-align: center;
+	border: 1px solid black;
+}
+table td{
+	padding:5px;
+	border: 1px solid black;
+}
+table th{
+	padding:5px;
+	border: 1px solid black;
+}
+ button{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+ #submit{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 
 }
 
+}
+@media  only screen and (min-width: 768px)
+{
+.left1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+width:100%;
+overflow-y: scroll;
+}
+#btn{
+	padding-top:15px;
+}
+table{
+	width:40%;
+	text-align: center;
+	border: 1px solid black;
+}
+table td{
+	padding:5px;
+	border: 1px solid black;
+}
+table th{
+	padding:5px;
+	border: 1px solid black;
+}
+ button{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+ #submit{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+}
