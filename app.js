@@ -63,6 +63,7 @@ app.use(function(req, res, next) {
          req.user = user;
          console.log(user);
          delete req.user.password; // delete the password from the session
+             delete  req.user._id;
          req.session_state.user = user;  //refresh the session value
          res.locals.user = user;
          }

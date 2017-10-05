@@ -179,7 +179,7 @@ app.post("/changePass",requireLoginStudent,function(req,res) {
             query.password=req.body.newpassword;
             req.db.collection("login").insertOne(query, function (err, data2) {
 
-                mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + obj2.password, query.email);
+                mail.sendMail("your new erp password", "Username: " + query.username + " ,Password: " + req.body.newpassword, query.email);
                 res.json({msg: "ok"});
                 req.db.close();
 
@@ -593,7 +593,8 @@ app.get('/getLecture/:username',function(req,res)
 
 app.get('/myClass',requireLoginStudent,function(req,res){
 console.log(req.user);
-   req.db.collection('Students').findOne({rollno:req.user.username,email:req.user.email},function(err,data){
+console.log('596');
+   req.db.collection('Students').find({rollno:req.user.username}).toArray(function(err,data){
        if(err)
         {
             res.json({msg:"ERROR OCCURRED"});

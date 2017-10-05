@@ -142,8 +142,8 @@ function addToTable(obj)
 		                                    {
                                                 var a={};
 		                                    	 a.email = $(event.target).parent().siblings().eq(0).text() 	;
-                                               
-		                                    	$.post("/removeLecture",a,function(data){
+												a.sub_name= $(event.target).parent().siblings().eq(1).text()
+                                                $.post("/removeLecture",a,function(data){
 		                                    		if(data.msg=="ok"){
 		                                    			alert("delete succesfull");
 		                                    			var parent =event.target.parentNode.parentNode.parentNode;

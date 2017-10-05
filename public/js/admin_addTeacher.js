@@ -55,7 +55,7 @@ function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,vot
 
 
 
-    document.getElementById('myform').onsubmit=(function(){
+   $('#myform').submit(function(){
 	var name=$('#name').val();
 var mob_no=$('#mob_no').val();
 var dob=$('#dob').val();

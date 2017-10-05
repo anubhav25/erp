@@ -76,7 +76,7 @@ $('#submit').click(function (argument) {
 
 
 
-document.getElementById('myform').onsubmit=(function(){
+$('#myform').submit(function(){
 
 
     var name=$('#name').val();
