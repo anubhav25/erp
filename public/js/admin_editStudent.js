@@ -65,7 +65,7 @@ function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,f
 
 	
 }
-$('#submit').click(function (argument) {
+    document.getElementById('myform').onsubmit=(function(){
 var name=$('#name').val();
 var mob_no=$('#mob_no').val();
 var rollno=$('#rollno').val();
@@ -160,14 +160,7 @@ $('#email').attr('disabled',true);
 
 
 
-});
-
-
-
-/*$('form').submit(function(){
-
-
-	return false;});*/
+	return false;});
 
 });
 

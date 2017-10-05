@@ -18,8 +18,10 @@
    
 	
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-	
-    
+
+
+
+
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
@@ -49,7 +51,7 @@
     <!-- /header -->
 	<div class="body1" >
 	<div class="left1" >
-	<form >
+	<form name="myform" id="myform" >
 <h3>1. General Information</h3>
 <table id="fill_details">
 <tr>
@@ -66,8 +68,8 @@
 </tr>
 <tr>
      <td>Class :</td>
-     <td><select id="classs">
-	 <option value="">class</option>
+     <td><select id="classs" name="classs">
+	 <option value="" name="0">class</option>
 	 <option value="csea" name="csea">CSE A</option>
 	 <option value="cseb" name="cseb">CSE B</option>
 	 <option value="ecea" name="ecea">ECE A</option>
@@ -130,8 +132,8 @@
 </tr>
 <tr>
      <td>Class Group :</td>
-     <td><select id="classs_group">
-     <option value="">Class Group</option>
+     <td><select id="classs_group" name="classs_group">
+     <option value="" name='0'>Class Group</option>
      <option value="1" name="1">1</option>
      <option value="2" name="2">2</option>
      <option value="3" name="3">3</option>
@@ -188,6 +190,8 @@
 	<script src="js/admin_addStudent.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
+    <script src="js/gen_validatorv4.js">    </script>
+    <script src="js/validator_student.js">    </script>
     <!-- Slider -->
     <script type="text/javascript"> 
     $(function() {
@@ -214,7 +218,9 @@
         Page.init();
     });
     $(".text-right").html("Created by Anubhav and Sunil");
+
     </script>
+
     <!-- /Slider -->
 </body>
 </html>

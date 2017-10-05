@@ -55,7 +55,7 @@ function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,vot
 
 
 
-$('#submit').click(function (argument) {
+    document.getElementById('myform').onsubmit=(function(){
 	var name=$('#name').val();
 var mob_no=$('#mob_no').val();
 var dob=$('#dob').val();
@@ -107,10 +107,6 @@ console.log(tcDetails);
 		});
 
 
-
-});
-
-$('form').submit(function(){
 	return false;});
 
 

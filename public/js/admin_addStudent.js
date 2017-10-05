@@ -64,66 +64,67 @@ function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,f
 
 
 	
-}
+}/*
 $('#submit').click(function (argument) {
-var name=$('#name').val();
-var mob_no=$('#mob_no').val();
-var rollno=$('#rollno').val();
-var batch_name=$('#batch_name').val();
-var classs=$('#classs').val();
-var sem=$('#sem').val();
-var fname=$('#fname').val();
-var fmob_no=$('#fmob_no').val();
-var foccupation=$('#foccupation').val();
-var mname=$('#mname').val();
-var dob=$('#dob').val();
-var religion=$('#religion').val();
-var bg=$('#bg').val();
-var gender=$('#gender').val();
-var Nationality=$('#Nationality').val();
-var caste=$('#caste').val();
-var Category=$('#Category').val();
-var family_income=$('#family_income').val();
-var voter_card_no=$('#voter_card_no').val();
-var aadhar_card_no=$('#aadhar_card_no').val();
-var residancy=$('#residancy').val();
-var email=$('#email').val();
-var classs_group=$('#classs_group').val();
-var address=$('#address').val();
-var city=$('#city').val();
-var distt=$('#distt').val();
-var state=$('#state').val();
-var pin=$('#pin').val();
-var landline=$('#landline').val();
-var country=$('#country').val();
-
-var stDetails=new studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,classs_group,address,city,distt,state,pin,landline,country);
-
-		$.post('/setStudentDetails',stDetails,function (data) {
-			console.log(data)
-			if(data.msg=="ok")
-			{
-				alert("student added");
-			}
-			else
-			{
-				alert(data.msg);
-			}
-		});
 		return false;
 	});
 
 
 
+*/
 
 
 
 
+document.getElementById('myform').onsubmit=(function(){
 
-/*$('form').submit(function(){
 
+    var name=$('#name').val();
+    var mob_no=$('#mob_no').val();
+    var rollno=$('#rollno').val();
+    var batch_name=$('#batch_name').val();
+    var classs=$('#classs').val();
+    var sem=$('#sem').val();
+    var fname=$('#fname').val();
+    var fmob_no=$('#fmob_no').val();
+    var foccupation=$('#foccupation').val();
+    var mname=$('#mname').val();
+    var dob=$('#dob').val();
+    var religion=$('#religion').val();
+    var bg=$('#bg').val();
+    var gender=$('#gender').val();
+    var Nationality=$('#Nationality').val();
+    var caste=$('#caste').val();
+    var Category=$('#Category').val();
+    var family_income=$('#family_income').val();
+    var voter_card_no=$('#voter_card_no').val();
+    var aadhar_card_no=$('#aadhar_card_no').val();
+    var residancy=$('#residancy').val();
+    var email=$('#email').val();
+    var classs_group=$('#classs_group').val();
+    var address=$('#address').val();
+    var city=$('#city').val();
+    var distt=$('#distt').val();
+    var state=$('#state').val();
+    var pin=$('#pin').val();
+    var landline=$('#landline').val();
+    var country=$('#country').val();
 
-	return false;});*/
+    var stDetails=new studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,classs_group,address,city,distt,state,pin,landline,country);
+
+    $.post('/setStudentDetails',stDetails,function (data) {
+        console.log(data)
+        if(data.msg=="ok")
+        {
+            alert("student added");
+        }
+        else
+        {
+            alert(data.msg);
+        }
+    });
+
+	return false;});
 
 });
 
