@@ -48,12 +48,15 @@
         </div>
     </header>
     <!-- /header -->
-
+<div id="left1">
+    <center>
+        <br>
 <input type="button" name="class_name_btn" id="class_name_btn" value="Add Class">
 <input type="button" name="lab_name_btn" id="lab_name_btn" value="Add Lab">
-<form action="http://localhost:5000/a" method="post" id="abc">
+<form action="" method="post" id="abc">
 
 <div id="fill_class_details_div" style="display:none">
+    <br>
 <table id="fill_class_details">
 <tr>
      <td>Subject Name :</td>
@@ -93,7 +96,8 @@
 
 </table>
 <input type="submit"  id="class_submit" value="Submit">
-</div>
+</div></form>
+<form action="" method="post" id="abc">
 <div id="fill_lab_details_div" style="display:none">
 <table id="fill_lab_details">
 <tr>
@@ -162,5 +166,34 @@
             
         </tr>
     </table>
+</center></div>
+      <!-- Slider -->
+    <script type="text/javascript"> 
+    $(function() {
+        var Page = (function() {
+            var $navArrows = $( '#nav-arrows' ),
+            slitslider = $( '#slider' ).slitslider( {
+                autoplay : true
+            } ),
+            init = function() {
+                initEvents();
+            },
+            initEvents = function() {
+                $navArrows.children( ':last' ).on( 'click', function() {
+                    slitslider.next();
+                    return false;
+                });
+                $navArrows.children( ':first' ).on( 'click', function() {
+                    slitslider.previous();
+                    return false;
+                });
+            };
+            return { init : init };
+        })();
+        Page.init();
+    });
+    $(".text-right").html("Created by Anubhav and Sunil");
+    </script>
+    <!-- /Slider -->
 </body>
 </html>

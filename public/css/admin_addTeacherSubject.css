@@ -1,7 +1,77 @@
 
-.left1{
-width:100%;
-background: linear-gradient(#00c6ff,#0072ff);
-height:100%;
+
+
+@media only screen and (min-width: 100px) and (max-width: 768px)
+{
+#left1{
+
+background : linear-gradient(#00c6ff,#0072ff);
+height:480px;
 overflow-y:scroll;
+}
+
+#subject_edit_delete_table{
+	width:40%;
+	text-align: center;
+	border: 1px solid black;
+
+}
+#subject_edit_delete_table td{
+	padding:5px;
+	border: 1px solid black;
+}
+#subject_edit_delete_table th{
+	padding:5px;
+	border: 1px solid black;
+}	
+
+	#class_submit,#lab_submit,#lab_name_btn, #class_name_btn{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+	
+
+}
+@media  only screen and (min-width: 768px)
+{
+	#class_submit,#lab_submit,#lab_name_btn, #class_name_btn{
+
+    background-color: #0080ff; /* Green */
+   
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+#left1{
+background : linear-gradient(#00c6ff,#0072ff);
+height:635px;
+overflow-y :scroll;
+}	
+#subject_edit_delete_table{
+	width:40%;
+	text-align: center;
+	border: 1px solid black;
+
+}
+#subject_edit_delete_table td{
+	padding:5px;
+	border: 1px solid black;
+}
+#subject_edit_delete_table th{
+	padding:5px;
+	border: 1px solid black;
+}	
+
 }

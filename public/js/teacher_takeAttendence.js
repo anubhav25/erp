@@ -7,7 +7,7 @@ var batch;
 var classs;
 var sem;
 var sub;
-
+var clicked = true;
 
     var date1 = new Date();
 
@@ -105,14 +105,19 @@ console.log(data);
                                         .attr({type : 'button',
                                             id : i,
                                             value:"       ",
+                                            color:'white',
                                         name : student_list[i].name});
                             tr.append($('<td>').append(input));
                              input.click(function(event)
                                             {
-                                             $(this).click(function(){
-                                          $('input[type="submit"].red').removeClass('red')
-                                           $(this).addClass('red');
-});
+                                             if(clicked){
+                $(this).css('background-color', 'black');
+                clicked  = false;
+            } else {
+                $(this).css('background-color', 'white');
+                clicked  = true;
+            } 
+
                                              var id= event.target.id;
                                              if( a[student_list[id].rollno]==='true')
                                              {
@@ -158,7 +163,7 @@ $.post('/takeAttendanceClass/'+batch+'/'+classs+'/'+sem+'/'+sub+'/'+date,a,funct
 });
 
                                                  
-$('#student_list').append(button);
+$('student_list').append(button);
 
 
         }
