@@ -145,7 +145,7 @@ function addToTable(obj)
 												a.sub_name= $(event.target).parent().siblings().eq(1).text()
                                                 $.post("/removeLecture",a,function(data){
 		                                    		if(data.msg=="ok"){
-		                                    			alert("delete succesfull");
+		                                    			alert("delete successful");
 		                                    			var parent =event.target.parentNode.parentNode.parentNode;
 		                                    			var child =event.target.parentNode.parentNode;
 

@@ -96,7 +96,7 @@ $.post('/updateTeacherDetails',tcDetails,function (data) {
 			console.log(data)
 			if(data.msg==="ok")
 			{
-				alert("Teacher Added");
+                alert("Details Updated");
                 $('#name').val('');
                 $('#mob_no').val('');
                 $('#dob').val('');

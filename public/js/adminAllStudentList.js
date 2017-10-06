@@ -1,6 +1,6 @@
 $(document).ready(function($) {
 
-var student_edit_delete_table = $("#student_edit_delete_table");
+var student_edit_delete_table = $("#student_edit_delete_table tbody");
 var addStudent = $("#addStudent");
 
 $("#addStudent").click(function(){
@@ -61,15 +61,19 @@ $("#addStudent").click(function(){
 		                                    	$.post("/deleteStudent",a,function(data){
 		                                    		if(data.msg=="ok"){
 		                                    			
-		                                    			alert("delete succesfull");
+		                                    			alert("delete successful");
 		                                    			var parent =event.target.parentNode.parentNode.parentNode;
 		                                    			var child =event.target.parentNode.parentNode;
 
 		                                    			parent.removeChild(child);
-		                                    		
+                                                        if(parent.childNodes.length==0)
+                                                        {
+                                                            student_edit_delete_table.hide();
+                                                        }
 		                                    		}
 		                                    		else{
 		                                    			alert("error");
+
 		                                    		}
 		                               });     	
 			                    				
@@ -78,7 +82,7 @@ $("#addStudent").click(function(){
 							
 						
 							student_edit_delete_table.append(tr);
-
+            				student_edit_delete_table.parent().show();
 		}
 
 });

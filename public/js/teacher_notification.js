@@ -37,7 +37,6 @@ $.get('/myLectures',function (data){
     
     var slelectBox = $('#slelectBox');
     var lectureCount=list.length;
-    alert(list);
     if(lectureCount>1)
     {
 

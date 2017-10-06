@@ -90,5 +90,8 @@ function insertIntoTable(a){
     {
         per ='--'
     }
-    $('#attendanceTable tbody').append($('<tr>').append($('<td>').text(a.sub)).append($('<td>').text(t)).append($('<td>').text(a.p)).append($('<td>').text(a.a)).append($('<td>').text(per)));
+    var table=$('#attendanceTable tbody');
+    table.append($('<tr>').append($('<td>').text(a.sub)).append($('<td>').text(t)).append($('<td>').text(a.p)).append($('<td>').text(a.a)).append($('<td>').text(per)));
+    table.parent().show();
+
 }

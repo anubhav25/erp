@@ -29,7 +29,7 @@ var selfList=$('#selfList');
 
 
     //   var socket = io('http://erp.openode.io/');
-    var socket = io('http://localhost:3000');
+    var socket = io();
 
 $.get('/myLectures',function (data){
   console.log(data);

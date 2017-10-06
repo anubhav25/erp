@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-var studentAttendenceList = $("#studentAttendenceList");
+var studentAttendenceList = $("#studentAttendenceList tbody");
 var btn = $("#btn");
 var submit = $("#submit");
 var date = $("#date");
@@ -41,7 +41,6 @@ console.log(data);
                                 input.click(function(event)
                                             {
                                                btn.hide();
-                                            studentAttendenceList.show();
                                                 var a=parseInt( event.target.id);
                                                 console.log(a);
                                                $.get('/getStudentList/'+list[a].class_name+'/'+list[a].sem+'/'+list[a].group,function(student_list){
@@ -60,7 +59,6 @@ console.log(data);
                                   input.click(function(event)
                                             {
                                               btn.hide();
-                                            studentAttendenceList.show();
                                                 var a= parseInt(event.target.id);
                                            console.log(a);
 
@@ -87,7 +85,6 @@ console.log(data);
         
         var i;
         for(i=0;i<StudentCount;i++){
-        alert(StudentCount);
         batch=student_list[i].batch_name;
         classs=student_list[i].classs;
         sem=student_list[i].sem;
@@ -104,36 +101,35 @@ console.log(data);
                             var input=$('<input>')
                                         .attr({type : 'button',
                                             id : i,
-                                            value:"       ",
+                                            value:"__A__",
                                             color:'white',
                                         name : student_list[i].name});
                             tr.append($('<td>').append(input));
                              input.click(function(event)
                                             {
-                                             if(clicked){
-                $(this).css('background-color', 'black');
-                clicked  = false;
-            } else {
-                $(this).css('background-color', 'white');
-                clicked  = true;
-            } 
 
                                              var id= event.target.id;
                                              if( a[student_list[id].rollno]==='true')
                                              {
-                                                 a[student_list[id].rollno]='false';
+                                                 a[student_list[id].rollno]='false'
+                                                 $(this).attr('value','__A__');
+                                                 $(this).css('background-color','white');
                                              }
                                              else
                                              {
                                                  a[student_list[id].rollno]='true';
+                                                 $(this).attr('value','__P__');
+                                                 $(this).css('background-color','#465465');
                                              }
                                              console.log(a);
                                                 });
                                              
                             
                             studentAttendenceList.append(tr);
+                            studentAttendenceList.parent().show();
 
-}
+
+        }
 var button =$('<input>').attr({
   id:"submit",
   type:'button',
@@ -142,9 +138,9 @@ var button =$('<input>').attr({
 });
 button.click(function(event)
                                 {
-                                  studentAttendenceList.hide();
+                                  studentAttendenceList.parent().hide();
                                   btn.show();
-                                  $('#studentAttendenceList tbody').html('');
+                                    studentAttendenceList.html('');
                                  
                                   $(this).remove();
 
@@ -163,7 +159,7 @@ $.post('/takeAttendanceClass/'+batch+'/'+classs+'/'+sem+'/'+sub+'/'+date,a,funct
 });
 
                                                  
-$('student_list').append(button);
+$('#student_list').append(button);
 
 
         }

@@ -1,6 +1,6 @@
 $(document).ready(function($) {
 
-var teacher_edit_delete_table = $("#teacher_edit_delete_table");
+var teacher_edit_delete_table = $("#teacher_edit_delete_table tbody");
 var addTeacher = $("#addTeacher");
 
 $("#addTeacher").click(function(){
@@ -52,7 +52,7 @@ $("#addTeacher").click(function(){
 											class : 'class_assign'});
 							input.click(function(event)
 		                                    {
-                                                 alert();
+
 		                                    	sessionStorage.email = $(event.target).parent().siblings().eq(1).text() 	;
 			                    				window.location.href="admin_addTeacherSubject.html";
 
@@ -72,11 +72,15 @@ $("#addTeacher").click(function(){
                                                
 		                                    	$.post("/deleteTeacher",a,function(data){
 		                                    		if(data.msg=="ok"){
-		                                    			alert("delete succesfull");
+		                                    			alert("delete successful");
 		                                    			var parent =event.target.parentNode.parentNode.parentNode;
 		                                    			var child =event.target.parentNode.parentNode;
 
 		                                    			parent.removeChild(child);
+		                                    			if(parent.childNodes.length==0)
+														{
+															teacher_edit_delete_table.hide();
+														}
 		                                    		}
 		                                    		else{
 		                                    			alert("error");
@@ -85,9 +89,11 @@ $("#addTeacher").click(function(){
 			                    				 });
 		                          
 							tr.append($('<td>').append(input));
-							
+
 						
 							teacher_edit_delete_table.append(tr);
+							teacher_edit_delete_table.parent().show();
+
 }
 		
 

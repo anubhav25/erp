@@ -5,7 +5,7 @@ $(document).ready(function($) {
 
 $.get('/getMyDetails',function(data)
 {
-	alert();
+
 	console.log(email);
 
 	$('#name').val(data.name);

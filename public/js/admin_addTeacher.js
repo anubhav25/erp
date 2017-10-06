@@ -81,7 +81,7 @@ console.log(tcDetails);
 			console.log(data)
 			if(data.msg==="ok")
 			{
-				alert("Teacher Added");
+				alert("Teacher Added, Password sent to email.");
                 $('#name').val('');
                 $('#mob_no').val('');
                 $('#dob').val('');

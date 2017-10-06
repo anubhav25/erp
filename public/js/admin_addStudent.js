@@ -116,7 +116,38 @@ $('#myform').submit(function(){
         console.log(data)
         if(data.msg=="ok")
         {
-            alert("student added");
+            alert("student added, Password sent to Email.");
+
+            $('#name').val('');
+            $('#mob_no').val('');
+            $('#rollno').val('');
+            $('#batch_name').val('');
+            $('#classs').val('');
+            $('#sem').val('');
+            $('#fname').val('');
+            $('#fmob_no').val('');
+            $('#foccupation').val('');
+            $('#mname').val('');
+            $('#dob').val('');
+            $('#religion').val('');
+            $('#bg').val('');
+            $('#gender').val('');
+            $('#Nationality').val('');
+            $('#caste').val('');
+            $('#Category').val('');
+            $('#family_income').val('');
+            $('#voter_card_no').val('');
+            $('#aadhar_card_no').val('');
+            $('#residancy').val('');
+            $('#email').val('');
+            $('#classs_group').val('');
+            $('#address').val('');
+            $('#city').val('');
+            $('#distt').val('');
+            $('#state').val('');
+            $('#pin').val('');
+            $('#landline').val('');
+            $('#country').val('');
         }
         else
         {
