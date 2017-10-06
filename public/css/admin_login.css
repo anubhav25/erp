@@ -21,7 +21,7 @@ height:480px;
 overflow-y:scroll;
 
 }
-li {
+ ul li a {
 color: black;
 }
 .right1{
@@ -49,9 +49,10 @@ height:635px;
 overflow-y:scroll;
 
 }
-li {
+ ul li a {
 color: black;
 }
+
 .right1{
 width:50%; 
 background: linear-gradient(#00c6ff,#0072ff);
@@ -60,7 +61,5 @@ float:left;
 height:635px;
 overflow-y:scroll;
 }
-li {
-color: black;
-}
+
 }
