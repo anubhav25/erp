@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	
-    <link rel="stylesheet" href="css/body.css">
+    
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="stylesheet" href="css/admin_login.css">
     <link rel="shortcut icon" href="images/favicon.png">
@@ -25,6 +25,7 @@
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/admin_login.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
 </head>
@@ -46,7 +47,7 @@
                         <li><a href="adminAllTeacherList.html">Teacher</a></li>
                         <li><a href="adminAllStudentList.html">Student</a></li>
                         <li><a href="admin_notification.html">Add notification</a></li>
-						<li><a href="index.html">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
                     </ul>        
                 </div>
             </div>
@@ -64,7 +65,10 @@
 	</div>
 
 
-    <!-- Slider -->
+	
+
+
+  <!-- Slider -->
     <script type="text/javascript"> 
     $(function() {
         var Page = (function() {
@@ -91,22 +95,17 @@
     });
     $(".text-right").html("Created by Anubhav and Sunil");
     </script>
-     <script src="/socket.io/socket.io.js"></script>
+    <!-- /Slider -->
+    <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src ="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src='js/admin_login.js'></script>
-
-
-    <!-- /Slider -->
-	
+    <script src ="js/recieve_notification_teacher.js"></script>
+    
 	</div>
 
 
 
 
 
-
-
-    
 </body>
 </html>

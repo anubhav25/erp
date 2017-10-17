@@ -41,7 +41,7 @@
                         <li class="active"><a href="adminAllTeacherList.html">Teacher</a></li>
                         <li><a href="adminAllStudentList.html">Student</a></li>
                         <li><a href="admin_notification.html">Add notification</a></li>
-						<li><a href="index.html">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
                     </ul>        
                 </div>
             </div>
@@ -53,19 +53,19 @@
         <br>
 <input type="button" name="class_name_btn" id="class_name_btn" value="Add Class">
 <input type="button" name="lab_name_btn" id="lab_name_btn" value="Add Lab">
-<form action="" method="post" id="abc">
+<form>
 
 <div id="fill_class_details_div" style="display:none">
     <br>
 <table id="fill_class_details">
 <tr>
      <td>Subject Name :</td>
-     <td><input type="text" name="class_sub_name" id="class_sub_name"></td>
+     <td><input type="text" name="class_sub_name" id="class_sub_name" required></td>
 
 </tr>
 <tr>
      <td>Class :</td>
-     <td><select id="class_class_name">
+     <td><select id="class_class_name" required>
      <option value="">class</option>
      <option value="csea" name="csea">CSE A</option>
      <option value="cseb" name="cseb">CSE B</option>
@@ -78,7 +78,7 @@
 </tr>
 <tr>
      <td>Semester :</td>
-     <td><select name="class_sem" id="class_sem">
+     <td><select name="class_sem" id="class_sem" required>
         <option value="">Semester</option>
         <option value="1" name="1">1</option>
      <option value="2" name="2">2</option>
@@ -97,17 +97,17 @@
 </table>
 <input type="submit"  id="class_submit" value="Submit">
 </div></form>
-<form action="" method="post" id="abc">
+<form>
 <div id="fill_lab_details_div" style="display:none">
 <table id="fill_lab_details">
 <tr>
      <td>Subject Name :</td>
-     <td><input type="text" name="lab_sub_name" id="lab_sub_name"></td>
+     <td><input type="text" name="lab_sub_name" id="lab_sub_name" required></td>
 
 </tr>
 <tr>
      <td>Class :</td>
-    <td><select id="lab_class_name">
+    <td><select id="lab_class_name" required>
     <option value="">class</option>
      <option value="csea" name="csea">CSE A</option>
      <option value="cseb" name="cseb">CSE B</option>
@@ -120,7 +120,7 @@
 </tr>
 <tr>
      <td>Semester :</td>
-      <td><select id="lab_sem">
+      <td><select id="lab_sem" required>
         <option value="">Semester</option>
     <option value="1" name="1">1</option>
      <option value="2" name="2">2</option>
@@ -136,7 +136,7 @@
 </tr>
 <tr>
      <td>Class Group :</td>
-      <td><select id="lab_group">
+      <td><select id="lab_group" required>
      <option value="">Group</option>
      <option value="1" name="1">1</option>
      <option value="2" name="2">2</option>

@@ -9,11 +9,12 @@
 
 background : linear-gradient(#00c6ff,#0072ff);
 height:480px;
+width:100%;
 overflow-y:scroll;
 }
 table{
-width:90%;
-margin: 10px;
+width:60%;
+margin: 10px 20%;
 }
 input{
   width: 90%
@@ -21,20 +22,20 @@ input{
 select{
     width: 90%;
 }
-#address{
-  width:96.2%;
-}
+
+
 }
 @media  only screen and (min-width: 768px)
 {
 .left1{
 background : linear-gradient(#00c6ff,#0072ff);
 height:635px;
-overflow-y :scroll;
+width:100%;
+overflow-y:scroll;
 }
 table{
-width:90%;
-margin: 10px;
+width:60%;
+margin: 10px 20%;
 }
 input{
   width: 90%
@@ -42,11 +43,11 @@ input{
 select{
     width: 90%;
 }
-#address{
-  width:96.2%;
-}	
-}
+	
+
 
 #dob{
 	width: 90%;
+}
+
 }

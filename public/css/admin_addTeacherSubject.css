@@ -6,8 +6,8 @@
 #left1{
 
 background : linear-gradient(#00c6ff,#0072ff);
-height:480px;
-overflow-y:scroll;
+min-height:480px;
+
 }
 
 #subject_edit_delete_table{
@@ -56,8 +56,8 @@ overflow-y:scroll;
 }
 #left1{
 background : linear-gradient(#00c6ff,#0072ff);
-height:635px;
-overflow-y :scroll;
+min-height:635px;
+
 }	
 #subject_edit_delete_table{
 	width:40%;

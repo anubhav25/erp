@@ -41,7 +41,7 @@
                         <li ><a href="adminAllTeacherList.html">Teacher</a></li>
                         <li><a href="adminAllStudentList.html">Student</a></li>
                         <li class="active"><a href="admin_notification.html">Add notification</a></li>
-						<li><a href="/logout">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
                     </ul>        
                 </div>
             </div>
@@ -50,11 +50,11 @@
     <!-- /header -->
 	<div class="body1"><center>
 	<div class="left1" style="width:100%;float:left">
-        <form>
+        
             <div id="heading" style="display:block">
                 <center><h3>Notification</h3></center>
                 <label for="notification_heading"> Notification heading :</label><br><br>
-                <input type="text" name="notification_heading" id="notification_heading"><br><br>
+                <input type="text" name="notification_heading" id="notification_heading" required><br><br>
                 <select name="target" id="target">
                     <option value="all">all</option>
                     <option value="teachers">teachers</option>
@@ -66,12 +66,12 @@
             </div>
             <br><br>
             <div id="text_div" style="display:none">Send notification as text :<br><br>
-                 <input type="text" name="notification_content" id="notification_content"><br><br>
-                 <input type="submit"  value="Submit">
+               <form>  <input type="text" name="notification_content" id="notification_content" required><br><br>
+                 <input type="submit"  value="Submit"></form>
             </div>
              <div id="file_div" style="display:none">Send notification as file :
-                 <br><br>
-                 <input type="file" name="file" id="file" ><br><br>
+                 <br><br><form>
+                 <input type="file" name="file" id="file" required><br><br>
                 <!--input type="submit"  value="Submit"-->
              </div>
             <br><br>

@@ -40,7 +40,7 @@
                         <li><a href="change_Password.html">Change Password</a></li>
                         <li class="active"><a href="teacher_notification.html">Add Notification</a></li>
                         <li><a href="teacher_contactUs.html">Contact Us</a></li>
-						<li><a href="index.html">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
                     </ul>        
                 </div>
             </div>
@@ -53,7 +53,7 @@
 <div id="heading" style="display:block">
 <center><h3>Notification for Students</h3></center>
     Notification heading :<br><br>
-     <input type="text" name="notification_heading" id="notification_heading"><br><br>
+     <input type="text" name="notification_heading" id="notification_heading" required><br><br>
      select Notification Option :<br><br>
       <div id="slelectBox">
         
@@ -61,7 +61,7 @@
    <input type="button"  id="textbtn" name="textbtn" value="Send Text Notification">
    <input type="button"  id="filebtnbtn" name="filebtnbtn" value="Send File Notification"></div><br><br>
      <div id="text_div" style="display:none">Send notification as text :<br><br>
-     <input type="text" name="notification_content" id="notification_content"><br><br>
+     <input type="text" name="notification_content" id="notification_content" ><br><br>
      <input type="submit"  id="submit_to_teacher" value="Submit">
      </div>
      <div id="file_div" style="display:none">Send notification as file :<br><br>

@@ -1,58 +1,4 @@
-/*body {
-  font: 1em sans-serif;
-  padding: 0;
-  margin : 0;
-}
 
-form {
-  max-width: 200px;
-}
-
-p * {
-  display: block;
-}
-
-input[type=email]{
-  -webkit-appearance: none;
-
-  width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-
-  font-family: inherit;
-  font-size: 90%;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* This is our style for the invalid fields */
-/*input:invalid{
-  border-color: #900;
-  background-color: #FDD;
-}
-
-input:focus:invalid {
-  outline: none;
-}
-
-/* This is the style of our error messages */
-/*.error {
-  width  : 100%;
-  padding: 0;
- 
-  font-size: 80%;
-  color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
- 
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.error.active {
-  padding: 0.3em;
-}*/
 
 
 
@@ -64,11 +10,13 @@ input:focus:invalid {
 
 background : linear-gradient(#00c6ff,#0072ff);
 height:480px;
+width:100%;
 overflow-y:scroll;
 }
+
 table{
-width:90%;
-margin: 10px;
+width:60%;
+margin: 10px 20%;
 }
 input{
   width: 90%
@@ -76,20 +24,18 @@ input{
 select{
     width: 90%;
 }
-#address{
-   width:96.2%;
-}
 }
 @media  only screen and (min-width: 768px)
 {
 .left1{
 background : linear-gradient(#00c6ff,#0072ff);
 height:635px;
-overflow-y :scroll;
+width:100%;
+overflow-y:scroll;
 }
 table{
-width:90%;
-margin: 10px;
+width:60%;
+margin: 10px 20%;
 }
 input{
   width: 90%;
@@ -97,7 +43,6 @@ input{
 select{
     width: 90%;
 }
-#address{
-  width:96.2%;
-}
+
+
 }

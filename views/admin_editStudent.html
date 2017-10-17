@@ -36,7 +36,7 @@
                         <li><a href="adminAllTeacherList.html">Teacher</a></li>
                         <li class="active"><a href="adminAllStudentList.html">Student</a></li>
                         <li><a href="admin_notification.html">Add notification</a></li>
-						<li><a href="index.html">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
                     </ul>        
                 </div>
             </div>
@@ -46,23 +46,23 @@
 	<div class="body1" >
 	<div class="left1" >
         <form name="myform" id="myform" >
-<h3>1. General Information</h3>
+<center><h3 >1. General Information<h3></h3>
 <table id="fill_details">
 <tr>
      <td>Name :</td>
-     <td><input type="text" name="name" id="name"></td>
+     <td><input type="text" name="name" id="name" required></td>
      <td>Mobile No. :</td>
-     <td><input type="number" name="mob_no" id="mob_no"></td>
+     <td><input type="number" name="mob_no" id="mob_no" required min="7000000000" max="9999999999"></td>
 </tr>
 <tr>
      <td>Roll No :</td>
-     <td><input type="text" name="rollno" id="rollno"></td>
+     <td><input type="text" name="rollno" id="rollno" required></td>
      <td>Batch Name :</td>
-     <td><input type="number" name="batch_name" id="batch_name"></td>
+     <td><input type="number" name="batch_name" id="batch_name" min="2018" max="2050" required></td>
 </tr>
 <tr>
      <td>Class :</td>
-     <td><select id="classs">
+     <td><select id="classs" required>
 	 <option value="">class</option>
 	 <option value="csea" name="csea">CSE A</option>
 	 <option value="cseb" name="cseb">CSE B</option>
@@ -72,26 +72,36 @@
 	 <option value="bt" name="bt">BT</option>
 	 </select></td>
      <td>Semester :</td>
-     <td><input type="number" name="sem" id="sem"></td>
+        <td><select id="sem" name="sem" required>
+     <option value="" name="">Sem</option>
+     <option value="1" name="1">1</option>
+     <option value="2" name="2">2</option>
+     <option value="3" name="3">3</option>
+     <option value="4" name="4">4</option>
+     <option value="5" name="5">5</option>
+     <option value="6" name="6">6</option>
+     <option value="7" name="7">7</option>
+     <option value="8" name="8">8</option>
+     </select></td>
 </tr>
 <tr>
      <td>Father's Name :</td>
-     <td><input type="text" name="fname" id="fname"></td>
+     <td><input type="text" name="fname" id="fname" required></td>
      <td>Father's Mobile No. :</td>
-     <td><input type="number" name="fmob_no" id="fmob_no"></td>
+     <td><input type="number" name="fmob_no" id="fmob_no" min="7000000000" max="9999999999"></td>
 </tr>
 <tr>
      <td>Father's Occupation :</td>
-     <td><input type="text" name="foccupation" id="foccupation"></td>
+     <td><input type="text" name="foccupation" id="foccupation" required></td>
      <td>Mother's Name :</td>
-     <td><input type="text" name="mname" id="mname"></td>
+     <td><input type="text" name="mname" id="mname" required></td>
 </tr>
 <tr>
      <td>DOB :</td>
-     <td><input type="date" name="dob" id="dob"></td>
+     <td><input type="date" name="dob" id="dob" required></td>
      <td>Religion</td>
-      <td><select name="religion" id="religion">
-        <option >Religion</option>
+      <td><select name="religion" id="religion" required>
+        <option value="">Religion</option>
          <option value="hindu">Hindu</option>
           <option value="muslim">Muslim</option>
            <option value="sikh">Sikh</option>
@@ -115,8 +125,8 @@
              
      </select></td>
      <td>Gender :</td>
-     <td><select name="gender" id="gender">
-        <option >Gender</option>
+     <td><select name="gender" id="gender" required>
+        <option value="">Gender</option>
          <option value="male">Male</option>
          <option value="female">Female</option>
             <option value="other">Other</option>
@@ -125,27 +135,27 @@
 </tr>
 <tr>
      <td>Nationality :</td>
-     <td><input type="text" name="Nationality" id="Nationality"></td>
+     <td><input type="text" name="Nationality" id="Nationality" required></td>
      <td>Caste :</td>
-     <td><input type="text" name="caste" id="caste"></td>
+     <td><input type="text" name="caste" id="caste" required></td>
 </tr>
 <tr>
      <td>Category :</td>
-     <td><input type="text" name="Category" id="Category"></td>
+     <td><input type="text" name="Category" id="Category" required></td>
      <td>Family Income :</td>
-     <td><input type="number" name="family_income" id="family_income"></td>
+     <td><input type="number" name="family_income" id="family_income" required></td>
 </tr>
 <tr>
      <td>Voter Card No :</td>
      <td><input type="text" name="voter_card_no" id="voter_card_no"></td>
      <td>Aadhar Card No</td>
-     <td><input type="number" name="aadhar_card_no" id="aadhar_card_no"></td>
+     <td><input type="number" name="aadhar_card_no" id="aadhar_card_no" min="100000000000" max="999999999999" required></td>
 </tr>
 
 <tr>
      <td>Rural/Urban  :</td>
      
-       <td><select name="residancy" id="residancy">
+       <td><select name="residancy" id="residancy" required>
        
          <option value="rural">Rural</option>
          <option value="urban">Urban</option>
@@ -153,12 +163,12 @@
              
      </select></td>
      <td>Email_ID :</td>
-     <td><input type="email" name="email" id="email">
-	 <span class="error" aria-live="polite"></span></td>
+     <td><input type="email" name="email" id="email" required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+	
 </tr>
 <tr>
      <td>Class Group :</td>
-     <td><select id="classs_group">
+     <td><select id="classs_group" required>
      <option value="">Class Group</option>
      <option value="1" name="1">1</option>
      <option value="2" name="2">2</option>
@@ -170,27 +180,27 @@
 
 <tr>
      <td>Address :</td>
-     <td colspan="3"><input type="text" name="address" id="address" width="500px" height="10px"></td>
+     <td><input type="text" name="address" id="address"  required></td>
      
 </tr>
 
 <tr>
      <td>City :</td>
-     <td><input type="text" name="city" id="city"></td>
+     <td><input type="text" name="city" id="city" required></td>
      <td>Distt.</td>
-     <td><input type="text" name="distt" id="distt"></td>
+     <td><input type="text" name="distt" id="distt" required></td>
 </tr>
 <tr>
      <td>State :</td>
-     <td><input type="text" name="state" id="state"></td>
+     <td><input type="text" name="state" id="state" required></td>
      <td>Pin No.</td>
-     <td><input type="number" name="pin" id="pin"></td>
+     <td><input type="number" name="pin" id="pin" required min="100000" max="999999"></td>
 </tr>
 <tr>
      <td>Land Line No :</td>
      <td><input type="number" name="landline" id="landline"></td>
      <td>Country.</td>
-     <td><input type="text" name="country" id="country"></td>
+     <td><input type="text" name="country" id="country" required></td>
 </tr>
 
 
