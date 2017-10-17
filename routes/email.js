@@ -5,7 +5,7 @@
 var nodemailer=require('nodemailer');
 
 var mymail='uietkuk.erp@gmail.com';
-var mypass='anubhavsunil'
+var mypass='anubhavsunil';
 
 function sendMail(sub,data,to)
 {

@@ -1,36 +1,38 @@
 {
-  "name": "erp",
-  "version": "1.0.0",
-  "description": "\"erp pannel for UIET\"",
-  "scripts": {
-    "test": "echo \"error\""
-  },
-  "main": "bin/www",
-  "dependencies": {
-    "body-parser": "~1.17.1",
-    "client-sessions": "^0.8.0",
-    "consolidate": "^0.14.5",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "file-base64": "^1.0.0",
-    "mongodb": "^2.2.31",
-    "morgan": "~1.8.1",
-    "multer": "^1.3.0",
-    "nodemailer": "^4.1.0",
-    "serve-favicon": "~2.4.2",
-    "socket.io": "^2.0.3",
-    "swig": "^1.4.2"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anubhav25/erp.git"
-  },
-  "author": "anubhav",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anubhav25/erp/issues"
-  },
-  "homepage": "https://github.com/anubhav25/erp#readme"
+    "name": "erp",
+    "version": "1.0.0",
+    "description": "\"erp pannel for UIET\"",
+    "scripts": {
+        "test": "echo \"error\""
+    },
+    "main": "bin/www",
+    "dependencies": {
+        "body-parser": "~1.17.1",
+        "client-sessions": "^0.8.0",
+        "consolidate": "^0.14.5",
+        "cookie-parser": "~1.4.3",
+        "debug": "~2.6.3",
+        "express": "~4.15.2",
+        "file-base64": "^1.0.0",
+        "mongodb": "^2.2.31",
+        "morgan": "~1.8.1",
+        "multer": "^1.3.0",
+        "nodemailer": "^4.1.0",
+        "serve-favicon": "~2.4.2",
+        "socket.io": "^2.0.3",
+        "swig": "^1.4.2",
+        "bootstrap": "^4.0.0-alpha.6",
+        "font-awesome": "^4.7.0"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anubhav25/erp.git"
+    },
+    "author": "anubhav",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/anubhav25/erp/issues"
+    },
+    "homepage": "https://github.com/anubhav25/erp#readme"
 }

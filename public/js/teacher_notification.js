@@ -1,12 +1,12 @@
 $(document).ready(function($) {
 
 var slelectBox = $("#slelectBox");
-   
+
 $("#textbtn").click(function(event)
           {
                 $("#file_div").hide();
                $("#text_div").show();
-              
+
           });
 $("#filebtnbtn").click(function(event)
           {
@@ -15,15 +15,15 @@ $("#filebtnbtn").click(function(event)
           });
 $("#submit").click(function(event)
           {
-                     
+
                $("#text_div").hide();
                $("#file_div").hide();
-               
+
           });
-  
 
 
-    
+
+
 var list;
 var username='';
     $.get('/myusername',function(res)
@@ -34,7 +34,7 @@ $.get('/myLectures',function (data){
   list=data.filter((e)=>
    { return !e.group;}
     );
-    
+
     var slelectBox = $('#slelectBox');
     var lectureCount=list.length;
     if(lectureCount>1)
@@ -54,27 +54,27 @@ $.get('/myLectures',function (data){
 
 //console.log(list);
     for( var id=0;id<lectureCount;id++){
-   
+
 
         if(list[id].group){
 
           $('<input />', { type: 'checkbox', id: 'cb'+id, value: list[id].class_name+'_'+list[id].sem+'_'+list[id].group }).appendTo(slelectBox);
           $('<label />', { 'for': 'cb'+id, text: list[id].class_name+'_'+list[id].sem+'_'+list[id].group }).appendTo(slelectBox);
-                                             } 
+                                             }
                    else{
                      $('<input />', { type: 'checkbox', id: 'cb'+id, value: list[id].class_name+'_'+list[id].sem}).appendTo(slelectBox);
           $('<label />', { 'for': 'cb'+id, text: list[id].class_name+'_'+list[id].sem}).appendTo(slelectBox);
-                                      
-                   
 
-       }                    
+
+
+       }
     }
 
 
 
 });
 
- 
+
 
 
 
@@ -84,7 +84,9 @@ $.get('/myLectures',function (data){
 
 
     $('#file').change(function(e){
-
+      if($('#notification_heading').val()==''){
+        alert('First Enter Heading')
+      };
         var file = e.target.files[0];
         var fileReader = new FileReader();
         fileReader.onload = function (e) {
@@ -96,7 +98,7 @@ $.get('/myLectures',function (data){
              msg.from=username;
             msg.fileName=file.name;
 
-            
+
             for (var i=0;i<list.length;i++)
                 {
                     if($('#cb'+i).checked)
@@ -123,7 +125,7 @@ $.get('/myLectures',function (data){
             data.notification_heading=$('#notification_heading').val();
             data.notification_content=$('#notification_content').val();
             data.from=username;
-            
+
             for (var i=0;i<list.length;i++)
                 {
                     if(document.getElementById('cb'+i).checked)
@@ -145,4 +147,3 @@ $.get('/myLectures',function (data){
 
 
 });
-

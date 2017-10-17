@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07ab46d6-069d-4c6b-8f16-d98e8b271407" name="Default" comment="added change password function">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/teacherShowAttendance.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/gen_validatorv4.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/teacherShowAttendence.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/adminAllStudentList.js" afterPath="$PROJECT_DIR$/public/js/adminAllStudentList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/adminAllTeacherList.js" afterPath="$PROJECT_DIR$/public/js/adminAllTeacherList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin_addStudent.js" afterPath="$PROJECT_DIR$/public/js/admin_addStudent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin_addTeacher.js" afterPath="$PROJECT_DIR$/public/js/admin_addTeacher.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin_addTeacherSubject.js" afterPath="$PROJECT_DIR$/public/js/admin_addTeacherSubject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin_editStudent.js" afterPath="$PROJECT_DIR$/public/js/admin_editStudent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/admin_editTeacher.js" afterPath="$PROJECT_DIR$/public/js/admin_editTeacher.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/show_attendance.js" afterPath="$PROJECT_DIR$/public/js/show_attendance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/student_profile.js" afterPath="$PROJECT_DIR$/public/js/student_profile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher_login.js" afterPath="$PROJECT_DIR$/public/js/teacher_login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher_notification.js" afterPath="$PROJECT_DIR$/public/js/teacher_notification.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/teacher_takeAttendence.js" afterPath="$PROJECT_DIR$/public/js/teacher_takeAttendence.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/db.js" afterPath="$PROJECT_DIR$/routes/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_notifications" afterPath="$PROJECT_DIR$/student_notifications" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teacher_notifications" afterPath="$PROJECT_DIR$/teacher_notifications" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/adminAllStudentList.html" afterPath="$PROJECT_DIR$/views/adminAllStudentList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/adminAllTeacherList.html" afterPath="$PROJECT_DIR$/views/adminAllTeacherList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/student_attendence.html" afterPath="$PROJECT_DIR$/views/student_attendence.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/email.js" afterPath="$PROJECT_DIR$/routes/email.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin_addTeacherSubject.html" afterPath="$PROJECT_DIR$/views/admin_addTeacherSubject.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/teacherShowAttendance.html" afterPath="$PROJECT_DIR$/views/teacherShowAttendance.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/teacher_takeAttendence.html" afterPath="$PROJECT_DIR$/views/teacher_takeAttendence.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -38,23 +28,73 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="teacher_takeAttendence.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/teacher_takeAttendence.html">
+      <file leaf-file-name="teacherShowAttendance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/teacherShowAttendance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="69" column="22" lean-forward="false" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+            <state relative-caret-position="170">
+              <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
               <folding>
+                <element signature="n#style#0;n#select#0;n#div#1;n#center#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#1;n#center#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacherShowAttendance.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/teacherShowAttendance.html">
+      <file leaf-file-name="teacherShowAttendence.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/teacherShowAttendence.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="239">
+              <caret line="160" column="18" lean-forward="false" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
+              <folding>
+                <marker date="1508239684325" expanded="true" signature="3993:5113" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="4434:5113" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="4468:4779" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="4783:4913" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="4917:5016" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="5020:5059" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="5063:5101" ph="..." />
+                <marker date="1508239684325" expanded="true" signature="5181:5323" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_addStudent.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin_addStudent.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teacher_takeAttendence.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/teacher_takeAttendence.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1389">
+              <caret line="592" column="5" lean-forward="true" selection-start-line="592" selection-start-column="5" selection-end-line="592" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teacher_takeAttendence.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/teacher_takeAttendence.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -65,22 +105,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add_</find>
-      <find>get_teacher_notification</find>
-      <find>down</find>
-      <find>console</find>
-      <find>admin_notification</find>
-      <find>emmit</find>
-      <find>save_notification</find>
-      <find>update</find>
-      <find>query1</find>
       <find>getStu</find>
       <find>deleteOn</find>
       <find>ema</find>
@@ -94,7 +125,6 @@
       <find>ValidationSet</find>
       <find>old_onsubmit</find>
       <find>sem</find>
-      <find>form</find>
       <find>myLe</find>
       <find>aler</find>
       <find>alertBox</find>
@@ -102,6 +132,16 @@
       <find>tr</find>
       <find>studentAttendenceList</find>
       <find>table</find>
+      <find>get</find>
+      <find>take</find>
+      <find>myLectures</find>
+      <find>getStudentList</find>
+      <find>Att</find>
+      <find>show()</find>
+      <find>show</find>
+      <find>createList</find>
+      <find>form</find>
+      <find>&lt;form</find>
     </findStrings>
     <replaceStrings>
       <replace>emit</replace>
@@ -113,16 +153,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/email.js" />
-        <option value="$PROJECT_DIR$/public/js/loginscript.js" />
-        <option value="$PROJECT_DIR$/public/js/forgotPass.js" />
         <option value="$PROJECT_DIR$/public/js/registerStudent.js" />
         <option value="$PROJECT_DIR$/views/student_result.html" />
         <option value="$PROJECT_DIR$/public/js/result.js" />
         <option value="$PROJECT_DIR$/routes/fileUpload.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/recieve_notification.js" />
         <option value="$PROJECT_DIR$/views/teacher_login.html" />
         <option value="$PROJECT_DIR$/public/js/admin_notification.js" />
@@ -137,7 +173,6 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/change_Password.html" />
         <option value="$PROJECT_DIR$/public/js/changePassword.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/validator.js" />
         <option value="$PROJECT_DIR$/public/js/validator.js" />
         <option value="$PROJECT_DIR$/views/admin_addTeacher.html" />
@@ -147,7 +182,6 @@
         <option value="$PROJECT_DIR$/public/js/validator_teacher.js" />
         <option value="$PROJECT_DIR$/routes/db.js" />
         <option value="$PROJECT_DIR$/public/js/admin_addTeacher.js" />
-        <option value="$PROJECT_DIR$/public/js/admin_addTeacherSubject.js" />
         <option value="$PROJECT_DIR$/public/js/admin_editTeacher.js" />
         <option value="$PROJECT_DIR$/public/js/admin_addStudent.js" />
         <option value="$PROJECT_DIR$/public/js/admin_editStudent.js" />
@@ -159,11 +193,17 @@
         <option value="$PROJECT_DIR$/public/js/adminAllTeacherList.js" />
         <option value="$PROJECT_DIR$/views/adminAllStudentList.html" />
         <option value="$PROJECT_DIR$/public/js/adminAllStudentList.js" />
-        <option value="$PROJECT_DIR$/views/teacher_takeAttendence.html" />
         <option value="$PROJECT_DIR$/public/js/teacher_takeAttendence.js" />
         <option value="$PROJECT_DIR$/views/student_attendence.html" />
         <option value="$PROJECT_DIR$/public/js/show_attendance.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/email.js" />
+        <option value="$PROJECT_DIR$/views/admin_addTeacherSubject.html" />
+        <option value="$PROJECT_DIR$/public/js/admin_addTeacherSubject.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/teacherShowAttendance.html" />
+        <option value="$PROJECT_DIR$/public/js/teacherShowAttendence.js" />
+        <option value="$PROJECT_DIR$/views/teacher_takeAttendence.html" />
       </list>
     </option>
   </component>
@@ -280,14 +320,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,7 +481,15 @@
       <workItem from="1507059031303" duration="316000" />
       <workItem from="1507083724389" duration="10540000" />
       <workItem from="1507143601655" duration="20803000" />
-      <workItem from="1507261371584" duration="5160000" />
+      <workItem from="1507261371584" duration="8408000" />
+      <workItem from="1507319605559" duration="597000" />
+      <workItem from="1507399045073" duration="1385000" />
+      <workItem from="1507432976309" duration="1900000" />
+      <workItem from="1507462033461" duration="597000" />
+      <workItem from="1507742237167" duration="31000" />
+      <workItem from="1507988126214" duration="227000" />
+      <workItem from="1508055491193" duration="595000" />
+      <workItem from="1508220981249" duration="15226000" />
     </task>
     <task id="LOCAL-00001" summary="index.js corrected">
       <created>1505668061357</created>
@@ -492,7 +544,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227101000" />
+    <option name="totallyTimeSpent" value="250907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -501,7 +553,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32405892" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32405892" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28641573" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -577,27 +629,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/registerStudent.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/raw-body/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="195" column="16" lean-forward="false" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/recieve_notification.js" />
-    <entry file="file://$PROJECT_DIR$/routes/fileUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin_notification.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -655,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/chat.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3332">
@@ -675,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="213" column="53" lean-forward="true" selection-start-line="213" selection-start-column="53" selection-end-line="213" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,35 +722,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="388" column="51" lean-forward="true" selection-start-line="388" selection-start-column="51" selection-end-line="388" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/admin_editStudent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="136" column="38" lean-forward="false" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin_editTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="98" column="41" lean-forward="false" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="66" column="68" lean-forward="false" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1136">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="50" column="20" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="112" column="276" lean-forward="false" selection-start-line="112" selection-start-column="274" selection-end-line="112" selection-end-column="276" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,23 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="104" column="21" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/admin_addTeacherSubject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin_addStudent.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="198" column="31" lean-forward="true" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,9 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="62" column="15" lean-forward="false" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -884,33 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="51" column="63" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/adminAllTeacherList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="94" column="70" lean-forward="true" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/teacher_takeAttendence.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="142" column="57" lean-forward="false" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/show_attendance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="94" column="26" lean-forward="false" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,26 +859,132 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="55" column="51" lean-forward="false" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#body#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/teacher_takeAttendence.html">
+    <entry file="file://$PROJECT_DIR$/public/js/show_attendance.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="69" column="22" lean-forward="false" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#1;n#center#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="436">
+          <caret line="94" column="26" lean-forward="false" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin_editTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="94" column="40" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="62" column="17" lean-forward="false" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/email.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/Hello.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/adminAllTeacherList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="60" column="63" lean-forward="true" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/admin_addTeacherSubject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin_addTeacherSubject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="155" column="55" lean-forward="false" selection-start-line="155" selection-start-column="55" selection-end-line="155" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1389">
+          <caret line="592" column="5" lean-forward="true" selection-start-line="592" selection-start-column="5" selection-end-line="592" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/teacherShowAttendance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="170">
+          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#1;n#center#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#center#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/teacherShowAttendence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="160" column="18" lean-forward="false" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
+          <folding>
+            <marker date="1508239684325" expanded="true" signature="3993:5113" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="4434:5113" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="4468:4779" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="4783:4913" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="4917:5016" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="5020:5059" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="5063:5101" ph="..." />
+            <marker date="1508239684325" expanded="true" signature="5181:5323" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin_addStudent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/teacher_takeAttendence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="155" column="17" lean-forward="false" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/teacher_takeAttendence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
           <folding />
         </state>
       </provider>

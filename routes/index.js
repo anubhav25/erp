@@ -157,7 +157,7 @@ app.post("/forgotPass",function(req,res){
     });
 
 
-app.post("/changePass",requireLoginStudent,function(req,res) {
+app.post("/changePass",function(req,res) {
 
 
 
@@ -424,6 +424,24 @@ app.get('/getStudentList/:class/:sem',requireLoginTeacher,function(req,res){
 
 });
 
+app.get('/getAttendance/:class/:sem/:sub/:batch',requireLoginTeacher,function(req,res){
+
+    var query ={
+        sub: req.params.sub,
+        classs : req.params.class,
+        sem :  req.params.sem
+    }
+    req.db.collection('Attendance'+req.params.batch).find(query,{_id:0}).toArray(function(err,objs){
+        if(err)
+        {
+            res.json({msg:"ERROR OCCURRED"});
+            throw err;
+        }
+        res.json(objs);
+    })
+
+
+});
 
 
 app.get('/getStudentList/:class/:sem/:group',requireLoginTeacher,function(req,res){
@@ -432,7 +450,7 @@ app.get('/getStudentList/:class/:sem/:group',requireLoginTeacher,function(req,re
         classs : req.params.class,
         sem :  req.params.sem,
         classs_group : req.params.group
-}
+                };
     req.db.collection('Students').find(query,{_id:0}).toArray(function(err,objs){
         if(err)
         {
@@ -443,6 +461,11 @@ app.get('/getStudentList/:class/:sem/:group',requireLoginTeacher,function(req,re
     })
 
 
+});
+
+app.get('/getAttendanceOfClass/:class/:sem/:group',function(req,res){
+
+    
 });
 
 

@@ -28,9 +28,10 @@ $(document).ready(function($) {
      var socket = io();
     //var socket = io('http://erp.openode.io/');
 
-
     $('#file').change(function(e){
-
+      if($('#notification_heading').val()==''){
+        alert('First Enter Heading')
+      };
         var file = e.target.files[0];
         var fileReader = new FileReader();
         fileReader.onload = function (e) {
@@ -60,12 +61,13 @@ $(document).ready(function($) {
         $('form').submit(function(){
 
 
+
             $("#text_div").hide();
             $("#file_div").hide();
 
             var data={};
             data.notification_heading=$('#notification_heading').val();
-            
+
             data.notification_content=$('#notification_content').val();
            var test =$('#target').val();
             if(test=='all')

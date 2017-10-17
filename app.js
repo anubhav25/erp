@@ -19,7 +19,7 @@ app.use(clientSessions({
     secure: true,
     ephemeral: true,
 
-    activeDuration: 1000 * 60 * 5// if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
+    activeDuration: 1000 * 60 * 15// if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
 
 }));
 

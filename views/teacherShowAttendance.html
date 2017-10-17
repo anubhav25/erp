@@ -1,10 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Attendance</title>
-</head>
-<body>
+    <style>
 
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Attendence</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sl-slide.css">
+
+    <link rel="stylesheet" href="css/teacher_takeAttendence.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="js/teacherShowAttendence.js"></script>
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+
+<body>
+<!--Header-->
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a id="logo" class="pull-left" href="index.html"></a>
+            <div class="nav-collapse collapse pull-right">
+                <ul class="nav">
+                    <li ><a href="teacher_login.html">Home</a></li>
+                    <li class="active"><a href="teacher_takeAttendence.html">Take Attendence</a></li>
+                    <li><a href="change_Password.html">Change Password</a></li>
+                    <li><a href="teacher_notification.html">Add Notification</a></li>
+                    <li><a href="teacher_contactUs.html">Contact Us</a></li>
+                    <li><a href="logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- /header -->
+
+<div class="body1">
+    <div class="left1" id="left1">
+        <center>
+            <div id="btn">
+
+            </div><br>
+                      <div id="student_list" >
+                          <select name="month" id="month" style="display:none">
+
+                          </select>
+                <table id="studentList" style="display:none" >
+<thead>
+
+</thead>
+                    <tbody></tbody>
+                </table><br>
+
+            </div></center>
+    </div>
+
+
+</div>
+
+
+
+
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.ba-cond.min.js"></script>
+<script src="js/jquery.slitslider.js"></script>
+<!-- Slider -->
+<script type="text/javascript">
+    $(function() {
+        var Page = (function() {
+            var $navArrows = $( '#nav-arrows' ),
+                slitslider = $( '#slider' ).slitslider( {
+                    autoplay : true
+                } ),
+                init = function() {
+                    initEvents();
+                },
+                initEvents = function() {
+                    $navArrows.children( ':last' ).on( 'click', function() {
+                        slitslider.next();
+                        return false;
+                    });
+                    $navArrows.children( ':first' ).on( 'click', function() {
+                        slitslider.previous();
+                        return false;
+                    });
+                };
+            return { init : init };
+        })();
+        Page.init();
+    });
+
+    $(".text-right").html("Created by Anubhav and Sunil");
+</script>
+
+
+<!-- /Slider -->
 </body>
 </html>

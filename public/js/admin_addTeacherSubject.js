@@ -12,28 +12,29 @@ $("#lab_name_btn").click(function(event)
                $("#fill_class_details_div").hide();
           });
 
-function subjectDetails(email,class_sub_name,class_class_name,class_sem){
+function subjectDetails(email,class_sub_name,class_class_name,class_sem,batch){
 this.sub_name=class_sub_name;
 this.class_name=class_class_name;
 this.sem=class_sem;
-
+    this.batch=batch;
 this.email=email;
 
 }
 
-function labDetails(email,lab_sub_name,lab_class_name,lab_sem,lab_group){
+function labDetails(email,lab_sub_name,lab_class_name,lab_sem,lab_group,batch){
 this.sub_name=lab_sub_name;
 this.class_name=lab_class_name;
 this.sem=lab_sem;
 this.group=lab_group;
 this.email=email;
+    this.batch=batch;
 
 }
 
 
 
 
-$('#class_submit').click(function (argument) {
+$('#classform').submit(function (argument) {
 
 			$("#fill_class_details_div").hide();
                $("#fill_lab_details_div").hide();
@@ -43,9 +44,10 @@ var email= sessionStorage.email;
      var class_sub_name=$('#class_sub_name').val();
 var class_class_name=$('#class_class_name').val();
 var class_sem=$('#class_sem').val();
+var batch=$('#class_batch').val();
 
 
-var subDetails=new subjectDetails(email,class_sub_name,class_class_name,class_sem);
+var subDetails=new subjectDetails(email,class_sub_name,class_class_name,class_sem,batch);
 
 
 $.post('/assignLecture',subDetails,function (data) {
@@ -61,11 +63,10 @@ $.post('/assignLecture',subDetails,function (data) {
                }
           });
 
-
+return false;
 });
 
-
-$('#lab_submit').click(function (argument) {
+$('#labform').submit(function (argument) {
 
 			$("#fill_class_details_div").hide();
                $("#fill_lab_details_div").hide();
@@ -76,8 +77,9 @@ var email= sessionStorage.email;
 var lab_class_name=$('#lab_class_name').val();
 var lab_sem=$('#lab_sem').val();
 var lab_group=$('#lab_group').val();
+    var batch=$('#class_batch').val();
 
-var subDetails=new labDetails(email,lab_sub_name,lab_class_name,lab_sem,lab_group);
+var subDetails=new labDetails(email,lab_sub_name,lab_class_name,lab_sem,lab_group,batch);
 
 
 $.post('/assignLecture',subDetails,function (data) {
@@ -94,22 +96,21 @@ $.post('/assignLecture',subDetails,function (data) {
                }
           });
 
-
+return false;
 });
 
 
 
 
 
-
+/*
 
 
 $('form').submit(function(){
 
-
 	return false;});
 
-
+*/
 
 
 

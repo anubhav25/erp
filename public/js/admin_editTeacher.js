@@ -6,7 +6,7 @@ $(document).ready(function($) {
 
 function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,voter_card_no,aadhar_card_no,address,city,distt,state,pin,landline,country)
 {
-	
+
 	this.name=name;
 	this.mob_no=mob_no;
     this.dob=dob;
@@ -17,7 +17,7 @@ function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,vot
     this.email=email;
 	this.voter_card_no=voter_card_no;
 	this.aadhar_card_no=aadhar_card_no;
-	
+
 	this.address=address;
 	this.city=city;
 	this.distt=distt;
@@ -63,13 +63,6 @@ $('#email').attr('disabled',true);
 
 
 $('form').submit(function(){
-
-
-
-	return false;});
-$('#submit').click(function(){
-
-
 
 	var name=$('#name').val();
 var mob_no=$('#mob_no').val();
@@ -123,6 +116,6 @@ $.post('/updateTeacherDetails',tcDetails,function (data) {
 
 
 
-
+return false;
 });
 });

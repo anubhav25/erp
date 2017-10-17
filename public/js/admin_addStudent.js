@@ -1,33 +1,11 @@
-/*var form  = document.getElementsByTagName('form')[0];
-var email = document.getElementById('mail');
-var error = document.querySelector('.error');
 
-email.addEventListener("input", function (event) {
- 
-  if (email.validity.valid) {
-    
-    error.innerHTML = "";
-    error.className = "error"; 
-  }
-}, false);
-form.addEventListener("submit", function (event) {
- 
-  if (!email.validity.valid) {
-    
-    
-    error.innerHTML = "I expect an e-mail, darling!";
-    error.className = "error active";
-    
-    event.preventDefault();
-  }
-}, false);*/
 $(document).ready(function($) {
 
 
 
 function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,foccupation,mname,dob,religion,bg,gender,Nationality,caste,Category,family_income,voter_card_no,aadhar_card_no,residancy,email,classs_group,address,city,distt,state,pin,landline,country)
 {
-	
+
 	this.name=name;
 	this.mob_no=mob_no;
 	this.rollno=rollno;
@@ -63,7 +41,7 @@ function studentDetails(name,mob_no,rollno,batch_name,classs,sem,fname,fmob_no,f
 
 
 
-	
+
 }/*
 $('#submit').click(function (argument) {
 		return false;
@@ -158,5 +136,3 @@ $('#myform').submit(function(){
 	return false;});
 
 });
-
-
