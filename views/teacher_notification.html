@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	<link rel="stylesheet" href="css/teacher_notification.css">
-
+ <!-- endbuild -->  <!-- endbuild -->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 	<script src="jquery-3.2.1.min.js"></script>
@@ -84,37 +84,10 @@
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-       <script src="/socket.io/socket.io.js"></script>
+       <script src="/socket.io/socket.io.js" ignore='true'></script>
     <script src="js/teacher_notification.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
-    <!-- Slider -->
-    <script type="text/javascript">
-    $(function() {
-        var Page = (function() {
-            var $navArrows = $( '#nav-arrows' ),
-            slitslider = $( '#slider' ).slitslider( {
-                autoplay : true
-            } ),
-            init = function() {
-                initEvents();
-            },
-            initEvents = function() {
-                $navArrows.children( ':last' ).on( 'click', function() {
-                    slitslider.next();
-                    return false;
-                });
-                $navArrows.children( ':first' ).on( 'click', function() {
-                    slitslider.previous();
-                    return false;
-                });
-            };
-            return { init : init };
-        })();
-        Page.init();
-    });
-    $(".text-right").html("Created by Anubhav and Sunil");
-    </script>
-    <!-- /Slider -->
+  <script src="js/common.js"></script> <!-- endbuild -->
 </body>
 </html>

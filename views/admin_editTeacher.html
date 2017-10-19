@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	<link rel="stylesheet" href="css/admin_editTeacher.css">
-    
+ <!-- endbuild --> 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
@@ -38,14 +38,14 @@
                         <li><a href="adminAllStudentList.html">Student</a></li>
                         <li><a href="admin_notification.html">Add notification</a></li>
 						<li><a href="logout">Logout</a></li>
-                    </ul>        
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
     <!-- /header -->
 	<div class="body1" >
-	<div class="left1" width:100%;">
+	<div class="left1" >
         <form name="myform" id="myform" >
 <center><h3 >1. General Information<h3></h3>
 <table id="fill_details">
@@ -66,7 +66,7 @@
           <option value="muslim">Muslim</option>
            <option value="sikh">Sikh</option>
             <option value="other">Other</option>
-             
+
      </select></td>
 </tr>
 <tr>
@@ -82,7 +82,7 @@
            <option value="ab+">AB+</option>
             <option value="ab-">AB-</option>
             <option value="other">Other</option>
-             
+
      </select></td>
      <td>Gender :</td>
        <td><select name="gender" id="gender" required>
@@ -90,7 +90,7 @@
          <option value="male">Male</option>
          <option value="female">Female</option>
             <option value="other">Other</option>
-             
+
      </select></td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@
 <tr>
      <td>Address :</td>
      <td><input type="text" name="address" id="address" required></td>
-     
+
 </tr>
 
 <tr>
@@ -143,8 +143,8 @@
  </form>
 
 	</div>
-	
-	
+
+
 	</div>
 
 
@@ -157,33 +157,7 @@
 	<script src="js/admin_editTeacher.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
-    <!-- Slider -->
-    <script type="text/javascript"> 
-    $(function() {
-        var Page = (function() {
-            var $navArrows = $( '#nav-arrows' ),
-            slitslider = $( '#slider' ).slitslider( {
-                autoplay : true
-            } ),
-            init = function() {
-                initEvents();
-            },
-            initEvents = function() {
-                $navArrows.children( ':last' ).on( 'click', function() {
-                    slitslider.next();
-                    return false;
-                });
-                $navArrows.children( ':first' ).on( 'click', function() {
-                    slitslider.previous();
-                    return false;
-                });
-            };
-            return { init : init };
-        })();
-        Page.init();
-    });
-    $(".text-right").html("Created by Anubhav and Sunil");
-    </script>
-    <!-- /Slider -->
+      <script src="js/common.js"></script>
+       <!-- endbuild --> 
 </body>
 </html>

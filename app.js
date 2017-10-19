@@ -40,7 +40,7 @@ app.set('view engine', 'ejs');
 var cons = require('consolidate');
 // view engine setup
 app.engine('html', cons.swig);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'myviews'));
 app.set('view engine', 'html');
 
 

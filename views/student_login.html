@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/body.css">
   <link rel="stylesheet" href="css/student_login.css">
   <script src="js/vendor/jquery-1.9.1.min.js"></script>
-
+ <!-- endbuild -->
 
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
@@ -96,7 +96,7 @@
     <script src="js/main.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js" ignore='true'></script>
     <!--<script src="https://code.jquery.com/jquery-1.11.1.js"></script>-->
     <script>
          $(function () {
@@ -170,37 +170,11 @@
          })
          });
     </script>
-    <!-- Slider -->
-    <script type="text/javascript">
-    $(function() {
-        var Page = (function() {
-            var $navArrows = $( '#nav-arrows' ),
-            slitslider = $( '#slider' ).slitslider( {
-                autoplay : true
-            } ),
-            init = function() {
-                initEvents();
-            },
-            initEvents = function() {
-                $navArrows.children( ':last' ).on( 'click', function() {
-                    slitslider.next();
-                    return false;
-                });
-                $navArrows.children( ':first' ).on( 'click', function() {
-                    slitslider.previous();
-                    return false;
-                });
-            };
-            return { init : init };
-        })();
-        Page.init();
-    });
-    $(".text-right").html("Created by Anubhav and Sunil");
-    </script>
-    <script src="/socket.io/socket.io.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src ="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src ="js/recieve_notification_student.js"></script>
-    <!-- /Slider -->
+      <script src="js/common.js"></script>
+    <!--script src="/socket.io/socket.io.js"></script-->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/recieve_notification_student.js"></script>
+ <!-- endbuild -->
 </body>
 </html>

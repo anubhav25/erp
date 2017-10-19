@@ -13,12 +13,13 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	<link rel="stylesheet" href="css/adminAllTeacherList.css">
     <link rel="stylesheet" href="css/body.css">
+     <!-- endbuild -->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
@@ -40,13 +41,13 @@
                         <li><a href="adminAllStudentList.html">Student</a></li>
                         <li><a href="admin_notification.html">Add notification</a></li>
 						<li><a href="logout">Logout</a></li>
-                    </ul>        
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
     <!-- /header -->
-    
+
 	<div id="teacher_edit_delete_div">
 	<center><input type="button" value="Add Teacher" id="addTeacher" class="addTeacher"></center>
 	<table id="teacher_edit_delete_table" style="display: none">
@@ -59,7 +60,7 @@
 			<th>Edit</th>
 			<th>Class Assign</th>
 			<th>Delete</th>
-			
+
 		</tr>
         </thead>
         <tbody>
@@ -67,35 +68,9 @@
         </tbody>
 	</table></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/adminAllTeacherList.js"></script>	
-    <!-- Slider -->
-    <script type="text/javascript"> 
-    $(function() {
-        var Page = (function() {
-            var $navArrows = $( '#nav-arrows' ),
-            slitslider = $( '#slider' ).slitslider( {
-                autoplay : true
-            } ),
-            init = function() {
-                initEvents();
-            },
-            initEvents = function() {
-                $navArrows.children( ':last' ).on( 'click', function() {
-                    slitslider.next();
-                    return false;
-                });
-                $navArrows.children( ':first' ).on( 'click', function() {
-                    slitslider.previous();
-                    return false;
-                });
-            };
-            return { init : init };
-        })();
-        Page.init();
-    });
-    $(".text-right").html("Created by Anubhav and Sunil");
-    </script>
-    <!-- /Slider -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/adminAllTeacherList.js"></script>
+      <script src="js/common.js"></script>
+ <!-- endbuild -->
 </body>
 </html>

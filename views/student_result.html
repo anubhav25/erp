@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/sl-slide.css">
 	<link rel="stylesheet" href="css/student_result.css">
-    
+ <!-- endbuild -->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
@@ -40,7 +40,7 @@
 						<li><a href="student_profile.html">Profile</a></li>
                         <li><a href="student_contactUs.html">Contact Us</a></li>
 						<li><a href="logout">Logout</a></li>
-                    </ul>        
+                    </ul>
                 </div>
             </div>
         </div>
@@ -62,8 +62,8 @@
             <option value="08">8</option>
 
         </select><br><br>
-        <button id ="submit" style="width:100px; height:40px;";>submit</button>
-	
+        <button id ="submit" style="width:100px; height:40px;">submit</button>
+
 
         <p id="wrongdetails" style="display: none;">
             <label style="color: red;">
@@ -73,7 +73,7 @@
 
 	</div></center>
 
-	
+
 	</div>
 
 
@@ -85,34 +85,8 @@
     <script src="js/main.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
-    <!-- Slider -->
-    <script type="text/javascript"> 
-    $(function() {
-        var Page = (function() {
-            var $navArrows = $( '#nav-arrows' ),
-            slitslider = $( '#slider' ).slitslider( {
-                autoplay : true
-            } ),
-            init = function() {
-                initEvents();
-            },
-            initEvents = function() {
-                $navArrows.children( ':last' ).on( 'click', function() {
-                    slitslider.next();
-                    return false;
-                });
-                $navArrows.children( ':first' ).on( 'click', function() {
-                    slitslider.previous();
-                    return false;
-                });
-            };
-            return { init : init };
-        })();
-        Page.init();
-    });
-    $(".text-right").html("Created by Anubhav and Sunil");
-    </script>
-    <!-- /Slider -->
-    <script src = "js/result.js"></script>
+  <script src="js/common.js"></script>
+      <script src="js/result.js"></script>
+       <!-- endbuild -->
 </body>
 </html>
