@@ -90,6 +90,9 @@ function insertIntoTable(a){
     {
         per ='--'
     }
+    else{
+       per=parseInt( per*100)/100;
+    }
     var table=$('#attendanceTable tbody');
     table.append($('<tr>').append($('<td>').text(a.sub)).append($('<td>').text(t)).append($('<td>').text(a.p)).append($('<td>').text(a.a)).append($('<td>').text(per)));
     table.parent().show();
