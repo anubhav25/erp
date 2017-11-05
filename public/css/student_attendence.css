@@ -1,61 +1,64 @@
-@media only screen and (min-width: 100px) and (max-width: 768px)
-{
- .body1{
-height:480px;
-
-}
-.left1{
-width:60%;
-background: linear-gradient(#00c6ff,#0072ff);
-
-float:left; 
-height:480px;
-
-overflow-y:scroll;
-
-}
-.right1{
-width:40%; 
-background: linear-gradient(#00c6ff,#0072ff);
-
-float:left; 
-height:480px;
-
-}
-table{
-	width:100%;
-	margin:2%;
-}
-
-}
-@media  only screen and (min-width: 768px)
-{
- .body1{
-height:635px;
-
-}
-.left1{
-width:60%;
-background: linear-gradient(#00c6ff,#0072ff);
-
-float:left; 
-height:635px;
-
-overflow-y:scroll;
-
-}
-.right1{
-width:40%; 
-background: linear-gradient(#00c6ff,#0072ff);
-
-float:left; 
-height:635px;
-
-}
-table{
-	width:90%;
-	margin:5%;
-	text-align:center;
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+    .body1 {
+        height: 480px;
+    }
+    .left1 {
+        width: 60%;
+        background: linear-gradient(#00c6ff, #0072ff);
+        float: left;
+        height: 480px;
+        overflow-y: scroll;
+    }
+    .right1 {
+        width: 40%;
+        background: linear-gradient(#00c6ff, #0072ff);
+        float: left;
+        height: 480px;
+    }
+    table {
+        width: 100%;
+        margin: 2%;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    th,
+    td {
+        padding: 5px;
+    }
 }
 
+@media only screen and (min-width: 768px) {
+    .body1 {
+        height: 635px;
+    }
+    .left1 {
+        width: 60%;
+        background: linear-gradient(#00c6ff, #0072ff);
+        float: left;
+        height: 635px;
+        overflow-y: scroll;
+    }
+    .right1 {
+        width: 40%;
+        background: linear-gradient(#00c6ff, #0072ff);
+        float: left;
+        height: 635px;
+    }
+    table {
+        width: 90%;
+        margin: 5%;
+        text-align: center;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    th,
+    td {
+        padding: 5px;
+    }
 }

@@ -615,7 +615,7 @@ app.get('/getLecture/:username',function(req,res)
 
 
 app.get('/myClass',requireLoginStudent,function(req,res){
-console.log(req.user);
+//console.log(req.user);
 console.log('596');
    req.db.collection('Students').find({rollno:req.user.username}).toArray(function(err,data){
        if(err)
@@ -624,7 +624,7 @@ console.log('596');
             throw err;
         }
         console.log(data);
-       res.send(data.classs);
+       res.send(data[0].classs);
    })
 
 });

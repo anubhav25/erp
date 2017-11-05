@@ -404,6 +404,7 @@ console.log(data);
                // console.log('msg recieved');
                 mongo.db.collection('chats').insertOne(msg, function () {
                     io.emit('chat_message', msg);
+                    console.log(msg);
                 });
 
 

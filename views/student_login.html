@@ -102,7 +102,7 @@
          $(function () {
 
             // var socket = io();
-             var socket = io('http://erp.openode.io/');
+             var socket = io();
              socket.emit('chat',{});
 
              $.get('/myusername',function(data)
@@ -171,7 +171,7 @@
          });
     </script>
       <script src="js/common.js"></script>
-    <!--script src="/socket.io/socket.io.js"></script-->
+   
     <link rel="stylesheet" href="css/jquery-ui.css">
     <script src="js/jquery-ui.js"></script>
     <script src="js/recieve_notification_student.js"></script>

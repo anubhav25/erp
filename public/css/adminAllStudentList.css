@@ -1,37 +1,51 @@
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+    #student_edit_delete_div {
+        background: linear-gradient(#00c6ff, #0072ff);
+        height: 480px;
+        overflow-y: scroll;
+    }
+    table {
+        width: 60%;
+        text-align: center;
+        margin: 5% 20% 5% 20%;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    th,
+    td {
+        padding: 5px;
+    }
+    #addStudent {
+        margin: 2%;
+        text-align: center;
+    }
+}
 
-
-@media only screen and (min-width: 100px) and (max-width: 768px)
-{
-#student_edit_delete_div{
-
-background : linear-gradient(#00c6ff,#0072ff);
-height:480px;
-overflow-y:scroll;
-}
-table{
-	width:60%;
-	text-align:center;
-	margin:5% 20% 5% 20% ;
-}	
-#addStudent{
-	margin :2%;
-	text-align: center;
-}
-}
-@media  only screen and (min-width: 768px)
-{
-#student_edit_delete_div{
-background : linear-gradient(#00c6ff,#0072ff);
-height:635px;
-overflow-y :scroll;
-}	
-table{
-	width:60%;
-	text-align:center;
-	margin:5% 20% 5% 20% ;
-}	
-#addStudent{
-	margin :2%;
-	text-align: center;
-}
+@media only screen and (min-width: 768px) {
+    #student_edit_delete_div {
+        background: linear-gradient(#00c6ff, #0072ff);
+        height: 635px;
+        overflow-y: scroll;
+    }
+    table {
+        width: 60%;
+        text-align: center;
+        margin: 5% 20% 5% 20%;
+    }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    th,
+    td {
+        padding: 5px;
+    }
+    #addStudent {
+        margin: 2%;
+        text-align: center;
+    }
 }

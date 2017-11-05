@@ -27,7 +27,7 @@ var alertBox = $("<div>").attr('id',"dialog");
 
 
     //   var socket = io('http://erp.openode.io/');
-    var socket = io('http://localhost:3000');
+    var socket = io();
 
     socket.emit('students',{});
 
