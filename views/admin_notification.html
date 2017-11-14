@@ -53,9 +53,9 @@
 	<div class="left1" style="width:100%;float:left">
 
             <div id="heading" style="display:block">
-                <form id="primaryform">
+                <form id="textform">
                   <center><h3>Notification</h3></center>
-                <label for="notification_heading"> Notification heading :</label><br><br>
+                <label for="notification_heading"> <lebel id="star" style="color:red">*</lebel>Notification heading :</label><br><br>
                 <input type="text" name="notification_heading" id="notification_heading" required><br><br>
                 <select name="target" id="target">
                     <option value="all">all</option>
@@ -68,18 +68,19 @@
 
             </div>
             <br><br>
-            <div id="text_div" style="display:none">Send notification as text :<br><br>
+            <div id="text_div" style="display:none"><lebel id="star" style="color:red">*</lebel>Send notification as text :<br><br>
                <input type="text" name="notification_content" id="notification_content" required><br><br>
                  <input type="submit"  value="Submit">
 
             </div>
-             <div id="file_div" style="display:none">Send notification as file :
+			</form>
+             <div id="file_div" style="display:none"><lebel id="star" style="color:red">*</lebel>Send notification as file :
                  <br><br>
                  <input type="file" name="file" id="file" required><br><br>
                 <!--input type="submit"  value="Submit"-->
              </div>
             <br><br>
-     </form>
+     
 
 
 	</div>

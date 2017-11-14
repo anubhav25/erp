@@ -378,6 +378,8 @@ var mongo={};
             socket.on('new_notification_text', function (data) {
 
 console.log(data);
+if(!(data.notification_heading=== ''|| data.notification_content=== ''))
+{
                 if(data.target=='all')
                 {
                     data.target='students';
@@ -393,6 +395,7 @@ console.log(data);
                     io.to('students').emit('new_notification_text',data);
                     save_notification(data);
                 }
+            }
 
 
 

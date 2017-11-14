@@ -146,7 +146,7 @@
                  if(res.sender===data)
                      res.sender='ME';
                  var msg = "<b> "+res.sender+"</b> :  "+res.msg;
-                 $('#messages').prepend($('<li>').html(msg));
+                 $('#messages').append($('<li>').html(msg));
                  window.scrollTo(100, document.body.scrollHeight);
              });
              socket.on('chat_file', function(res){

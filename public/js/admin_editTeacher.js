@@ -4,6 +4,7 @@ $(document).ready(function($) {
 
 
 
+
 function teacherDetails(name,mob_no,dob,religion,bg,gender,Nationality,email,voter_card_no,aadhar_card_no,address,city,distt,state,pin,landline,country)
 {
 

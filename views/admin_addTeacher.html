@@ -54,16 +54,16 @@
 <center><h3 >1. General Information<h3></h3>
 <table id="fill_details">
 <tr>
-     <td>Name :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Name :</td>
      <td><input type="text" name="name" id="name" required></td>
-     <td>Mobile No. :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Mobile No. :</td>
      <td><input type="number" name="mob_no" id="mob_no" required min="7000000000" max="9999999999"></td>
 </tr>
 
 <tr>
-     <td>DOB :</td>
-     <td><input type="date" name="dob" id="dob" required></td>
-     <td>Religion</td>
+     <td><lebel id="star" style="color:red">*</lebel>DOB :</td>
+     <td><input type="date" name="dob" id="dob" required min="1960-01-01" max="2000-01-01"></td>
+     <td><lebel id="star" style="color:red">*</lebel>Religion</td>
           <td><select name="religion" id="religion" required>
         <option value="">Religion</option>
          <option value="hindu">Hindu</option>
@@ -75,8 +75,8 @@
 </tr>
 <tr>
 
-         <td>Blood Group :</td>
-     <td><select name="bg" id="bg">
+         <td><lebel id="star" style="color:red">*</lebel>Blood Group :</td>
+     <td><select name="bg" id="bg" required>
         <option >Blood Group</option>
          <option value="o+">O+</option>
          <option value="o-">O-</option>
@@ -89,7 +89,7 @@
             <option value="other">Other</option>
 
      </select></td>
-     <td>Gender :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Gender :</td>
       <td><select name="gender" id="gender" required>
         <option value="">Gender</option>
          <option value="male">Male</option>
@@ -99,16 +99,16 @@
      </select></td>
 </tr>
 <tr>
-     <td>Nationality :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Nationality :</td>
      <td><input type="text" name="Nationality" id="Nationality" required></td>
-     <td>Email ID :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Email ID :</td>
      <td><input type="text" name="email" id="email" required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></td>
 </tr>
 
 <tr>
      <td>Voter Card No :</td>
      <td><input type="text" name="voter_card_no" id="voter_card_no"></td>
-     <td>Aadhar Card No</td>
+     <td><lebel id="star" style="color:red">*</lebel>Aadhar Card No</td>
      <td><input type="number" name="aadhar_card_no" id="aadhar_card_no" required min="100000000000" max="999999999999"></td>
 </tr>
 
@@ -120,13 +120,13 @@
 </tr>
 
 <tr>
-     <td>City :</td>
+     <td><lebel id="star" style="color:red">*</lebel>City :</td>
      <td><input type="text" name="city" id="city" required></td>
-     <td>Distt.</td>
+     <td><lebel id="star" style="color:red">*</lebel>Distt.</td>
      <td><input type="text" name="distt" id="distt" required></td>
 </tr>
 <tr>
-     <td>State :</td>
+     <td><lebel id="star" style="color:red">*</lebel>State :</td>
      <td><input type="text" name="state" id="state" required></td>
      <td>Pin No.</td>
      <td><input type="number" name="pin" id="pin" required min="100000" max="999999"></td>
@@ -134,7 +134,7 @@
 <tr>
      <td>Land Line No :</td>
      <td><input type="number" name="landline" id="landline"></td>
-     <td>Country.</td>
+     <td><lebel id="star" style="color:red">*</lebel>Country.</td>
      <td><input type="text" name="country" id="country" required></td>
 </tr>
 

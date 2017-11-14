@@ -57,19 +57,19 @@
 <center><h3 >1. General Information<h3></h3>
 <table id="fill_details">
 <tr>
-     <td>Name :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Name :</td>
      <td><input type="text" name="name" id="name" required></td>
-     <td>Mobile No. :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Mobile No. :</td>
      <td><input type="number" name="mob_no" id="mob_no"  min="7000000000" max="9999999999" required></td>
 </tr>
 <tr>
-     <td>Roll No :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Roll No :</td>
      <td><input type="text" name="rollno" id="rollno" required></td>
-     <td>Batch Name :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Batch Name :</td>
      <td><input type="number" name="batch_name" id="batch_name" min="2018" max="2050" required></td>
 </tr>
 <tr>
-     <td>Class :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Class :</td>
      <td><select id="classs" name="classs" required>
 	 <option value="" name="">class</option>
 	 <option value="csea" name="csea">CSE A</option>
@@ -79,7 +79,7 @@
 	 <option value="mech" name="mech">MECH</option>
 	 <option value="bt" name="bt">BT</option>
 	 </select></td>
-     <td>Semester :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Semester :</td>
       <td><select id="sem" name="sem" required>
 	 <option value="" name="">Sem</option>
 	 <option value="1" name="1">1</option>
@@ -93,21 +93,21 @@
 	 </select></td>
 </tr>
 <tr>
-     <td>Father's Name :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Father's Name :</td>
      <td><input type="text" name="fname" id="fname" required></td>
      <td>Father's Mobile No. :</td>
      <td><input type="number" name="fmob_no" id="fmob_no"></td>
 </tr>
 <tr>
-     <td>Father's Occupation :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Father's Occupation :</td>
      <td><input type="text" name="foccupation" id="foccupation" required></td>
-     <td>Mother's Name :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Mother's Name :</td>
      <td><input type="text" name="mname" id="mname" required></td>
 </tr>
 <tr>
-     <td>DOB :</td>
-     <td><input type="date" name="dob" id="dob" required></td>
-     <td>Religion</td>
+     <td><lebel id="star" style="color:red">*</lebel>DOB :</td>
+     <td><input type="date" name="dob" id="dob" required min="1980-01-01" max="2000-01-01"></td>
+     <td><lebel id="star" style="color:red">*</lebel>Religion</td>
      <td><select name="religion" id="religion" required>
         <option value="">Religion</option>
          <option value="hindu">Hindu</option>
@@ -119,8 +119,8 @@
 
 </tr>
 <tr>
-     <td>Blood Group :</td>
-     <td><select name="bg" id="bg" >
+     <td><lebel id="star" style="color:red">*</lebel>Blood Group :</td>
+     <td><select name="bg" id="bg" required>
         <option >Blood Group</option>
          <option value="o+">O+</option>
          <option value="o-">O-</option>
@@ -133,7 +133,7 @@
             <option value="other">Other</option>
 
      </select></td>
-     <td>Gender :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Gender :</td>
 
        <td><select name="gender" id="gender" required>
         <option value="">Gender</option>
@@ -144,26 +144,26 @@
      </select></td>
 </tr>
 <tr>
-     <td>Nationality :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Nationality :</td>
      <td><input type="text" name="Nationality" id="Nationality" required></td>
-     <td>Caste :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Caste :</td>
      <td><input type="text" name="caste" id="caste" required></td>
 </tr>
 <tr>
-     <td>Category :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Category :</td>
      <td><input type="text" name="Category" id="Category" required></td>
-     <td>Family Income :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Family Income :</td>
      <td><input type="number" name="family_income" id="family_income" required></td>
 </tr>
 <tr>
      <td>Voter Card No :</td>
      <td><input type="text" name="voter_card_no" id="voter_card_no"></td>
-     <td>Aadhar Card No</td>
+     <td><lebel id="star" style="color:red">*</lebel>Aadhar Card No</td>
      <td><input type="number" name="aadhar_card_no" id="aadhar_card_no" required min="100000000000" max="999999999999"></td>
 </tr>
 
 <tr>
-     <td>Rural/Urban  :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Rural/Urban  :</td>
        <td><select name="residancy" id="residancy" required>
 
          <option value="rural">Rural</option>
@@ -171,12 +171,12 @@
 
 
      </select></td>
-     <td>Email_ID :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Email_ID :</td>
      <td><input type="email" name="email" id="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
 	 <span class="error" aria-live="polite"></span></td>
 </tr>
 <tr>
-     <td>Class Group :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Class Group :</td>
      <td><select id="classs_group" name="classs_group" required>
      <option value="" name='0'>Class Group</option>
      <option value="1" name="1">1</option>
@@ -188,27 +188,27 @@
 </tr>
 
 <tr>
-     <td>Address :</td>
+     <td><lebel id="star" style="color:red">*</lebel>Address :</td>
      <td><input type="text" name="address" id="address" required></td>
 
 </tr>
 
 <tr>
-     <td>City :</td>
+     <td><lebel id="star" style="color:red">*</lebel>City :</td>
      <td><input type="text" name="city" id="city" required></td>
-     <td>Distt.</td>
+     <td><lebel id="star" style="color:red">*</lebel>Distt.</td>
      <td><input type="text" name="distt" id="distt" required></td>
 </tr>
 <tr>
-     <td>State :</td>
+     <td><lebel id="star" style="color:red">*</lebel>State :</td>
      <td><input type="text" name="state" id="state" required></td>
-     <td>Pin No.</td>
+     <td><lebel id="star" style="color:red">*</lebel>Pin No.</td>
      <td><input type="number" name="pin" id="pin" required min="100000" max="999999"></td>
 </tr>
 <tr>
      <td>Land Line No :</td>
      <td><input type="number" name="landline" id="landline"></td>
-     <td>Country.</td>
+     <td><lebel id="star" style="color:red">*</lebel>Country.</td>
      <td><input type="text" name="country" id="country" required></td>
 </tr>
 

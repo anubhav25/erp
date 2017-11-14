@@ -53,12 +53,14 @@ $(document).ready(function($) {
             socket.emit('new_notification_file', msg );
             $('#file').val('');
             $('#notification_heading').val('');
+            
+            alert("notification added");
         };
 
         fileReader.readAsBinaryString(file);
     });
 
-        $('form').submit(function(){
+        $('#textform').submit(function(){
 
 
 
@@ -83,7 +85,7 @@ $(document).ready(function($) {
             $('#notification_content').val('');
             $('#notification_heading').val('');
 
-
+            alert("notification added");
 
             return false;
         });
